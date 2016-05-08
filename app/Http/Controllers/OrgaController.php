@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Orga;
 use App\Event;
+use App\Tag;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -23,12 +24,16 @@ class OrgaController extends Controller
 
     public function index()
     {
-       // $users = User::all()->lists('name','id');
-        $id = Auth::user()->id;
+       /* $id = Auth::user()->id;
+
         $list = Event::where('user_id', $id)->get();
         $infos = User::where('id', $id)->get();
-        return view('orgas.index')->with(compact('list', 'infos'));
-        //return view('orgas.index', compact('list'));
+        $tags = Tag::all();
+        //dd($tags);
+        return view('orgas.index')->with(compact('list', 'infos', 'tags'));
+        //return view('orgas.index', compact('list'));*/
+        return redirect('/');
+
     }
     
     public function infosEdit(){
@@ -68,7 +73,13 @@ class OrgaController extends Controller
      */
     public function show($id)
     {
-        //
+        $id = Auth::user()->id;
+
+        $list = Event::where('user_id', $id)->get();
+        $infos = User::where('id', $id)->get();
+        $tags = Tag::all();
+        $user = User::find($id);
+        return view('orgas.show')->with(compact('user','list', 'infos', 'tags'));
     }
 
     /**
