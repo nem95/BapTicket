@@ -99,9 +99,9 @@
                         <ul class="dropdown-menu" role="menu">
 
                         @if(Auth::check() && Auth::user()->is_orga == 1 || Auth::check() && Auth::user()->is_admin == 1 )
-                                <li><a href="{{ route('orga.show', Auth::user()->id) }}">Mon profil</a></li>
-                                <li><a href="{{ route('event.create') }}">Créer un event</a></li>
-                            @endif
+                            <li><a href="{{ route('orga.show', Auth::user()->id) }}">Mon profil</a></li>
+                            <li><a href="{{ route('event.create') }}">Créer un event</a></li>
+                        @endif
                             <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                         </ul>
                     </li>
