@@ -21,7 +21,7 @@
                         <div class="form-group">
                             {!! Form::label('title', 'Nom de la conférence* :') !!}
                             {!! Form::text('title', '', 
-                                ['class' => 'form-control']) 
+                                ['class' => 'form-control', 'placeholder' => 'Donnez un nom à votre conférence']) 
                             !!}
                         </div>    
                         <div class="form-group">
@@ -93,21 +93,21 @@
                     <div class="col-md-6">
 
                         <div class="form-group">
-                            {!! Form::label('subject', 'Sujet de la conférence') !!}
+                            {!! Form::label('subject', 'Sujet de la conférence :') !!}
                             {!! Form::text('subject', '', 
                                 ['class' => 'form-control']) 
                             !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('host', 'Conférencier(s)') !!}
+                            {!! Form::label('host', 'Conférencier(s) :') !!}
                             {!! Form::text('host', '', 
                                 ['class' => 'form-control']) 
                             !!}
                             </div>
 
                         <div class="form-group">
-                            {!! Form::label('places', 'Places disponibles') !!}
+                            {!! Form::label('places', 'Places disponibles :') !!}
                             {!! Form::text('places', '', 
                                 ['class' => 'form-control']) 
                             !!}

@@ -9,6 +9,7 @@
 
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
 
     <!-- Styles -->
@@ -126,6 +127,7 @@
 {{--SLIDER SLICK.JS--}}
 
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://jashkenas.github.com/coffee-script/extras/coffee-script.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="{{asset("slick/slick/slick.min.js")}}"></script>
 <script type="text/javascript" src="{{asset("js/menu.js")}}"></script>
@@ -139,6 +141,15 @@
             nextArrow: '<img src="{{asset("img/next.png")}}" alt="" class="slick-next next">',
         });
     });
+</script>
+<script>
+    $(document).ready(function(){
+        $("address").each(function(){                         
+            var embed ="<iframe width='100%' height='600' frameborder='0' scrolling='no'  marginheight='0' marginwidth='0'   src='https://maps.google.com/maps?&amp;q="+ encodeURIComponent( $(this).text() ) +"&amp;output=embed'></iframe>";
+                $(this).html(embed);
+                             
+   });
+});
 </script>
 </body>
 </html>

@@ -21,6 +21,7 @@ body {
 .borderevent {
     margin-top: 5%;
     background-color: white;
+    margin-bottom: 3%;
 }
 
 .btnevent {
@@ -94,7 +95,6 @@ body {
 footer {
     background-color: #342e2e;
     color: white;
-    margin-top: 2%;
     font-size: 16px;
 }
 
@@ -203,8 +203,117 @@ footer {
     margin-top: -8.5px;
 }
 
+/* Show Event */
 
+.bgshowevent {
+    background-color: white;
+}
 
+.imgshowevent {
+    padding: 0;
+    width: 100%;
+}
+
+.showeventh {
+    text-align: center;
+    background-color: #66868c;
+    color: white;
+    margin-top: 0;
+    padding: 0.3%;
+
+}
+
+.showeventtitle {
+    clear: both;
+}
+
+.showeventh2 {
+    font-weight: bold;
+    color: #49ada6;
+    float: left;
+    margin-top: 1%;
+}
+
+.showeventh3 {
+    float: right;
+    margin-top: 1.5%;
+}
+
+.showeventcontent {
+    margin-top: 1%;
+    text-align: justify;
+}
+
+.showtags {
+    font-weight: bold;
+}
+
+.showbtn i{
+    background-color: #49ada6;
+    width: 40px;
+    height: 40px;
+    padding: 7px;
+    border-radius: 50%;
+    color: white;
+    margin-right: 1%;
+    text-align: center;
+}
+
+.tableshow {
+    width: 100%;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.tableshow td {
+    border-bottom: 1px solid black;
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+
+.btnshow {
+    background-color: #49ada6;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 3px;
+}
+
+.imgshoworga {
+    margin-top: 5%;
+    height: auto;
+    width: 100%;
+    border: 1px solid;
+    border-color: #49ada6;
+}
+
+.showbtn2 {
+    text-align: right;
+}
+.showbtn2 i{
+    background-color: #49ada6;
+    width: 40px;
+    height: 40px;
+    padding: 7px;
+    border-radius: 50%;
+    color: white;
+    margin-right: 1%;
+    text-align: center;
+}
+
+.showorgacontent {
+    text-align: justify;
+}
+
+.eventshowa {
+    color: gray;
+    text-decoration: none;
+}
+
+.btnshoworga {
+    text-align: center;
+}
 /* Reponsive Homepage */
 
 @media screen and (max-width: 667px) {

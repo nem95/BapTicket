@@ -1,39 +1,86 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid bgshowevent">
     <div class="row">
     @include('errors.message')
+    <img class="imgshowevent" src="{{asset("img/conf-1.jpg")}}" alt="conf">
+    <div><h2 class="showeventh">{{ $event->title }}</h2></div>
         <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading" style="text-align: center;" ><h3>{{ $event->title }}</h3>Créer le : {{ $event->created_at }}</div>
+            <div class="showeventtitle">
+                <h3 class="showeventh2">Description de l'événement</h3>
+                <h4 class="showeventh3">Date de l'événement - {{ $event->date }} à {{ $event->start }}</h4>
+            </div>
+            <div class="clearfix"></div>
+            <div class="showeventcontent">
+                <p>{{ $event->content }}</p>
+                <p class="showtags">Tags:</p>
+            </div>
 
-                <div class="panel-body">
-                    {{ $event->content }}
+            <div class="showbtn">
+                <a href=""><i class="fa fa-2x fa-facebook" aria-hidden="true"></i></a>
+                <a href=""><i class="fa fa-2x fa-twitter" aria-hidden="true"></i></a>
+                <a href=""><i class="fa fa-2x fa-instagram" aria-hidden="true"></i></a>                    
+                <a href=""><i class="fa fa-2x fa-google-plus" aria-hidden="true"></i></a>
+                <a href=""><i class="fa fa-2x fa-share" aria-hidden="true"></i></a>
+            </div>
+
+            <table class="tableshow">
+                <tr>
+                    <td>Nom</td>
+                    <td>Date</td>
+                    <td>Heure</td>
+                    <td>Prix</td>
+                    <td>Disponibilité</td>
+                    <td>Quantité</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Type de billet</td>
+                    <td>JJ/MM/YYYY</td>
+                    <td>00:00 à 00:00</td>
+                    <td>GRATUIT</td>
+                    <td>{{ $event->placesLeft }}/{{ $event->places }}</td>
+                    <td>{!! Form::selectRange('number', 1, $event->places); !!}</td>
+                    <td><button class="btnshow">Réserver</button></td>
+                </tr>
+            </table>
+        </div>
+        <address>
+            119 rue du vieux pont, Nanterre
+        </address>
+        <div class="col-md-10 col-md-offset-1">
+            <div class="col-md-9">
+                <div class="showeventtitle">
+                    <h3 class="showeventh2">Profil de l'organisateur</h3>
+                    <div class="showbtn2">
+                        <a href=""><i class="fa fa-2x fa-facebook" aria-hidden="true"></i></a>
+                        <a href=""><i class="fa fa-2x fa-twitter" aria-hidden="true"></i></a>
+                        <a href=""><i class="fa fa-2x fa-instagram" aria-hidden="true"></i></a>                    
+                        <a href=""><i class="fa fa-2x fa-google-plus" aria-hidden="true"></i></a>
+                        <a href=""><i class="fa fa-2x fa-share" aria-hidden="true"></i></a>
+                    </div>
                 </div>
+                <br>
+                <div class="showorgacontent">
+                    <p>Prénom: UserSurname
+                    <br>
+                    Nom: UserName
+                    <br>
+                    Profession: UserSector</p>
 
-                <div class="panel-footer" style="text-align: center;">
-                @if(Auth::check()
-                && (Auth::user()->id == $event->user_id
-                || Auth::user()->isAdmin))
+                    <div class="clear-fix"></div>
 
-                    {!! Form::model($event, array(
-                        'route' => array('event.destroy', $event->id),
-                        'method' => 'DELETE')) 
-                    !!}
-
-                    {!! Form::submit('Supprimer', ['class' => 'btn btn-default']) !!}
-
-                    
-                    
+                    <p>Description: <br> UserContent</p>
+                    <a href="" class="eventshowa">En savoir plus...</a>
+                </div>
                 
-                    <a class="btn btn-default" href="{{ route('event.edit', $event->id) }}">Modifier l'article</a>
-                
-                @endif
-
-                    <a class="btn btn-default" href="{{ route('event.index') }}">Retour aux articles</a>
-
-                    {!! Form::close() !!}
+            </div>
+            <div class="col-md-3">
+                <img src="{{asset("img/hollande.jpg")}}" alt="profil" class="imgshoworga">
+                <p>Note:</p>
+                <div class="btnshoworga">
+                    <button class="btnshow">Voir le profil</button>
                 </div>
                 
             </div>
