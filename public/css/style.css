@@ -1,0 +1,126 @@
+body {
+    font-family: 'Lato';
+    background-color: #e8eaea;
+}
+
+/* Homepage */
+
+.fa-btn {
+    margin-right: 6px;
+}
+        
+.eventstitle {
+    text-align: center;
+}
+
+.imgevent {
+    width: 100%;
+    height: auto;
+}
+
+.borderevent {
+
+    padding: 0;
+    margin-top: 5%;
+    background-color: white;
+}
+
+.btnevent {
+    float: right;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    background-color: #49ada6;
+}
+
+.placesevent {
+    float: left;
+    margin-top: 2%;
+    color: grey;
+}
+
+.eventa {
+    color: grey;
+    font-size: 12px;
+}
+
+.bodyevent {
+    padding-right: 3%;
+    padding-left: 3%;
+    padding-bottom: 3%;
+}
+
+.titlehr {
+    border: 2px solid black;
+}
+
+.h1event {
+    margin-bottom: 10px;
+}
+
+.eventstitle {
+    margin-top: -0.15%;
+}
+
+/* Footer */
+
+footer {
+    background-color: #342e2e;
+    color: white;
+    margin-top: 2%;
+    font-size: 16px;
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer h3{
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.footer p{
+    color: white;
+}
+
+.apropos {
+  text-align: center;
+  display: inline-block;
+}
+
+.apropos a{
+    color: white;
+    text-align: center;
+}
+
+.hrfooter {
+    border: 0.5px solid white;
+    margin-right: 30%;
+    margin-left: 30%;
+}
+
+.presse a{
+    color: white;
+    text-align: center;
+}
+
+.footer a {
+    color: white;
+}
+
+.copyrights {
+    margin-top: 3%;
+}
+.letterblue {
+    color: #49ada6;
+}
+
+.contact i{
+    margin-top: 3%;
+    background-color: #49ada6;
+    width: 45px;
+    height: 45px;
+    padding: 2%;
+    border-radius: 50%;
+}

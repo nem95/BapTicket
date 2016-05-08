@@ -1,0 +1,203 @@
+/*######### LE MENU #########*/
+.menu{
+    width: 100%;
+    height: 70px;
+    position: absolute; /*tres important pour que le slider soit coller en haut*/
+    background-color: rgba(0,0,0, 0.5);
+    z-index: 9999;
+}
+.barre-menu{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+ li{
+    margin-left: 5px;
+    margin-top: 15px;
+}
+.nav-nav {
+    width: 100%;
+}
+.nav-nav , li, .nav-nav  a {
+    display:block;
+    float:left;
+    text-decoration:none;
+    list-style: none;
+}
+
+.bars, .find, .retour, .search-bar, .retour-click, .retour-clicks{
+    display: none;
+}
+.logo, .show-nones{
+    width: 10%;
+    margin-top: 0;
+    margin-right: 3%;
+    margin-top: 12px;
+}
+.show-none{
+    display: none;
+}
+.search{
+    width: 60%;
+    height: auto;
+}
+.cherche{
+    width: 100%;
+    height: auto;
+}
+.formulaire{
+    border-radius: 5px;
+    background: white;
+}
+.chercher{
+    width: 60%;
+    height: 24px;
+    padding-left: 5px;
+    background: white;
+    margin-bottom: 0;
+}
+.chercher input[type="text"]:focus{
+    outline: none;
+}
+ .rechrch {
+    outline: none;
+}
+.champ{
+    width: 90%;
+    border: 0;
+}
+.boutons{
+
+    height: 34px;
+    margin-left: 0;
+    margin-top: 2px;
+}
+.selecteur{
+    width: 19%;
+    height: auto;
+    display: inline-block;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    background-color: whitesmoke;
+}
+.eye-selector{
+    width: 16%;
+    margin-left: 5%;
+}
+.selct{
+    width: 75%;
+    border: 0;
+    background-color: whitesmoke;
+}
+.selct{
+    outline: none;
+}
+.recherche{
+    width: 22%;
+    height: auto;
+    display: inline-block;
+    float: right;
+    margin-left: -2%;
+    border-right: 2px #49ADA6;
+    border-top-right-radius:5px;
+    border-bottom-right-radius: 5px;
+    background-color:#49ADA6;
+}
+.rechrch{
+    width: 100%;
+    background-color:#49ADA6;
+    border:0;
+    border-top-right-radius:5px;
+    border-bottom-right-radius: 5px;
+}
+.co{
+    width: auto;
+    height: 35px;
+    margin-left: 1%;
+    padding-left: 10px;
+    padding-right: 10px;
+    float: left;
+    border-radius: 5px;
+    background-color: rgba(73,173,166, 0.8);
+}
+.connexion{
+    vertical-align: middle;
+}
+.connex{
+    text-align: center;
+    line-height: 2.5em;
+}
+p, a {
+    text-decoration: none;
+    color: #2e3436;
+}
+.account{
+    margin-top: 22px;
+}
+.account a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.help a{
+    color: white;
+}
+.help{
+    margin-top: 22px;
+    margin-left: 10px;
+}
+
+/*######### LE SLIDER #########*/
+
+.slider{
+    margin-top: 0px;
+    z-index: 0;
+}
+.prev{
+    width: auto;
+    height:200px !important;
+    left:5% !important;
+    z-index: 9999 !important;
+}
+.next{
+    width: auto;
+    height:200px !important;
+    right:5% !important;
+    z-index: 9999 !important;
+}
+.slide-1, .slide-2, .slide-3{
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -300px;
+    padding-bottom: 150px;
+}
+.slide-1 h2, .slide-1 p, .slide-2 h2, .slide-2 p, .slide-3 h2, .slide-3 p  {
+    text-align: center;
+    color: white;
+}
+.participe{
+    width: 40%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 64px;
+}
+.participer, .plus{
+    width: 46%;
+}
+.participer{
+    height: 34px;
+    margin-right: 2%;
+    border: 0px;
+    border-radius: 5px ;
+    background-color: rgba(73,173,166, 0.5);
+    color: white;
+}
+.plus{
+    height: 34px;
+    margin-left: 2%;
+    border: 0px;
+    border-radius: 5px ;
+    background-color: rgba(85,121,127, 0.5);
+    color: white;
+}

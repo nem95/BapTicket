@@ -1,0 +1,75 @@
+
+.profil-orga{
+    padding-top: 80px !important;
+}
+.profilOrga{
+    overflow: hidden;
+}
+.title{
+    float: left;
+}
+.social{
+    float: right;
+}
+.profil-title{
+    font-size: 1.6em;
+}
+.icones{
+    width: 35px;
+    margin-left: 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.infos p{
+    margin-bottom: 1px;
+}
+.Marge-bot{
+    margin-bottom: 25px !important;
+
+}
+.tags{
+    width: 100%;
+    border: 1px solid gray;
+    overflow: hidden;
+}
+.tags p{
+    font-size: 1.1em;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 3px;
+}
+.tags button{
+    background:none;
+    border: 0;
+}
+.tags span{
+    border: 1px solid #CCCCCC;
+    font-size: 0.7em;
+    margin: 2px;
+    padding: 2px;
+}
+.delete-icon{
+    width: 0.7em;
+    margin-bottom: 3px;
+}
+
+.profil-pic{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.modif-prfl{
+    font-size: 1.5em;
+    color: white;
+    margin-top: 25px;
+    width: 100%;
+    background: #49ADA6;
+    border: 0;
+    border-radius: 5px;
+}
+
+/* EDIT PROFIL ORGANISATEUR*/
+.orga-edit{
+    padding-top: 80px;
+}

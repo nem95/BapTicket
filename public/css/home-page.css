@@ -1,0 +1,17 @@
+.separator{
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-top: -30px;
+    margin-bottom: 30px;
+}
+.top-conf{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    margin-top: -38px;
+    z-index: 9999;
+}
+.top-conf h2{
+    text-align: center;
+}

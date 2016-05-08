@@ -1,0 +1,74 @@
+@media screen and (max-width: 640px) {
+    /*######### LE MENU #########*/
+    .menu{
+        width: 100%;
+        height: auto;
+        position: relative; /*tres important pour que le slider soit coller en haut*/
+        background-color: #22313F;
+        margin-bottom: 5px;
+    }
+    .menu-nav{
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .barre-menu{
+        width: 100%;
+    }
+    .search, .co, .account, .help{
+        display: none;
+    }
+    .nav-nav{
+        padding-left: 0px;
+    }
+    .bars{
+        width: 9%;
+        color: white;
+        display: inline-block;
+    }
+    .find{
+        width: 8%;
+        color: white;
+        display: inline-block;
+        float: right;
+        margin-right: 5px;
+    }
+    .bars, .find{
+        margin-top: 1.5em;
+    }
+    .logo{
+        width: 40%;
+        margin-right: 19%;
+        margin-left: 19%;
+        margin-top: 8px;
+        float: left;
+    }
+    .show-none, .show-nones{
+        display: none;
+    }
+    .search-bar{
+        display: inline-block !important;
+        width: 84%;
+    }
+    .retour{
+        display: block !important;
+        width: 10%;
+    }
+    .retour-click, .retour-clicks{
+        display: none;
+    }
+    .input-search{
+        width: 100%;
+        height: 50px;
+        margin-left: 1%;
+        font-size: 1.3em;
+        background: #22313F;
+        color: white;
+        border: 0;
+        border-bottom: 1px solid white;
+        display: inline-block;
+    }
+    /*######### LE SLIDER #########*/
+    .slider{
+        display: none;
+    }
+}
