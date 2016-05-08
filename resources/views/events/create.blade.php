@@ -5,8 +5,8 @@
     <div class="row">
     @include('errors.message')
         <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Création Event</div>
+            <div class="panel panel-default createevent">
+                <div class="panel-heading">Créer un évènement</div>
                     <div class="panel-body">
                         {!! Form::open(array(
                             'route' => 'event.store',
@@ -77,7 +77,7 @@
                     </div>
                     <div class="panel-footer">
                         {!! Form::submit('Créer',
-                            ['class' => 'btn btn-primary'])
+                            ['class' => 'btn btnlogin'])
                         !!}
 
                         {!! Form::close() !!}

@@ -50,6 +50,9 @@ body {
     padding-bottom: 3%;
 }
 
+.contentevent {
+}
+
 .titlehr {
     border: 2px solid black;
 }
@@ -123,4 +126,30 @@ footer {
     height: 45px;
     padding: 2%;
     border-radius: 50%;
+}
+
+/* Login Register */
+
+.login {
+    margin-top: 15%;
+}
+
+.btnlogin {
+    background-color: #49ada6;
+    color: white;
+}
+
+.alogin {
+    color: grey;
+    font-size: 12px;
+}
+
+.register {
+    margin-top: 15%;
+}
+
+/* Event */
+
+.createevent {
+    margin-top: 10%;
 }

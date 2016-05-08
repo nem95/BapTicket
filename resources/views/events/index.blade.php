@@ -63,11 +63,12 @@
                         <img class="imgevent" src="{{asset("img/conference.jpg")}}" alt="conf">
                         </div>
                         <div class="bodyevent">
-                            <h4><a href="{{ route('event.show', $event->id) }}">{{ $event->title }}</a>
-                            <div class="clear-fix"></div></h4>
-                            <div class="clearfix"></div>
-                            {{ $event->content }}
-                            <div class="clear-fix"></div>
+                            <h4><a href="{{ route('event.show', $event->id) }}">{{ $event->title }}</a></h4>
+            
+                            <div class="contentevent">
+                            {{ str_limit($event->content, $limit = 75, $end = '...') }}
+                            </div>
+                            
                             <a href="{{ route('event.show', $event->id) }}" class="eventa">En savoir plus...</a>
 
                             <div class="clearfix"></div>
