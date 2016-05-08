@@ -5,7 +5,6 @@
         height: auto;
         position: relative; /*tres important pour que le slider soit coller en haut*/
         background-color: #22313F;
-        margin-bottom: 5px;
     }
     .menu-nav{
         padding-right: 0;

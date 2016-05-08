@@ -19,8 +19,6 @@ body {
 }
 
 .borderevent {
-
-    padding: 0;
     margin-top: 5%;
     background-color: white;
 }
@@ -31,11 +29,14 @@ body {
     border-radius: 3px;
     color: white;
     background-color: #49ada6;
+    margin-top: -3%;
+    margin-right: 2%;
 }
 
 .placesevent {
     float: left;
     margin-top: 2%;
+    padding-bottom: 3%;
     color: grey;
 }
 
@@ -51,6 +52,7 @@ body {
 }
 
 .contentevent {
+    overflow: hidden;
 }
 
 .titlehr {
@@ -63,6 +65,28 @@ body {
 
 .eventstitle {
     margin-top: -0.15%;
+}
+
+.dateevent {
+    display: none;
+}
+
+.priceevent {
+    float: right;
+    z-index: 100;
+    position: relative;
+    color: white;
+    margin-top: -63%;
+    margin-right: 3%;
+    background-color: #66868c;
+    padding: 0.5%;
+    opacity: 0.8;
+}
+
+.priceevent2{
+    display: none;
+    margin-top: 2%;
+    color: gray;
 }
 
 /* Footer */
@@ -148,8 +172,61 @@ footer {
     margin-top: 15%;
 }
 
-/* Event */
+/* Create Event */
 
-.createevent {
-    margin-top: 10%;
+.createeventh {
+    padding-top: 4.5%;
+    padding-bottom: 0.2%;
+    text-align: center;
+    background-color: #66868c;
+    color: white;
+}
+
+.number {
+    background-color: #49ada6;
+    font-size: 25px;
+    color: white;
+    padding: 0.2% 1%;
+}
+
+.numbevent {
+    color: gray;
+    margin-top: 2.5%;
+}
+
+.numbevent2 {
+    color: gray;
+}
+
+.hrevent {
+    border: 1px solid gray;
+    margin-top: -8.5px;
+}
+
+
+
+/* Reponsive Homepage */
+
+@media screen and (max-width: 667px) {
+    .btnevent {
+        width: 100%;
+        text-align: center;
+        border-radius: 0;
+        margin-top: 0.5%;
+        margin-right: 0;
+    }
+
+    .priceevent {
+        display: none;
+    }
+
+    .priceevent2 {
+        display: inline-block;
+        float: right;
+    }
+
+    .dateevent {
+        display: block;
+        color: #66868c;
+    }
 }

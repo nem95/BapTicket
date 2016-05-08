@@ -60,10 +60,17 @@
                 <div class="col-md-3">
                     <div class="borderevent">
                         <div class="topevent">
+
                         <img class="imgevent" src="{{asset("img/conference.jpg")}}" alt="conf">
+                        <span class="priceevent">GRATUIT</span>
                         </div>
                         <div class="bodyevent">
                             <h4><a href="{{ route('event.show', $event->id) }}">{{ $event->title }}</a></h4>
+                            
+                            <div class="dateevent">
+                                <i class="fa fa-calendar" aria-hidden="true"></i> {{ $event->date }} - à
+                            </div>
+                            
             
                             <div class="contentevent">
                             {{ str_limit($event->content, $limit = 75, $end = '...') }}
@@ -73,11 +80,17 @@
 
                             <div class="clearfix"></div>
 
-                            <div class="placesevent"><i class="fa fa-user" aria-hidden="true"></i> Places: {{ $event->placesTaken }}/{{ $event->places }}</div>
-                            <button class="btnevent">Participer</button>
-
-                            <div class="clearfix"></div>
+                            <div class="placesevent"><i class="fa fa-user" aria-hidden="true"></i> Places: {{ $event->placesTaken }}/{{ $event->places }}
+                            </div>
+                            <div class="priceevent2">
+                                <i class="fa fa-eur" aria-hidden="true"></i> GRATUIT
+                            </div>
+                            
+                            
                         </div>
+                        <button class="btnevent">Participer</button>
+
+                        <div class="clearfix"></div>
                     </div>
                 </div>
             @endforeach
