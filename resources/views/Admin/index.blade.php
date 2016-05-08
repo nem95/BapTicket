@@ -56,7 +56,7 @@
                                 @else
                                     <td class="col-md-2">NON</td>
                                 @endif
-                                <td class="col-md-2"><button> Edit</button></td>
+                                <td class="col-md-2"><button><a href="{{route('orga.edit', $users->id)}}">Edit</a></button></td>
                                 <td class="col-md-2"><button> Delete</button></td>
                             </tr>
                         @endforeach
