@@ -52,7 +52,7 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        $this -> validate($request, [
+        /*$this -> validate($request, [
             'title' => 'required',
             'subject' => 'required',
             'host' => 'required',
@@ -62,12 +62,23 @@ class EventController extends Controller
             'places' => 'required',
             'date' => 'required',
             'duration' => 'required'
-        ]);
+        ]);*/
 
         $event = new Event;
-        $input = $request -> input();
-        $input['user_id'] = Auth::user() -> id;
-        $event -> fill($input) -> save();
+        /*$input = $request -> input();
+        $input['user_id'] = Auth::user() -> id;*/
+        $event->title = $request->title;
+        $event->subject = $request->subject;
+        $event->host = $request->host;
+        $event->sector = $request->sector;
+        $event->content = $request->content;
+        $event->localisation = $request->localisation;
+        $event->places = $request->places;
+        $event->date = $request->date;
+        $event->duration = $request->duration;
+
+        $event->save();
+        //$event -> fill($input) -> save();
 
         return redirect() -> route('event.index') -> with('success', 'Votre évènement a été créé');
     }

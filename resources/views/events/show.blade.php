@@ -37,11 +37,11 @@
                 </tr>
                 <tr>
                     <td>Type de billet</td>
-                    <td>JJ/MM/YYYY</td>
+                    <td>{{$event->date}}</td>
                     <td>00:00 à 00:00</td>
                     <td>GRATUIT</td>
                     <td>{{ $event->placesLeft }}/{{ $event->places }}</td>
-                    <td>{!! Form::selectRange('number', 1, $event->places); !!}</td>
+                    <td>{!! Form::selectRange('number', 1, 3)!!}</td>
                     <td><button class="btnshow">Réserver</button></td>
                 </tr>
             </table>
@@ -80,7 +80,7 @@
                 <img src="{{asset("img/hollande.jpg")}}" alt="profil" class="imgshoworga">
                 <p>Note:</p>
                 <div class="btnshoworga">
-                    <button class="btnshow">Voir le profil</button>
+                    <button class="btnshow"><a href="{{route('orga.show', $event->user_id)}}">Voir le profil</a></button>
                 </div>
                 
             </div>
