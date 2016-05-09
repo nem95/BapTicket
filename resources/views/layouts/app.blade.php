@@ -5,7 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Witickets</title>
+    
+    <title>Site de billetterie pour des conférences sur le digital </title>
+
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <!-- Dublin Core -->
+    <meta name="DC.title" content="WITICKET site de billetterie pour des conférences sur le digital">
+    <meta name="DC.creator" content="WITICKET">
+    <meta name="DC.subject" content="Site de conférences sur le digital, top conférences" />
+    <meta name="DC.description" content="WITICKET, est le site de billeterie pour des conférences touchant le domaine du digital" />
+    <meta name="DC.publisher" content="WITICKET">
+    <meta name="DC.format" content="website">
+    <meta name="DC.identifier" content="">
+    <meta name="DC.language" content="fr-FR">
+    <meta name="DC.coverage" content="World">
+    <meta name="DC.rights" content="&copy; Site de billetterie pour des conférences sur le digital">
+    <!-- END Dublin Core -->
+
+    <!-- Referencement -->
+    <meta name="description" content="WITICKET, est le site de billeterie pour des conférences touchant le domaine du digital">
+    <meta name="keywords" content="WITICKET, billeterie, conférences, digital, marketing">
+    <meta name="author" content="">
+    <meta name="robots" content="index">
+    <meta name="Indentifier-URL" content="">
+    <!-- END Référencement -->
+
+    <!-- Open Graph-->
+    <meta property="og:title" content="WITICKET site de billetterie pour des conférences sur le digital">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="Site de conférences sur le digital, top conférence">
+    <meta property="og:description" content="WITICKET, est le site de billeterie pour des conférences touchant le domaine du digitale">
+    <!-- END Open Graph-->
 
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
@@ -144,11 +176,19 @@
 </script>
 <script>
     $(document).ready(function(){
-        $("address").each(function(){                         
-            var embed ="<iframe width='100%' height='600' frameborder='0' scrolling='no'  marginheight='0' marginwidth='0'   src='https://maps.google.com/maps?&amp;q="+ encodeURIComponent( $(this).text() ) +"&amp;output=embed'></iframe>";
-                $(this).html(embed);
-                             
-   });
+        $("address").each(function(){                     
+            var embed ="<iframe width='100%' height='100%' frameborder='0' scrolling='no' marginheight='0' marginwidth='0'  src='https://maps.google.com/maps?&amp;q="+ encodeURIComponent( $(this).text() ) +"&amp;output=embed'></iframe>";
+                $(this).html(embed);                             
+        });
+        $('.maps').click(function () {
+        $('.maps iframe').css("pointer-events", "auto");
+    });
+    
+    $( ".maps" ).mouseleave(function() {
+      $('.maps iframe').css("pointer-events", "none"); 
+    });
+
+
 });
 </script>
 </body>

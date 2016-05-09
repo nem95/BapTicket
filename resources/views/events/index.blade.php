@@ -73,14 +73,14 @@
                             
             
                             <div class="contentevent">
-                            {{ str_limit($event->content, $limit = 75, $end = '...') }}
+                                <p>{{ str_limit($event->content, $limit = 75, $end = '...') }}</p>
                             </div>
                             
                             <a href="{{ route('event.show', $event->id) }}" class="eventa">En savoir plus...</a>
 
                             <div class="clearfix"></div>
 
-                            <div class="placesevent"><i class="fa fa-user" aria-hidden="true"></i> Places: {{ $event->placesTaken }}/{{ $event->places }}
+                            <div class="placesevent"><i class="fa fa-user" aria-hidden="true"></i>  {{ $event->placesTaken }}/{{ $event->places }}
                             </div>
                             <div class="priceevent2">
                                 <i class="fa fa-eur" aria-hidden="true"></i> GRATUIT
@@ -88,7 +88,7 @@
                             
                             
                         </div>
-                        <button class="btnevent">Participer</button>
+                        <button class="btnevent"><a href="{{ route('event.show', $event->id) }}">Participer</a></button>
 
                         <div class="clearfix"></div>
                     </div>

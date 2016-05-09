@@ -11,6 +11,7 @@ body {
         
 .eventstitle {
     text-align: center;
+
 }
 
 .imgevent {
@@ -28,17 +29,27 @@ body {
     float: right;
     border: none;
     border-radius: 3px;
-    color: white;
     background-color: #49ada6;
-    margin-top: -3%;
-    margin-right: 2%;
+    margin-top: -5%;
+    margin-right: 2.5%;
+    padding: 3% 6%;
+}
+
+.btnevent a {
+    color: white;
+    font-size: 16px;
 }
 
 .placesevent {
     float: left;
-    margin-top: 2%;
-    padding-bottom: 3%;
-    color: grey;
+    margin-top: 4%;
+    padding-bottom: 2%;
+    color: #66868c;
+    font-size: 18px;
+}
+
+.placesevent i {
+    font-size: 20px;
 }
 
 .eventa {
@@ -52,8 +63,16 @@ body {
     padding-bottom: 3%;
 }
 
+.bodyevent h4 {
+    margin-bottom: 10px; 
+}
+
 .contentevent {
     overflow: hidden;
+}
+
+.contentevent p {
+    margin-bottom: 0;
 }
 
 .titlehr {
@@ -62,6 +81,7 @@ body {
 
 .h1event {
     margin-bottom: 10px;
+    margin-top: -3.5%;
 }
 
 .eventstitle {
@@ -174,6 +194,10 @@ footer {
 
 /* Create Event */
 
+.createeventbody{
+    background-color: white;
+}
+
 .createeventh {
     padding-top: 4.5%;
     padding-bottom: 0.2%;
@@ -201,6 +225,78 @@ footer {
 .hrevent {
     border: 1px solid gray;
     margin-top: -8.5px;
+}
+
+.createeventmap iframe {
+    pointer-events: none;
+    height: 380px;
+}
+
+.trhead {
+    background-color: #F5F5F5;
+    border-bottom: 1px solid;
+    border-color: #bfbfbf;
+}
+
+.createeventtable {
+    width: 100%;
+    text-align: left;
+    border-radius: 5px;
+    background-color: white;
+    overflow: hidden;
+}
+.createeventtable tr{
+    border-bottom: 1px solid;
+    border-color: #bfbfbf;
+}
+
+.createeventtable td{
+    padding: 1% 2%;
+}
+
+.createeventtable i{
+    color: #49ada6;
+    margin-right: 15%;
+}
+
+.createeventtable input {
+    width: 90%;
+}
+
+.bordertableevent {
+    border:1px solid;
+    border-color: #bfbfbf;
+    border-radius: 5px;
+}
+
+.parametresbillet {
+    background-color: #F5F5F5;
+    border-top:1px solid;
+    border-color: #bfbfbf;
+    padding: 1% 2%;
+}
+
+.billethr {
+    border: 1px solid black;
+    margin-top: -0.75%;
+}
+
+.ajoutbillet {
+    text-align: center;
+}
+
+.btnbillet {
+    background-color: #49ada6;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5% 1%;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+.btnbillet a{
+    color: white;
+    text-decoration: none;
 }
 
 /* Show Event */
@@ -274,10 +370,14 @@ footer {
 
 .btnshow {
     background-color: #49ada6;
-    color: white;
     font-size: 20px;
     border: none;
     border-radius: 3px;
+}
+
+.btnshow a {
+    color: white;
+    text-decoration: none;
 }
 
 .imgshoworga {
@@ -314,6 +414,11 @@ footer {
 .btnshoworga {
     text-align: center;
 }
+
+.maps iframe{
+    pointer-events: none;
+    height: 600px;
+}
 /* Reponsive Homepage */
 
 @media screen and (max-width: 667px) {
@@ -323,6 +428,11 @@ footer {
         border-radius: 0;
         margin-top: 0.5%;
         margin-right: 0;
+        padding: 1%;
+    }
+
+    .btnevent a {
+        font-size: 20px;
     }
 
     .priceevent {
@@ -339,3 +449,4 @@ footer {
         color: #66868c;
     }
 }
+

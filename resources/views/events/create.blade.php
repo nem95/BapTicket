@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="createeventbody">
+    
+
 <div class="createeventh"><h3>Créer une conférence</h3></div>
 <div class="container">
     <div class="row">
@@ -21,7 +24,7 @@
                                 !!}
                             </div>
                             <div class="form-group">
-                                {!! Form::label('content', 'Description') !!}
+                                {!! Form::label('content', 'Description* :') !!}
                                 {!! Form::textarea('content', '',
                                     ['class' => 'form-control'])
                                 !!}
@@ -36,7 +39,7 @@
                                 </p>
                                 </div>
                             </div>
-
+                            <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                 {!! Form::label('debut', 'Début* :') !!}
@@ -54,9 +57,10 @@
                                 !!}
                                 </div>
                             </div>
+                            </div>
 
                             <div class="form-group">
-                                {!! Form::label('localisation', 'Lieu de la conférence :') !!}
+                                {!! Form::label('localisation', 'Lieu de la conférence* :') !!}
                                 {!! Form::text('localisation', '',
                                     ['class' => 'form-control', 'placeholder' => 'Nom du lieu'])
                                 !!}
@@ -71,7 +75,7 @@
                                     ['class' => 'form-control', 'placeholder' => 'Adresse 2'])
                                 !!}
                             </div>
-                            <div class="form-group">
+                            <div class="form-group row">
                                 <div class="col-md-7">
                                     {!! Form::text('city', '',
                                     ['class' => 'form-control', 'placeholder' => 'Ville'])
@@ -100,12 +104,10 @@
                                 {!! Form::text('host', '',
                                     ['class' => 'form-control'])
                                 !!}
-
-                                {{ Form::hidden('sector', 'secret') }}
                                 </div>
 
                             <div class="form-group">
-                                {!! Form::label('places', 'Places disponibles :') !!}
+                                {!! Form::label('places', 'Places disponibles* :') !!}
                                 {!! Form::text('places', '',
                                     ['class' => 'form-control'])
                                 !!}
@@ -118,13 +120,17 @@
                                 !!}
                             </div>
 
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83998.94722671287!2d2.2775170023698585!3d48.858837739220725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis!5e0!3m2!1sfr!2sfr!4v1462733419328" width="100%" height="380px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            <div class="embed-container createeventmap">
+                                <address>
+                                    12 Avenue Léonard de Vinci, 92916 Paris La Défense
+                                </address>
+                            </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
                                 {!! Form::label('img', 'Image de conférence :') !!}
-                                {!! Form::file('image')!!}
+                                {!! Form::file('img')!!}
                             </div>
                         </div>
 
@@ -132,6 +138,121 @@
                             <h4><span class="number">2</span> Création des billets</h4>
                             <hr class="hrevent">
                         </div>
+
+                        <div class="bordertableevent panel panel-default">
+                                                    
+                            <table class="createeventtable">
+                                <tr class="trhead">
+                                    <td>Nom du billet</td>
+                                    <td>Quantité disponible</td>
+                                    <td>Prix</td>                                        
+                                    <td>Options</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input class="form-control" type="text">
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text">
+                                    </td>
+                                    <td>
+                                        <p>GRATUIT</p>
+                                    </td>
+                                    <td>
+                                        <i class="fa fa-2x fa-cog" aria-hidden="true"></i>
+                                        <i class="fa fa-2x fa-trash" aria-hidden="true"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input class="form-control" type="text">
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text">
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text">
+                                    </td>
+                                    <td>
+                                        <i class="fa fa-2x fa-cog" aria-hidden="true"></i>
+                                        <i class="fa fa-2x fa-trash" aria-hidden="true"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input class="form-control" type="text">
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text">
+                                    </td>
+                                    <td>
+                                        <p>INVITÉ / VIP</p>
+                                    </td>
+                                    <td>
+                                        <i class="fa fa-2x fa-cog" aria-hidden="true"></i>
+                                        <i class="fa fa-2x fa-trash" aria-hidden="true"></i>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="parametresbillet">
+                                <p>Paramètres</p>
+                                <hr class="billethr">
+                                <div class="form-group">
+                                {!! Form::label('', 'Description du billet :') !!}
+                                {!! Form::textarea('', '',
+                                    ['class' => 'form-control', 'size' => '20x4'])
+                                !!}
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        {!! Form::label('', 'Début de vente des billets :') !!}
+                                    </div>
+                                    <div class="col-md-8">
+                                        {!! Form::date('', '',
+                                            ['class' => 'form-control'])
+                                        !!}
+                                    </div>
+                                    <div class="col-md-4">
+                                        {!! Form::time('', '',
+                                        ['class' => 'form-control'])
+                                        !!}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        {!! Form::label('', 'Fin de vente des billets :') !!}
+                                    </div>
+                                    <div class="col-md-8">
+                                        {!! Form::date('', '',
+                                            ['class' => 'form-control'])
+                                        !!}
+                                    </div>
+                                    <div class="col-md-4">
+                                        {!! Form::time('', '',
+                                        ['class' => 'form-control'])
+                                        !!}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        {!! Form::checkbox('', ''); !!} Masquer la visibilité de ce billet
+                                    </div>
+                                </div>
+                                
+                            </div> 
+                            <div class="panel-footer">
+                                <div class="row">
+                                    <div class="col-md-12 ajoutbillet">
+                                        <button class="btnbillet"><a href=""><i class="fa fa-plus-circle" aria-hidden="true"></i> Billet Payant</a></button>
+                                        <button class="btnbillet"><a href=""><i class="fa fa-plus-circle" aria-hidden="true"></i> Billet Gratuit</a></button>
+                                        <button class="btnbillet"><a href=""><i class="fa fa-plus-circle" aria-hidden="true"></i> Don</a></button>
+                                    </div>
+                                </div>
+                            </div>  
+
+                        </div>
+                                                        
+                    
 
 
                             {!! Form::submit('Créer la conférence',
@@ -145,5 +266,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection

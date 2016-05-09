@@ -41,14 +41,17 @@
                     <td>00:00 à 00:00</td>
                     <td>GRATUIT</td>
                     <td>{{ $event->placesLeft }}/{{ $event->places }}</td>
-                    <td>{!! Form::selectRange('number', 1, 3)!!}</td>
-                    <td><button class="btnshow">Réserver</button></td>
+                    <td>{!! Form::selectRange('number', 1, 3) !!}</td>
+                    <td><button class="btnshow"><a href="">Réserver</a></button></td>
                 </tr>
             </table>
         </div>
-        <address>
-            119 rue du vieux pont, Nanterre
-        </address>
+        <div class="embed-container maps">
+            <address>
+                12 Avenue Léonard de Vinci, 92916 Paris La Défense
+            </address>
+        </div>
+        
         <div class="col-md-10 col-md-offset-1">
             <div class="col-md-9">
                 <div class="showeventtitle">
@@ -80,7 +83,7 @@
                 <img src="{{asset("img/hollande.jpg")}}" alt="profil" class="imgshoworga">
                 <p>Note:</p>
                 <div class="btnshoworga">
-                    <button class="btnshow"><a href="{{route('orga.show', $event->user_id)}}">Voir le profil</a></button>
+                    <button class="btnshow"><a class="showa" href="{{route('orga.show', $event->user_id)}}">Voir le profil</a></button>
                 </div>
                 
             </div>

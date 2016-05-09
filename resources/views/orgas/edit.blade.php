@@ -100,7 +100,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-4 control-label">Descritpion </label>
+                    <label class="col-md-4 control-label">Description </label>
                     <div class="col-md-6">
                             @if($user->known != '')
                             <textarea class="form-control" name="known" rows="10" cols="40" placeholder="Saisir votre description ici" maxlength="500">{{$user->known}}</textarea>
@@ -113,9 +113,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-4 control-label">NewsLetter</label>
+                    <label class="col-md-4 control-label">Newsletter</label>
                     <div class="col-md-6">
-                        <p>Voulez-vous vous inscrire a notre New letter ?</p>
+                        <p>Voulez-vous vous inscrire a notre Newsletter ?</p>
                             @if($user->newsletter == 1)
                                 <input type="radio" name="newsletter" value="1" checked> OUI
                                 <input type="radio" name="newsletter" value="0" > NON<br>
@@ -131,8 +131,8 @@
 
                 <div class="form-group">
                     <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fa fa-btn fa-sign-in"></i>Enrengistrer les modifications
+                        <button type="submit" class="btn center-block btnlogin">
+                            <i class="fa fa-btn fa-sign-in"></i>Enregistrer les modifications
                         </button>
                     </div>
                 </div>
