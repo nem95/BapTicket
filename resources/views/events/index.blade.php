@@ -80,11 +80,14 @@
 
                             <div class="clearfix"></div>
 
-                            <div class="placesevent"><i class="fa fa-user" aria-hidden="true"></i>  {{ $event->placesTaken }}/{{ $event->places }}
+                            <div class="placesevent">
+                                <i class="fa fa-user" aria-hidden="true"></i>  {{ $event->placesLeft }}/{{ $event->places }}
+                                <div class="priceevent2">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i> {{ $event->localisation }}
+                                    <i class="fa fa-eur" aria-hidden="true"></i> GRATUIT
+                                </div>
                             </div>
-                            <div class="priceevent2">
-                                <i class="fa fa-eur" aria-hidden="true"></i> GRATUIT
-                            </div>
+                            
                             
                             
                         </div>

@@ -11,7 +11,7 @@
         <div class="col-md-12">
             <div class="createevent">
                 <div class="numbevent">
-                    <h4><span class="number">1</span> Description de l'évènement</h4>
+                    <h4><span class="number">1</span> Description de l'événement</h4>
                     <hr class="hrevent">
                 </div>
                     {!! Form::open(array('route' => 'event.store', 'method' => 'POST'))!!}
@@ -43,7 +43,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                 {!! Form::label('debut', 'Début* :') !!}
-                                {!! Form::time('duration', '',
+                                {!! Form::time('debut', '',
                                     ['class' => 'form-control'])
                                 !!}
                                 </div>
