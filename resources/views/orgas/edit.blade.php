@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-9 orga-edit">
-            <form class="form-horizontal" role="form" method="POST" action="{{route('orga.update', $user->id)}}">
+            <form class="form-horizontal" role="form" method="POST" action="{{route('orga.update', $user->id)}}" enctype="multipart/form-data">
                 {!! csrf_field() !!}
 
                 <input type="hidden" name="_method" value="PUT"/>

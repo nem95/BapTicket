@@ -11,7 +11,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\Facades\Image;
-
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 class OrgaController extends Controller
 {
     /**
@@ -137,19 +137,18 @@ class OrgaController extends Controller
         $user->sectors = $request->sectors;
         $user->known = $request->known;
         //upload image de profil
-        if($request->image)
+        if(Input::file())
         {
 
-            $image = Input::file('image');
-            $name = Input::file('photo')->getClientOriginalName();
-
-            dd($name);
-            $filename  = time() . '.' . $image->getClientOriginalExtension();
+            $image = Input::file();
+            //dd($image);
+            $filename  = time() . '-' . Input::file('image')->getClientOriginalName();
             $destinationPath = 'uploads'; // upload path
             Input::file('image')->move($destinationPath, $filename); // uploading file to given path
             $path = public_path('uploads/' . $filename);
-            Image::make($image->getRealPath())->resize(200, 200)->save($path);
-            $user->photo = $filename;
+
+            //sImage::make($image->getRealPath())->resize(200, 200)->save($path);
+            $user->photo = $destinationPath. '/'.$filename;
         }else{
             $filename = "pas de fichier";
             dd($filename);
