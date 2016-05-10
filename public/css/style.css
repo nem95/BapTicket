@@ -198,6 +198,15 @@ footer {
     margin-bottom: 5%;
 }
 
+/* Page Profil*/
+
+.showorgatitle {
+    margin-top: 2%;
+}
+
+.pageprofil {
+    margin-top: 7%;
+}
 /* Create Event */
 
 .createeventbody{
@@ -425,9 +434,53 @@ footer {
     pointer-events: none;
     height: 600px;
 }
+
+.showeventmobileprofil {
+    display: none;
+}
+/* Général */
+
+.bold {
+    font-weight: bold;
+    text-align: center;
+}
+
+.btnmobile {
+    display: none;
+}
+
+.displaynoneweb {
+    display: none;
+}
 /* Reponsive Homepage */
 
 @media screen and (max-width: 667px) {
+
+    .displaynone {
+        display: none;
+    }
+
+    .displaynoneweb {
+        display: block;
+    }
+
+    .centermobile {
+        text-align: center;
+    }
+
+    .btnmobile {
+        display: block;
+    }
+
+    .showeventmobileprofil {
+        display: block;
+    }
+
+    .maps iframe {
+        height: 350px;
+        margin-top: 5%;
+    }
+
     .btnevent {
         width: 100%;
         text-align: center;

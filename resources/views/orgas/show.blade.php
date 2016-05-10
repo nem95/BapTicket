@@ -4,84 +4,44 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-10 col-md-offset-1 pageprofil">
             <div class="col-md-9">
                 <div class="showeventtitle">
-                    <h3 class="showeventh2">Profil de l'organisateur</h3>
+                    <h3 class="showeventh2">Profil</h3>
                     <div class="showbtn2">
-                        <a href=""><i class="fa fa-2x fa-facebook" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-2x fa-twitter" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-2x fa-instagram" aria-hidden="true"></i></a>                    
-                        <a href=""><i class="fa fa-2x fa-google-plus" aria-hidden="true"></i></a>
                         <a href=""><i class="fa fa-2x fa-share" aria-hidden="true"></i></a>
+                        @if(Auth::check() &&  Auth::user()->socialfb != '')
+                            <a href="{{ Auth::user()->socialfb }}" target="_blank">
+                                <i class="fa fa-2x fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        @endif
+                        @if(Auth::check() &&  Auth::user()->socialtt != '')
+                            <a href="{{ Auth::user()->socialtt }}" target="_blank">
+                                <i class="fa fa-2x fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        @endif
+                        @if(Auth::check() &&  Auth::user()->socialig != '')
+                            <a href="{{ Auth::user()->socialig }}" target="_blank">
+                                <i class="fa fa-2x fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        @endif
+                        @if(Auth::check() &&  Auth::user()->socialgg != '')
+                            <i class="fa fa-2x fa-google-plus" aria-hidden="true"></i>
+                        @endif
                     </div>
                 </div>
                 <br>
                 <div class="showorgacontent">
-                    <p>Prénom: UserSurname
+                    <p>Prénom: {{ Auth::user()->surname }}
                     <br>
-                    Nom: UserName
+                    Nom: {{ Auth::user()->name }}
                     <br>
-                    Profession: UserSector</p>
+                    Profession: {{ Auth::user()->sectors }}</p>
 
                     <div class="clear-fix"></div>
 
-                    <p>Description: <br> UserContent</p>
-                    <a href="" class="eventshowa">En savoir plus...</a>
-                </div>
-                
-            </div>
-            <div class="col-md-3">
-                <img src="{{asset("img/hollande.jpg")}}" alt="profil" class="imgshoworga">
-                <p>Note:</p>
-                <div class="btnshoworga">
-                    <button class="btnshow"><a class="showa" href="">Voir le profil</a></button>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div>
+                    <p>Description: <br> {{ Auth::user()->known }}</p>
 
-    <div class="container-fluid profil-orga">
-
-        <div class="row profil">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="col-md-8">
-                    <div class="profilOrga">
-                        <div class="title">
-                            <h1 class="profil-title">Profil</h1>
-                        </div>
-                        <div class="social">
-                            @if(Auth::check() &&  Auth::user()->socialfb != '')
-                                <a href="{{ Auth::user()->socialfb }}" target="_blank">
-                                    <img class="icones" src="{{ asset("img/icons/icon-fb.png") }}" alt="Icone Facebook">
-                                </a>
-                            @endif
-                            @if(Auth::check() &&  Auth::user()->socialtt != '')
-                                <a href="{{ Auth::user()->socialtt }}" target="_blank">
-                                    <img class="icones" src="{{ asset("img/icons/icon-tt.png") }}" alt="Icone Twitter">
-                                </a>
-                            @endif
-                            @if(Auth::check() &&  Auth::user()->socialig != '')
-                                <a href="{{ Auth::user()->socialig }}" target="_blank">
-                                    <img class="icones" src="{{ asset("img/icons/icon-ig.png") }}" alt="Icone Instagram">
-                                </a>
-                            @endif
-                            @if(Auth::check() &&  Auth::user()->socialgg != '')
-                                <a href="{{ Auth::user()->socialgg }}" target="_blank">
-                                    <img class="icones" src="{{ asset("img/icons/icon-gg.png") }}" alt="Icone Google+">
-                                </a>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="infos">
-                        <p>Prénom : {{ Auth::user()->surname }}</p>
-                        <p>Nom : {{ Auth::user()->name }}</p>
-                        <p class="Marge-bot">Profession : {{ Auth::user()->sectors }}</p>
-                        <p>Description :</p>
-                        <p class="Marge-bot">{{ Auth::user()->known }}</p>
-                    </div>
                     @if(Auth::check() &&  Auth::user()->is_orga == 1 || Auth::check() &&  Auth::user()->is_admin ==1)
                         <div class="tags">
                             <p>Tags :
@@ -109,69 +69,80 @@
                             @endforeach--}}
                         </div>
                     @endif
-
                 </div>
-                <div class="col-md-4">
-                    <div class="profil-pic">
-                        @if(Auth::user()->photo !='')
-                            <img src="{{ asset(Auth::user()->photo) }}" alt="" class="img-responsive">
-                        @else
-                            <img src="{{ asset("img/defaults-img/default-profil.png") }}" alt="" class="img-responsive">
-                        @endif
-
-                        @if(Auth::check() &&  Auth::user()->is_orga == 1 || Auth::check() &&  Auth::user()->is_admin ==1)
-                            <a href="{{route('orga.edit', Auth::user()->id)}}" class="modif-prfl">Modifier le profil</a>
-                        @endif
-                    </div>
-                </div>
+                
             </div>
-        </div>
-
-        <div class="row h1event">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="col-md-3">
-                    <hr class="titlehr">
-                </div>
-                <div class="col-md-6">
-                    <h1 class="eventstitle">LES TOP CONFÉRENCES</h1>
-                </div>
-                <div class="col-md-3">
-                    <hr class="titlehr">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                @include('errors.message')
-
-                @foreach($list as $event)
-                    <div class="col-md-3">
-                        <div class="borderevent">
-                            <div class="topevent">
-                                <img class="imgevent" src="{{asset("img/conference.jpg")}}" alt="conf">
-                            </div>
-                            <div class="bodyevent">
-                                <h4><a href="{{ route('event.show', $event->id) }}">{{ $event->title }}</a>
-                                    <div class="clear-fix"></div></h4>
-                                <div class="clearfix"></div>
-                                {{ $event->content }}
-                                <div class="clear-fix"></div>
-                                <a href="{{ route('event.show', $event->id) }}" class="eventa">En savoir plus...</a>
-
-                                <div class="clearfix"></div>
-
-                                <div class="placesevent"><i class="fa fa-user" aria-hidden="true"></i> Places: {{ $event->placesTaken }}/{{ $event->places }}</div>
-                                <button class="btnevent">Participer</button>
-
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-
-                {{---{!! $list->links() !!}--}}
+            <div class="col-md-3">
+                @if(Auth::user()->photo !='')
+                    <img src="{{ asset(Auth::user()->photo) }}" alt="" class="img-responsive imgshoworga">
+                @else
+                    <img src="{{ asset("img/hollande.jpg") }}" alt="" class="img-responsive imgshoworga">
+                @endif
+                <p>Note:</p>
+                <div class="btnshoworga">
+                    @if(Auth::check() &&  Auth::user()->is_orga == 1 || Auth::check() &&  Auth::user()->is_admin ==1)
+                        <button class="btnshow"><a href="{{route('orga.edit', Auth::user()->id)}}">Modifier le profil</a></button>
+                    @endif
+                </div>              
             </div>
         </div>
     </div>
+</div>
+
+<div class="showorgatitle"><h2 class="showeventh">Mes conférences organisées</h2></div>
+
+    <div class="container-fluid">
+    
+        <div class="row">
+            <div class="col-md-12">
+            @include('errors.message')
+
+            @foreach($list as $event)
+                <div class="col-md-3">
+                    <div class="borderevent">
+                        <div class="topevent">
+
+                        <img class="imgevent" src="{{asset("img/conference.jpg")}}" alt="conf">
+                        <span class="priceevent">GRATUIT</span>
+                        </div>
+                        <div class="bodyevent">
+                            <h4><a href="{{ route('event.show', $event->id) }}">{{ $event->title }}</a></h4>
+                            
+                            <div class="dateevent">
+                                <i class="fa fa-calendar" aria-hidden="true"></i> {{ $event->date }} - {{ $event->debut }} à {{ $event->fin }}
+                            </div>
+                            
+            
+                            <div class="contentevent">
+                                <p>{{ str_limit($event->content, $limit = 85, $end = '...') }}</p>
+                            </div>
+                            
+                            <a href="{{ route('event.show', $event->id) }}" class="eventa">En savoir plus...</a>
+
+                            <div class="clearfix"></div>
+
+                            <div class="placesevent">
+                                <i class="fa fa-user" aria-hidden="true"></i>  {{ $event->placesLeft }}/{{ $event->places }}
+                                <div class="priceevent2">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i> {{ $event->localisation }}
+                                    <i class="fa fa-eur" aria-hidden="true"></i> GRATUIT
+                                </div>
+                            </div>
+                            
+                            
+                            
+                        </div>
+                        <button class="btnevent"><a href="{{ route('event.show', $event->id) }}">Participer</a></button>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            @endforeach
+
+            {{---{!! $list->links() !!}--}}
+            </div>
+        </div>
+
+    </div>
+
 @endsection
