@@ -38,7 +38,7 @@
                 <tr>
                     <td>Type de billet</td>
                     <td>{{$event->date}}</td>
-                    <td>00:00 à 00:00</td>
+                    <td>{{$event->debut}} à {{$event->fin}}</td>
                     <td>GRATUIT</td>
                     <td>{{ $event->placesLeft }}/{{ $event->places }}</td>
                     <td>{!! Form::selectRange('number', 1, 3) !!}</td>
@@ -48,7 +48,7 @@
         </div>
         <div class="embed-container maps">
             <address>
-                12 Avenue Léonard de Vinci, 92916 Paris La Défense
+                {{ $event->adresse }} {{ $event->adresse2 }}, {{ $event->postal }} {{ $event->city }}
             </address>
         </div>
         

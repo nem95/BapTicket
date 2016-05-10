@@ -70,12 +70,15 @@ class EventController extends Controller
         $event->title = $request->title;
         $event->subject = $request->subject;
         $event->host = $request->host;
-        $event->sector = $request->sector;
         $event->content = $request->content;
         $event->localisation = $request->localisation;
         $event->places = $request->places;
         $event->date = $request->date;
-        $event->duration = $request->duration;
+        $event->adresse = $request->adresse;
+        $event->city = $request->city;
+        $event->postal = $request->postal;
+        $event->debut = $request->debut;
+        $event->fin = $request->fin;
 
         $event->save();
         //$event -> fill($input) -> save();
@@ -122,12 +125,15 @@ class EventController extends Controller
             'title' => 'required',
             'subject' => 'required',
             'host' => 'required',
-            'sector' => 'required',
             'content' => 'required',
             'localisation' => 'required',
             'places' => 'required',
             'date' => 'required',
-            'duration' => 'required'
+            'adresse' => 'required',
+            'city' => 'required',
+            'postal' => 'required',
+            'debut' => 'required',
+            'fin' => 'required',
         ]);
 
         $event = Event::findOrFail($id);

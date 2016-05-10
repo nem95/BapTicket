@@ -2,6 +2,47 @@
 
 @section('content')
 
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="col-md-9">
+                <div class="showeventtitle">
+                    <h3 class="showeventh2">Profil de l'organisateur</h3>
+                    <div class="showbtn2">
+                        <a href=""><i class="fa fa-2x fa-facebook" aria-hidden="true"></i></a>
+                        <a href=""><i class="fa fa-2x fa-twitter" aria-hidden="true"></i></a>
+                        <a href=""><i class="fa fa-2x fa-instagram" aria-hidden="true"></i></a>                    
+                        <a href=""><i class="fa fa-2x fa-google-plus" aria-hidden="true"></i></a>
+                        <a href=""><i class="fa fa-2x fa-share" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <br>
+                <div class="showorgacontent">
+                    <p>Prénom: UserSurname
+                    <br>
+                    Nom: UserName
+                    <br>
+                    Profession: UserSector</p>
+
+                    <div class="clear-fix"></div>
+
+                    <p>Description: <br> UserContent</p>
+                    <a href="" class="eventshowa">En savoir plus...</a>
+                </div>
+                
+            </div>
+            <div class="col-md-3">
+                <img src="{{asset("img/hollande.jpg")}}" alt="profil" class="imgshoworga">
+                <p>Note:</p>
+                <div class="btnshoworga">
+                    <button class="btnshow"><a class="showa" href="">Voir le profil</a></button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
     <div class="container-fluid profil-orga">
 
         <div class="row profil">
