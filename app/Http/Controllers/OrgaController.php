@@ -9,6 +9,8 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
+use Intervention\Image\Facades\Image;
 
 class OrgaController extends Controller
 {
@@ -111,6 +113,12 @@ class OrgaController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+
+
+
+
+
         //dd($request->sectors);
         $user = User::find($id);
 
@@ -128,6 +136,26 @@ class OrgaController extends Controller
         $user->socialgg = $request->socialgg;
         $user->sectors = $request->sectors;
         $user->known = $request->known;
+        //upload image de profil
+        if($request->image)
+        {
+
+            $image = Input::file('image');
+            $name = Input::file('photo')->getClientOriginalName();
+
+            dd($name);
+            $filename  = time() . '.' . $image->getClientOriginalExtension();
+            $destinationPath = 'uploads'; // upload path
+            Input::file('image')->move($destinationPath, $filename); // uploading file to given path
+            $path = public_path('uploads/' . $filename);
+            Image::make($image->getRealPath())->resize(200, 200)->save($path);
+            $user->photo = $filename;
+        }else{
+            $filename = "pas de fichier";
+            dd($filename);
+
+        }
+
         if ($request->newsletter){
             $user->newsletter = $request->newsletter;
         }else{
@@ -137,7 +165,7 @@ class OrgaController extends Controller
         $user->update();
 
 
-        return redirect('/orga');
+        return redirect()->route('orga.show', $user->id);
     }
 
     /**

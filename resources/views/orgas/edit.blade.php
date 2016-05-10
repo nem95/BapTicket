@@ -99,6 +99,7 @@
                     </div>
                 </div>
 
+
                 <div class="form-group">
                     <label class="col-md-4 control-label">Description </label>
                     <div class="col-md-6">
@@ -109,6 +110,17 @@
                             @endif
 
 
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Photo de profil </label>
+                    <div class="col-md-6">
+                        <input name="image" type="file">
+                        <p class="errors">{!!$errors->first('image')!!}</p>
+                        @if(Session::has('error'))
+                            <p class="errors">{!! Session::get('error') !!}</p>
+                        @endif
                     </div>
                 </div>
 
