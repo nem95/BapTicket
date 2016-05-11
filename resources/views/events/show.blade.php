@@ -85,21 +85,21 @@
                 </div>
                 <br>
                 <div class="showorgacontent">
-                    <p>Prénom: UserSurname
+                    <p>Prénom: {{ $user->surname }}
                     <br>
-                    Nom: UserName
+                    Nom: {{ $user->name }}
                     <br>
-                    Profession: UserSector</p>
+                    Profession: {{ $user->sector }}</p>
 
                     <div class="clear-fix"></div>
 
-                    <p>Description: <br> UserContent</p>
+                    <p>Description: <br> {{ $user->known }}</p>
                     <a href="" class="eventshowa">En savoir plus...</a>
                 </div>
                 
             </div>
             <div class="col-md-3">
-                <img src="{{asset("img/hollande.jpg")}}" alt="profil" class="imgshoworga">
+                <img src="{{asset($user->photo)}}" alt="profil" class="imgshoworga">
                 <p>Note:</p>
                 <div class="btnshoworga">
                     <button class="btnshow"><a class="showa" href="{{route('orga.show', $event->user_id)}}">Voir le profil</a></button>
@@ -110,7 +110,7 @@
 
         <div class="col-md-10 col-md-offset-1 showeventmobileprofil">
             <div class="col-sd-12">
-                <img src="{{asset("img/hollande.jpg")}}" alt="profil" class="imgshoworga">
+                <img src="{{ $user->photo }}" alt="profil" class="imgshoworga">
                 <p>Note:</p>
                 <div class="btnshoworga row">
                     <div class="showbtn2 centermobile">

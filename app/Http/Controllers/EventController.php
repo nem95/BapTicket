@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -95,9 +96,13 @@ class EventController extends Controller
     public function show($id)
     {
         $event = Event::findOrFail($id);
-        
+        $id = $event->user_id;
+        $user = User::findOrFail($id);
+        //dd($user);
 
-        return view('events.show', compact('event'));
+
+
+        return view('events.show', compact('event', 'user'));
     }
 
     /**
