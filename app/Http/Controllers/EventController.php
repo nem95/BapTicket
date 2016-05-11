@@ -80,6 +80,7 @@ class EventController extends Controller
         $event->postal = $request->postal;
         $event->debut = $request->debut;
         $event->fin = $request->fin;
+        $event->user_id = Auth::user()->id;
 
         $event->save();
         //$event -> fill($input) -> save();
@@ -97,8 +98,8 @@ class EventController extends Controller
     {
         $event = Event::findOrFail($id);
         $id = $event->user_id;
+        //dd($id);
         $user = User::findOrFail($id);
-        //dd($user);
 
 
 
