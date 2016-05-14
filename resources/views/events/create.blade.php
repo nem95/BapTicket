@@ -122,13 +122,7 @@
 
                             <div class="embed-container createeventmap">
                                 <address>
-                                    {{  
-                                        $adresse = $_POST['adresse']; 
-                                        $adresse2 = $_POST['adresse2']; 
-                                        $city = $_POST['city']; 
-                                        $postal = $_POST['postal'];  
-                                        print("$adresse $adresse2, $postal $city");  
-                                    }}
+                                    
                                 </address>
                             </div>
                         </div>

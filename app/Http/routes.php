@@ -27,5 +27,14 @@ Route::group(['middleware' => ['web']], function () {
     Route::resource('/orga', 'OrgaController');
     Route::resource('/admin', 'AdminController');
 
+    /* Route Google Map */
+
+    Route::post('events.store',function()
+    {
+        $data = [];
+        $data['adresse'] = Input::get('adresse');
+        return View::make('events.store', $data);
+    });
+
     
 });
