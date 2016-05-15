@@ -55,8 +55,11 @@
                     <td>{{$event->debut}} à {{$event->fin}}</td>
                     <td>GRATUIT</td>
                     <td>{{ $event->placesLeft }}/{{ $event->places }}</td>
-                    <td>{!! Form::selectRange('number', 1, 3) !!}</td>
-                    <td><button class="btnshow"><a href="">Réserver</a></button></td>
+                    {!! Form::model($event,array('route' => array('resa.update', $event->id),'method' => 'PUT')) !!}}
+                        {{ Form::hidden('event_id', $event->id) }}
+                        <td>{!! Form::selectRange('number', 1, 3) !!}</td>
+                        <td>{!! Form::submit('Réserver',['class' => 'btn btnlogin']) !!}</td>
+                    {!! Form::close() !!}
                 </tr>
             </table>
             <br>
