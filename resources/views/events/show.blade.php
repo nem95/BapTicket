@@ -55,13 +55,13 @@
                     <td>{{$event->debut}} à {{$event->fin}}</td>
                     <td>GRATUIT</td>
                     <td>{{ $event->placesLeft }}/{{ $event->places }}</td>
-                    {!! Form::model($event,array('route' => array('resa.update', $event->id),'method' => 'PUT')) !!}}
+                    {!! Form::model($event,array('route' => array('resa.update', $event->id),'method' => 'PUT')) !!}
                         {{ Form::hidden('event_id', $event->id) }}
-                        @if($resas)
+                        @if($resas >= 3)
                             <td>{!! Form::selectRange('number', 0,0, null, ['disabled' => 'disabled']) !!}</td>
                             <td>{!! Form::submit('Réserver',['class' => 'btn btnlogin', 'disabled' => 'disabled']) !!}</td>
                         @else
-                            <td>{!! Form::selectRange('number', 1,3) !!}</td>
+                            <td>{!! Form::selectRange('number', 1,3 - $resas ) !!}</td>
                             <td>{!! Form::submit('Réserver',['class' => 'btn btnlogin']) !!}</td>
                         @endif
                     {!! Form::close() !!}

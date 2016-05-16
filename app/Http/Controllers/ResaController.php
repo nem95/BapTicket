@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\Resa;
+use App\User;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
@@ -73,12 +75,16 @@ class ResaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-   
+
     public function update(Request $request, $id)
     {
         $resas = Resa::where('user_id', Auth::user()->id)->count();
-        if ($resas < 3){
-            $places = $request->number - $resas;
+
+        if ($resas < 3 ){
+            $places = intval($request->number);
+            $places = $resas - $places;
+            $places = abs($places);
+
             for ($i = 1; $i <= $places; $i++) {
                 $resa = new Resa;
 
@@ -87,22 +93,24 @@ class ResaController extends Controller
                 $resa->nb_place = $request->number;
                 $resa->save();
 
+                $user =  Auth::user();
+
+                $pdf = PDF::loadView('pdf.billet', compact('user'));
             }
-            //$resas = Resa::where('event_id', $id)->get();
 
             $event =  Event::find($id);
 
-            $event->placesLeft = $event->placesLeft - $places;
-
+            $event->placesLeft = $event->placesLeft - $resas;
             $event->update();
+
+            //return redirect() -> route('event.show', $id) -> with('success', 'Votre évènement a été créé');
+            return $pdf->download('billet.pdf');
+
         }else{
             return redirect() -> route('event.show', $id) -> with('success', 'Votre évènement a été créé');
-
         }
-
-
-        return redirect() -> route('event.index') -> with('success', 'Votre évènement a été créé');
     }
+
 
     /**
      * Remove the specified resource from storage.
