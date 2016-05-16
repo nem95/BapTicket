@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\Resa;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -97,13 +98,21 @@ class EventController extends Controller
     public function show($id)
     {
         $event = Event::findOrFail($id);
-        $id = $event->user_id;
+        /*$id = $event->user_id;
         //dd($id);
         $user = User::findOrFail($id);
+        $resas = Resa::where('user_id', Auth::user()->id->count();
+        $resa = $resas;
+        $resa = strval($resa);
+        //dd($resas);*/
+        $user_id = $event->user_id;
+        $user = User::findOrFail($user_id);
+        $resas = Resa::where('user_id', Auth::user()->id)->count();
+
+        return view('events.show')->with(compact('event', 'user', 'resas'));
 
 
-
-        return view('events.show', compact('event', 'user'));
+        //return view('events.show')->with(compact('event', 'user'));
     }
 
     /**

@@ -73,27 +73,33 @@ class ResaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+   
     public function update(Request $request, $id)
     {
-        $resa = new Resa();
+        $resas = Resa::where('user_id', Auth::user()->id)->count();
+        if ($resas < 3){
+            $places = $request->number - $resas;
+            for ($i = 1; $i <= $places; $i++) {
+                $resa = new Resa;
 
-        $resa->user_id = Auth::user()->id;
-        $resa->event_id = $request->event_id;
-        $resa->nb_place = $request->number;
+                $resa->user_id = Auth::user()->id;
+                $resa->event_id = $request->event_id;
+                $resa->nb_place = $request->number;
+                $resa->save();
 
+            }
+            //$resas = Resa::where('event_id', $id)->get();
 
-        $event =  Event::find($id);
-        
-        //$id = $request->event_id;
-        //dd($id);
-        //$findEvent = Event::findOrFail($id);
-        $event->placesLeft = $event->placesLeft - $request->number;
-        
-        $event->update();
-        $resa->save();
-        //dd($event->placesLeft);
+            $event =  Event::find($id);
 
-        //$event -> fill($input) -> save();
+            $event->placesLeft = $event->placesLeft - $places;
+
+            $event->update();
+        }else{
+            return redirect() -> route('event.show', $id) -> with('success', 'Votre évènement a été créé');
+
+        }
+
 
         return redirect() -> route('event.index') -> with('success', 'Votre évènement a été créé');
     }

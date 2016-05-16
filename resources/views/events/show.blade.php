@@ -57,8 +57,13 @@
                     <td>{{ $event->placesLeft }}/{{ $event->places }}</td>
                     {!! Form::model($event,array('route' => array('resa.update', $event->id),'method' => 'PUT')) !!}}
                         {{ Form::hidden('event_id', $event->id) }}
-                        <td>{!! Form::selectRange('number', 1, 3) !!}</td>
-                        <td>{!! Form::submit('Réserver',['class' => 'btn btnlogin']) !!}</td>
+                        @if($resas)
+                            <td>{!! Form::selectRange('number', 0,0, null, ['disabled' => 'disabled']) !!}</td>
+                            <td>{!! Form::submit('Réserver',['class' => 'btn btnlogin', 'disabled' => 'disabled']) !!}</td>
+                        @else
+                            <td>{!! Form::selectRange('number', 1,3) !!}</td>
+                            <td>{!! Form::submit('Réserver',['class' => 'btn btnlogin']) !!}</td>
+                        @endif
                     {!! Form::close() !!}
                 </tr>
             </table>
