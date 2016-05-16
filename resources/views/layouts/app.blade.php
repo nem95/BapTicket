@@ -139,7 +139,7 @@
                         </ul>
                     </li>
                 @endif
-                <li class="help"><a href="{{ url('/help') }}">Aide</a></li>
+                <li class="help"><a href="{{ url('/faq') }}">Aide</a></li>
             </ul>
         </div>
     </div>

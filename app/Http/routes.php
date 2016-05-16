@@ -28,14 +28,40 @@ Route::group(['middleware' => ['web']], function () {
     Route::resource('/admin', 'AdminController');
     Route::resource('/resa', 'ResaController');
 
-    /* Route Google Map */
+    /* Route pages autres */
 
-    Route::post('events.store',function()
+    Route::get('/mentions', function()
     {
-        $data = [];
-        $data['adresse'] = Input::get('adresse');
-        return View::make('events.store', $data);
+        return view('other.mentions');
     });
 
-    
+    Route::get('/qui', function()
+    {
+        return view('other.qui');
+    });
+
+    Route::get('/cgu', function()
+    {
+        return view('other.cgu');
+    });   
+
+    Route::get('/faq', function()
+    {
+        return view('other.faq');
+    });   
+
+    Route::get('/plan', function()
+    {
+        return view('other.plan');
+    });   
+
+    Route::get('/presse', function()
+    {
+        return view('other.presse');
+    });   
+
+    Route::get('/services', function()
+    {
+        return view('other.services');
+    });      
 });

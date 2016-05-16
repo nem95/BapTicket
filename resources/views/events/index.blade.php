@@ -59,10 +59,9 @@
             @foreach($list as $event)
                 <div class="col-md-3">
                     <div class="borderevent">
-                        <div class="topevent">
-
-                        <img class="imgevent" src="{{asset("img/conference.jpg")}}" alt="conf">
-                        <span class="priceevent">GRATUIT</span>
+                        <div class="imgfullmobile">
+                            <img class="imgevent" src="{{asset("img/conference.jpg")}}" alt="conf">
+                            <span class="priceevent">GRATUIT</span>
                         </div>
                         <div class="bodyevent">
                             <h4><a href="{{ route('event.show', $event->id) }}">{{ $event->title }}</a></h4>
@@ -100,5 +99,6 @@
 
         </div>
         </div>
+        @include('pagination.default', ['paginator' => $list])
     </div>
 @endsection

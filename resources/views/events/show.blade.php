@@ -26,7 +26,7 @@
             <div class="showbtn centermobile">
                 <a href=""><i class="fa fa-2x fa-facebook" aria-hidden="true"></i></a>
                 <a href=""><i class="fa fa-2x fa-twitter" aria-hidden="true"></i></a>
-                <a href=""><i class="fa fa-2x fa-instagram" aria-hidden="true"></i></a>                    
+                <a href=""><i class="fa fa-2x fa-instagram" aria-hidden="true"></i></a>
                 <a href=""><i class="fa fa-2x fa-google-plus" aria-hidden="true"></i></a>
                 <a href=""><i class="fa fa-2x fa-share" aria-hidden="true"></i></a>
             </div>
