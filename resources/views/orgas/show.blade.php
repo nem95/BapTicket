@@ -76,7 +76,7 @@
                 @if(Auth::user()->photo !='')
                     <img src="{{ asset(Auth::user()->photo) }}" alt="" class="img-responsive imgshoworga">
                 @else
-                    <img src="{{ asset("img/hollande.jpg") }}" alt="" class="img-responsive imgshoworga">
+                    <img src="{{ asset("img/defaults-img/default-profil.png") }}" alt="" class="img-responsive imgshoworga">
                 @endif
                 <p>Note:</p>
                 <div class="btnshoworga">
@@ -93,7 +93,7 @@
                 @if(Auth::user()->photo !='')
                     <img src="{{ asset(Auth::user()->photo) }}" alt="" class="img-responsive imgshoworga">
                 @else
-                    <img src="{{ asset("img/hollande.jpg") }}" alt="" class="img-responsive imgshoworga">
+                    <img src="{{ asset("img/defaults-img/default-profil.png") }}" alt="" class="img-responsive imgshoworga">
                 @endif
                 <p>Note:</p>
                 <div class="btnshoworga row">
@@ -205,7 +205,7 @@
             {{---{!! $list->links() !!}--}}
             </div>
         </div>
-
+        
     </div>
 
 @endsection

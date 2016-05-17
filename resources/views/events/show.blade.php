@@ -84,11 +84,25 @@
                 <div class="showeventtitle">
                     <h3 class="showeventh2">Profil de l'organisateur</h3>
                     <div class="showbtn2">
-                        <a href=""><i class="fa fa-2x fa-facebook" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-2x fa-twitter" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-2x fa-instagram" aria-hidden="true"></i></a>                    
-                        <a href=""><i class="fa fa-2x fa-google-plus" aria-hidden="true"></i></a>
                         <a href=""><i class="fa fa-2x fa-share" aria-hidden="true"></i></a>
+                        @if(Auth::check() &&  Auth::user()->socialfb != '')
+                            <a href="{{ Auth::user()->socialfb }}" target="_blank">
+                                <i class="fa fa-2x fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        @endif
+                        @if(Auth::check() &&  Auth::user()->socialtt != '')
+                            <a href="{{ Auth::user()->socialtt }}" target="_blank">
+                                <i class="fa fa-2x fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        @endif
+                        @if(Auth::check() &&  Auth::user()->socialig != '')
+                            <a href="{{ Auth::user()->socialig }}" target="_blank">
+                                <i class="fa fa-2x fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        @endif
+                        @if(Auth::check() &&  Auth::user()->socialgg != '')
+                            <i class="fa fa-2x fa-google-plus" aria-hidden="true"></i>
+                        @endif
                     </div>
                 </div>
                 <br>
@@ -107,7 +121,11 @@
                 
             </div>
             <div class="col-md-3">
-                <img src="{{asset($user->photo)}}" alt="profil" class="imgshoworga">
+                @if(Auth::user()->photo !='')
+                    <img src="{{ asset(Auth::user()->photo) }}" alt="" class="img-responsive imgshoworga">
+                @else
+                    <img src="{{ asset("img/defaults-img/default-profil.png") }}" alt="" class="img-responsive imgshoworga">
+                @endif
                 <p>Note:</p>
                 <div class="btnshoworga">
                     <button class="btnshow"><a class="showa" href="{{route('orga.show', $event->user_id)}}">Voir le profil</a></button>
@@ -118,15 +136,33 @@
 
         <div class="col-md-10 col-md-offset-1 showeventmobileprofil">
             <div class="col-sd-12">
-                <img src="{{asset($user->photo)}}" alt="profil" class="imgshoworga">
+                 @if(Auth::user()->photo !='')
+                    <img src="{{ asset(Auth::user()->photo) }}" alt="" class="img-responsive imgshoworga">
+                @else
+                    <img src="{{ asset("img/defaults-img/default-profil.png") }}" alt="" class="img-responsive imgshoworga">
+                @endif
                 <p>Note:</p>
                 <div class="btnshoworga row">
                     <div class="showbtn2 centermobile">
-                        <a href=""><i class="fa fa-2x fa-facebook" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-2x fa-twitter" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-2x fa-instagram" aria-hidden="true"></i></a>                    
-                        <a href=""><i class="fa fa-2x fa-google-plus" aria-hidden="true"></i></a>
                         <a href=""><i class="fa fa-2x fa-share" aria-hidden="true"></i></a>
+                        @if(Auth::check() &&  Auth::user()->socialfb != '')
+                            <a href="{{ Auth::user()->socialfb }}" target="_blank">
+                                <i class="fa fa-2x fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        @endif
+                        @if(Auth::check() &&  Auth::user()->socialtt != '')
+                            <a href="{{ Auth::user()->socialtt }}" target="_blank">
+                                <i class="fa fa-2x fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        @endif
+                        @if(Auth::check() &&  Auth::user()->socialig != '')
+                            <a href="{{ Auth::user()->socialig }}" target="_blank">
+                                <i class="fa fa-2x fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        @endif
+                        @if(Auth::check() &&  Auth::user()->socialgg != '')
+                            <i class="fa fa-2x fa-google-plus" aria-hidden="true"></i>
+                        @endif
                     </div>
 
                     <button class="btnevent"><a class="showa" href="{{route('orga.show', $event->user_id)}}">Voir le profil</a></button>

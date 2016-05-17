@@ -32,7 +32,7 @@
                             <div class="form-group">
                             {!! Form::label('', 'Tags :') !!}
                                 <div class="tags">
-                                <p><span>Le TAG<button><img class="delete-icon" src="{{ asset("img/icons/icon-delete.png") }}" alt="Icone de suppersion du tag..."></button></span>
+                                <p><span>Le TAG<button><img class="delete-icon" src="{{ asset("img/icons/icon-delete.png") }}" alt="Icône de suppression du tag..."></button></span>
                                     {{--@foreach()
                                         <span>Le TAG<button><img class="delete-icon" src="{{ asset("img/icons/icon-delete.png") }}" alt="Icone de suppersion du tag..."></button></span>
                                     @endforeach--}}
@@ -119,11 +119,17 @@
                                     ['class' => 'form-control'])
                                 !!}
                             </div>
+                            
 
                             <div class="embed-container createeventmap">
+
                                 <address>
-                                    
+
+
+
                                 </address>
+                                    
+                                    
                             </div>
                         </div>
 
