@@ -25,7 +25,7 @@
 			<br>
 			75 001 PARIS</p>
 			<hr class="hrfooter">
-			<a href="{{ url('/presse') }}">Presse</a>
+			<a href="{{ url('/contact') }}">Contact</a>
 		</div>
 	</div>
 	<div class="row">

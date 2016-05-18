@@ -28,6 +28,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::resource('/admin', 'AdminController');
     Route::resource('/resa', 'ResaController');
 
+    Route::resource('/contact', 'ContactController');
+
     /* Route pages autres */
 
     Route::get('/mentions', function()
@@ -55,9 +57,9 @@ Route::group(['middleware' => ['web']], function () {
         return view('other.plan');
     });   
 
-    Route::get('/presse', function()
+    Route::get('/contact', function()
     {
-        return view('other.presse');
+        return view('other.contact');
     });   
 
     Route::get('/services', function()

@@ -453,6 +453,10 @@ footer {
     font-size: 15px;
 }
 
+.whitetext p, a, h4 {
+    color: white;
+}
+
 .contentother img {
     margin-bottom: 5%;
     margin-top: 2%;
@@ -482,6 +486,26 @@ footer {
     display: none;
 }
 
+.cadetblue {
+    background-color: #44ada7 !important;
+}
+
+.darkcadetblue {
+    background-color: #618f97;
+    padding-bottom: 1%;
+    padding-top: 2%;
+    margin-top:-2%;
+}
+
+.darkslategray {
+    background-color: #36494c;
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+
+.gray {
+    color: gray !important;
+}
 /* Pagination styling */ 
 
 .pagination { 

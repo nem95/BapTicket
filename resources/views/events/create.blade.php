@@ -123,10 +123,10 @@
 
                             <div class="embed-container createeventmap">
 
+                            <input name="example" type="text" value="$_POST['adresse']" />
+
                                 <address>
-
-
-
+                                    
                                 </address>
                                     
                                     
