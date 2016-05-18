@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="">    
+<div class="createeventbody">    
 <div class="createeventh"><h3>F.A.Q</h3></div>
 <div class="container">
     <div class="row">

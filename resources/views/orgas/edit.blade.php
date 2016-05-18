@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="numbevent">
-                <h4><span class="number">1</span> Informations générales (Elles apparaîtront sur votre profil)</h4>
+                <h4 class="gray"><span class="number">1</span> Informations générales (Elles apparaîtront sur votre profil)</h4>
                 <hr class="hrevent">
             </div>
             <form class="form-horizontal" role="form" method="POST" action="{{route('orga.update', $user->id)}}" enctype="multipart/form-data">
@@ -49,7 +49,7 @@
                 
 
                 <div class="numbevent">
-                    <h4><span class="number">2</span> Informations personnelles (Elles n'apparaîtront pas sur votre profil)</h4>
+                    <h4 class="gray"><span class="number">2</span> Informations personnelles (Elles n'apparaîtront pas sur votre profil)</h4>
                     <hr class="hrevent">
                 </div>
 
@@ -96,7 +96,7 @@
                 </div>
 
                 <div class="numbevent">
-                    <h4><span class="number">3</span> Photo de profil</h4>
+                    <h4 class="gray"><span class="number">3</span> Photo de profil</h4>
                     <hr class="hrevent">
                 </div>
 
@@ -111,7 +111,7 @@
                 </div>
 
                 <div class="numbevent">
-                    <h4><span class="number">4</span> Réseaux sociaux</h4>
+                    <h4 class="gray"><span class="number">4</span> Réseaux sociaux</h4>
                     <hr class="hrevent">
                 </div>
 

@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="">    
+<div class="createeventbody">    
 <div class="createeventh"><h3>Contact</h3></div>
-<div class="container-fluid createeventbody">
+<div class="container-fluid">
     <div class="row">
     	<div class="col-md-10 col-md-offset-1">
     		<div class="numbevent">
@@ -47,20 +47,36 @@
             </div>
     	</div>
     </div>
-                        
-                            <div class="form-group">
-                                {!! Form::label('message', 'Message') !!}
-                                {!! Form::textarea('message', '', 
-                                    ['class' => 'form-control']) 
-                                !!}
-                            </div>
-                        
-                        {!! Form::submit('Envoyer le message',
-                            ['class' => 'btn btn-primary'])
-                        !!}
+    <div class="row">
+    	<div class="col-md-6 col-md-offset-3">
+    		<div class="form-group">
+                {!! Form::label('objet', 'Objet:') !!}
+                {!! Form::text('objet', '', 
+                ['class' => 'form-control']) 
+                !!}
+            </div>
+    		<div class="form-group">
+                {!! Form::label('message', 'Message:') !!}
+                {!! Form::textarea('message', '', 
+                ['class' => 'form-control']) 
+                !!}
+            </div>
+    	</div>
+    </div>
+    <div class="row">
+    	<div class="col-md-12 btncontact">
+    		{!! Form::submit('Envoyer le message',
+                ['class' => 'btn btnlogin'])
+            !!}
+            {!! Form::close() !!}
+            <a class="btn btnlogin" href="{{ route('event.index') }}">Retour à l'accueil</a>
+    	</div>
+    </div>
 
-                        {!! Form::close() !!}
-                        <a class="btn btn-default" href="{{ route('event.index') }}">Retour à l'accueil</a>
+                        
+                            
+                        
+                        
     
 </div>
 

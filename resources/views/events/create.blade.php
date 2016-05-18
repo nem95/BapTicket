@@ -11,7 +11,7 @@
         <div class="col-md-12">
             <div class="createevent">
                 <div class="numbevent">
-                    <h4><span class="number">1</span> Description de l'événement</h4>
+                    <h4 class="gray"><span class="number">1</span> Description de l'événement</h4>
                     <hr class="hrevent">
                 </div>
                     {!! Form::open(array('route' => 'event.store', 'method' => 'POST'))!!}
@@ -141,7 +141,7 @@
                         </div>
 
                         <div class="numbevent2">
-                            <h4><span class="number">2</span> Création des billets</h4>
+                            <h4 class="gray"><span class="number">2</span> Création des billets</h4>
                             <hr class="hrevent">
                         </div>
 

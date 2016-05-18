@@ -64,7 +64,7 @@
                             <span class="priceevent">GRATUIT</span>
                         </div>
                         <div class="bodyevent">
-                            <h4><a href="{{ route('event.show', $event->id) }}">{{ $event->title }}</a></h4>
+                            <h4 class="black"><a href="{{ route('event.show', $event->id) }}">{{ $event->title }}</a></h4>
                             
                             <div class="dateevent">
                                 <i class="fa fa-calendar" aria-hidden="true"></i> {{ $event->date }} - {{ $event->debut }} à {{ $event->fin }}

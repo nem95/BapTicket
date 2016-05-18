@@ -50,7 +50,7 @@ class ContactController extends Controller
         $input = $request -> input();
         $contact -> fill($input) -> save();
 
-        return redirect() -> route('other.contact') -> with('success', 'Votre message a été envoyé');
+        return redirect() -> route('event.index') -> with('success', 'Votre message a été envoyé');
     }
 
     /**
