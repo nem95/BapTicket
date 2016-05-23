@@ -4,7 +4,7 @@
 <div class="createeventbody">
     
 
-<div class="createeventh"><h3>Créer une conférence</h3></div>
+<div class="createeventh"><h3>Modifier une conférence</h3></div>
 <div class="container">
     <div class="row">
     @include('errors.message')
@@ -14,261 +14,111 @@
                     <h4 class="gray"><span class="number">1</span> Description de l'événement</h4>
                     <hr class="hrevent">
                 </div>
-                    {!! Form::open(array('route' => 'event.store', 'method' => 'POST'))!!}
+                    <form class="form-horizontal" role="form" method="POST" action="{{route('event.update', $event->id)}}" enctype="multipart/form-data">
+                    {!! csrf_field() !!}
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                {!! Form::label('title', 'Nom de la conférence* :') !!}
-                                {!! Form::text('title', '',
-                                    ['class' => 'form-control', 'placeholder' => 'Donnez un nom à votre conférence'])
-                                !!}
-                            </div>
-                            <div class="form-group">
-                                {!! Form::label('content', 'Description* :') !!}
-                                {!! Form::textarea('content', '',
-                                    ['class' => 'form-control'])
-                                !!}
-                            </div>
-                            <div class="form-group">
-                            {!! Form::label('', 'Tags :') !!}
-                                <div class="tags">
-                                <p><span>Le TAG<button><img class="delete-icon" src="{{ asset("img/icons/icon-delete.png") }}" alt="Icône de suppression du tag..."></button></span>
-                                    {{--@foreach()
-                                        <span>Le TAG<button><img class="delete-icon" src="{{ asset("img/icons/icon-delete.png") }}" alt="Icone de suppersion du tag..."></button></span>
-                                    @endforeach--}}
-                                </p>
-                                </div>
-                            </div>
-                            <div class="row">
+                        <input type="hidden" name="_method" value="PUT"/>
+                        <div class="form-group">
+                            <label class="col-md-12">Nom de la conférence:</label>
                             <div class="col-md-6">
-                                <div class="form-group">
-                                {!! Form::label('debut', 'Début* :') !!}
-                                {!! Form::time('debut', '',
-                                    ['class' => 'form-control'])
-                                !!}
-                                </div>
+                                <input type="text" class="form-control" name="nom" placeholder="{{$event->title}}" value="{{$event->title }}">
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-
-                                {!! Form::label('fin', 'Fin* :') !!}
-                                {!! Form::time('fin', '',
-                                    ['class' => 'form-control'])
-                                !!}
-                                </div>
-                            </div>
-                            </div>
-
-                            <div class="form-group">
-                                {!! Form::label('localisation', 'Lieu de la conférence* :') !!}
-                                {!! Form::text('localisation', '',
-                                    ['class' => 'form-control', 'placeholder' => 'Nom du lieu'])
-                                !!}
-                            </div>
-                            <div class="form-group">
-                                {!! Form::text('adresse', '',
-                                    ['class' => 'form-control', 'placeholder' => 'Adresse'])
-                                !!}
-                            </div>
-                            <div class="form-group">
-                                {!! Form::text('adresse2', '',
-                                    ['class' => 'form-control', 'placeholder' => 'Adresse 2'])
-                                !!}
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-7">
-                                    {!! Form::text('city', '',
-                                    ['class' => 'form-control', 'placeholder' => 'Ville'])
-                                    !!}
-                                </div>
-                                <div class="col-md-5">
-                                    {!! Form::text('postal', '',
-                                    ['class' => 'form-control', 'placeholder' => 'Code Postal'])
-                                    !!}
-                                </div>
-                            </div>
-
                         </div>
 
-                        <div class="col-md-6">
-
-                            <div class="form-group">
-                                {!! Form::label('subject', 'Sujet de la conférence :') !!}
-                                {!! Form::text('subject', '',
-                                    ['class' => 'form-control'])
-                                !!}
+                        <div class="form-group">
+                            <label class="col-md-12">Description:</label>
+                            <div class="col-md-6">
+                                    <textarea class="form-control" name="description" rows="8" cols="40" placeholder="Saisir votre description ici" maxlength="500">{{$event->content}}</textarea>
                             </div>
+                        </div>
 
-                            <div class="form-group">
-                                {!! Form::label('host', 'Conférencier(s) :') !!}
-                                {!! Form::text('host', '',
-                                    ['class' => 'form-control'])
-                                !!}
-                                </div>
-
-                            <div class="form-group">
-                                {!! Form::label('places', 'Places disponibles* :') !!}
-                                {!! Form::text('places', '',
-                                    ['class' => 'form-control'])
-                                !!}
+                        <div class="form-group">
+                            <label class="col-md-12">Début:</label>
+                            <div class="col-md-6">
+                                <input type="time" class="form-control" name="debut" placeholder="{{$event->debut}}" value="{{$event->debut}}">
                             </div>
+                        </div>
 
-                            <div class="form-group">
-                                {!! Form::label('date', 'Date de l\'évènement* :') !!}
-                                {!! Form::date('date', '',
-                                    ['class' => 'form-control'])
-                                !!}
+                        <div class="form-group">
+                            <label class="col-md-12">Fin:</label>
+                            <div class="col-md-6">
+                                <input type="time" class="form-control" name="fin" placeholder="{{$event->fin}}" value="{{$event->fin}}">
                             </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-12">Nom du lieu:</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="localisation" placeholder="{{$event->localisation}}" value="{{$event->localisation}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-12">Adresse:</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="adresse" placeholder="{{$event->adresse}}" value="{{$event->adresse}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-12">Adresse 2:</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="adresse2" placeholder="{{$event->adresse2}}" value="{{$event->adresse2}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-12">Ville:</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="ville" placeholder="{{$event->city}}" value="{{$event->city}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-12">Code postal:</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="postal" placeholder="{{$event->postal}}" value="{{$event->postal}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-12">Sujet de la conférence:</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="subject" placeholder="{{$event->subject}}" value="{{$event->subject}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-12">Conférencier(s):</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="host" placeholder="{{$event->host}}" value="{{$event->host}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-12">Places:</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="places" placeholder="{{$event->places}}" value="{{$event->places}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-12">Date:</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="date" placeholder="{{$event->date}}" value="{{$event->date}}">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn center-block btnlogin">
+                                    Enregistrer
+                                </button>
+                                <a class="btn btnlogin" href="{{ route('event.index') }}">Retour à l'accueil</a>
+                            </div>
+                        </div>
                             
 
-                            <div class="embed-container createeventmap">
-
-                            <input name="example" type="text" value="$_POST['adresse']" />
-
-                                <address>
-                                    
-                                </address>
-                                    
-                                    
-                            </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                {!! Form::label('img', 'Image de conférence :') !!}
-                                {!! Form::file('img')!!}
-                            </div>
-                        </div>
-
-                        <div class="numbevent2">
-                            <h4 class="gray"><span class="number">2</span> Création des billets</h4>
-                            <hr class="hrevent">
-                        </div>
-
-                        <div class="bordertableevent panel panel-default">
-                                                    
-                            <table class="createeventtable">
-                                <tr class="trhead">
-                                    <td>Nom du billet</td>
-                                    <td>Quantité disponible</td>
-                                    <td>Prix</td>                                        
-                                    <td>Options</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input class="form-control" type="text">
-                                    </td>
-                                    <td>
-                                        <input class="form-control" type="text">
-                                    </td>
-                                    <td>
-                                        <p>GRATUIT</p>
-                                    </td>
-                                    <td>
-                                        <i class="fa fa-2x fa-cog" aria-hidden="true"></i>
-                                        <i class="fa fa-2x fa-trash" aria-hidden="true"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input class="form-control" type="text">
-                                    </td>
-                                    <td>
-                                        <input class="form-control" type="text">
-                                    </td>
-                                    <td>
-                                        <input class="form-control" type="text">
-                                    </td>
-                                    <td>
-                                        <i class="fa fa-2x fa-cog" aria-hidden="true"></i>
-                                        <i class="fa fa-2x fa-trash" aria-hidden="true"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input class="form-control" type="text">
-                                    </td>
-                                    <td>
-                                        <input class="form-control" type="text">
-                                    </td>
-                                    <td>
-                                        <p>INVITÉ / VIP</p>
-                                    </td>
-                                    <td>
-                                        <i class="fa fa-2x fa-cog" aria-hidden="true"></i>
-                                        <i class="fa fa-2x fa-trash" aria-hidden="true"></i>
-                                    </td>
-                                </tr>
-                            </table>
-                            <div class="parametresbillet">
-                                <p>Paramètres</p>
-                                <hr class="billethr">
-                                <div class="form-group">
-                                {!! Form::label('', 'Description du billet :') !!}
-                                {!! Form::textarea('', '',
-                                    ['class' => 'form-control', 'size' => '20x4'])
-                                !!}
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-md-12">
-                                        {!! Form::label('', 'Début de vente des billets :') !!}
-                                    </div>
-                                    <div class="col-md-8">
-                                        {!! Form::date('', '',
-                                            ['class' => 'form-control'])
-                                        !!}
-                                    </div>
-                                    <div class="col-md-4">
-                                        {!! Form::time('', '',
-                                        ['class' => 'form-control'])
-                                        !!}
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-md-12">
-                                        {!! Form::label('', 'Fin de vente des billets :') !!}
-                                    </div>
-                                    <div class="col-md-8">
-                                        {!! Form::date('', '',
-                                            ['class' => 'form-control'])
-                                        !!}
-                                    </div>
-                                    <div class="col-md-4">
-                                        {!! Form::time('', '',
-                                        ['class' => 'form-control'])
-                                        !!}
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        {!! Form::checkbox('', ''); !!} Masquer la visibilité de ce billet
-                                    </div>
-                                </div>
-                                
-                            </div> 
-                            <div class="panel-footer">
-                                <div class="row">
-                                    <div class="col-md-12 ajoutbillet">
-                                        <button class="btnbillet"><a href=""><i class="fa fa-plus-circle" aria-hidden="true"></i> Billet Payant</a></button>
-                                        <button class="btnbillet"><a href=""><i class="fa fa-plus-circle" aria-hidden="true"></i> Billet Gratuit</a></button>
-                                        <button class="btnbillet"><a href=""><i class="fa fa-plus-circle" aria-hidden="true"></i> Don</a></button>
-                                    </div>
-                                </div>
-                            </div>  
-
-                        </div>
-                                                        
-                    
-
-
-                            {!! Form::submit('Créer la conférence',
-                                ['class' => 'btn btnlogin'])
-                            !!}
-
-
-                            <a class="btn btnlogin" href="{{ route('event.index') }}">Retour à l'accueil</a>
-
-                    {!! Form::close() !!}
             </div>
         </div>
     </div>
