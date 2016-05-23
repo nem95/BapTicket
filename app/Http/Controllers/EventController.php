@@ -145,7 +145,9 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this -> validate($request, [
+        //dd($request);
+
+        /*$this -> validate($request, [
             'title' => 'required',
             'subject' => 'required',
             'host' => 'required',
@@ -158,7 +160,21 @@ class EventController extends Controller
             'postal' => 'required',
             'debut' => 'required',
             'fin' => 'required',
-        ]);
+        ]);*/
+        $user->title = $request->title;
+        $user->subject = $request->subject;
+        $user->host = $request->host;
+        $user->content = $request->content;
+        $user->adresse = $request->adresse;
+        $user->postal = $request->postal;
+        $user->city = $request->city;
+        $user->country = $request->country;
+        $user->socialfb = $request->socialfb;
+        $user->socialtt = $request->socialtt;
+        $user->socialig = $request->socialig;
+        $user->socialgg = $request->socialgg;
+        $user->sectors = $request->sectors;
+        $user->known = $request->known;
 
         $event = Event::findOrFail($id);
         $input = $request->input();

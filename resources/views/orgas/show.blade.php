@@ -191,7 +191,7 @@
                             <div class="clearfix"></div>
 
                             <div class="placesevent">
-                                <i class="fa fa-user" aria-hidden="true"></i>  {{ $event->placesLeft }}/{{ $event->places }}
+                                <i class="fa fa-user" aria-hidden="true"></i>  {{ $event->places - $event->reservations->count() }}/{{ $event->places }}
                                 <div class="priceevent2">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i> {{ $event->localisation }}
                                     <i class="fa fa-eur" aria-hidden="true"></i> GRATUIT
@@ -201,7 +201,9 @@
                             
                             
                         </div>
-                        <button class="btnevent"><a href="{{ route('event.show', $event->id) }}">Participer</a></button>
+                        @if(Auth::check() &&  $event->user_id == Auth::user()->id || Auth::check() &&  Auth::user()->is_admin ==1)
+                            <button class="btnevent"><a href="{{route('event.edit', $event->id)}}">Modifier </a></button>
+                        @endif
 
                         <div class="clearfix"></div>
                     </div>
