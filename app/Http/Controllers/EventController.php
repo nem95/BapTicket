@@ -161,24 +161,22 @@ class EventController extends Controller
             'debut' => 'required',
             'fin' => 'required',
         ]);*/
-        $user->title = $request->title;
-        $user->subject = $request->subject;
-        $user->host = $request->host;
-        $user->content = $request->content;
-        $user->adresse = $request->adresse;
-        $user->postal = $request->postal;
-        $user->city = $request->city;
-        $user->country = $request->country;
-        $user->socialfb = $request->socialfb;
-        $user->socialtt = $request->socialtt;
-        $user->socialig = $request->socialig;
-        $user->socialgg = $request->socialgg;
-        $user->sectors = $request->sectors;
-        $user->known = $request->known;
-
         $event = Event::findOrFail($id);
-        $input = $request->input();
-        $event->fill($input)->save();
+
+        $event->title = $request->title;
+        $event->subject = $request->subject;
+        $event->host = $request->host;
+        $event->content = $request->content;
+        $event->localisation = $request->localisation;
+        $event->places = $request->places;
+        $event->date = $request->date;
+        $event->adresse = $request->adresse;
+        $event->city = $request->city;
+        $event->postal = $request->postal;
+        $event->debut = $request->debut;
+        $event->fin = $request->fin;
+
+        $event->save();
 
         return redirect() -> route('event.index') -> with('success', 'Votre article a bien été modifié');
     }

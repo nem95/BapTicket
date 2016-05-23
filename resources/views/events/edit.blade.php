@@ -21,14 +21,14 @@
                         <div class="form-group">
                             <label class="col-md-12">Nom de la conférence:</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="nom" placeholder="{{$event->title}}" value="{{$event->title }}">
+                                <input type="text" class="form-control" name="title" placeholder="{{$event->title}}" value="{{$event->title }}">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-md-12">Description:</label>
                             <div class="col-md-6">
-                                    <textarea class="form-control" name="description" rows="8" cols="40" placeholder="Saisir votre description ici" maxlength="500">{{$event->content}}</textarea>
+                                    <textarea class="form-control" name="content" rows="8" cols="40" placeholder="Saisir votre description ici" maxlength="500">{{$event->content}}</textarea>
                             </div>
                         </div>
 
@@ -70,7 +70,7 @@
                         <div class="form-group">
                             <label class="col-md-12">Ville:</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="ville" placeholder="{{$event->city}}" value="{{$event->city}}">
+                                <input type="text" class="form-control" name="city" placeholder="{{$event->city}}" value="{{$event->city}}">
                             </div>
                         </div>
 
@@ -117,7 +117,7 @@
                                 <a class="btn btnlogin" href="{{ route('event.index') }}">Retour à l'accueil</a>
                             </div>
                         </div>
-
+                    </form>
 
             </div>
         </div>
