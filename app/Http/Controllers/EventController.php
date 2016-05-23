@@ -24,7 +24,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $list = Event::orderBy('created_at', 'desc')->paginate(8);
+        $list = Event::orderBy('created_at', 'desc')->with('reservations')->paginate(8);
         return view('events.index', compact('list'));
 
     }

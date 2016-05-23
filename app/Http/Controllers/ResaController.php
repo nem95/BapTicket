@@ -104,8 +104,11 @@ class ResaController extends Controller
             $event->update();
 
             //return redirect() -> route('event.show', $id) -> with('success', 'Votre évènement a été créé');
-            return $pdf->download('billet.pdf');
-
+            if ($pdf){
+                return $pdf->download('billet.pdf');
+            }else{
+                return redirect() -> route('event.show', $id) -> with('success', 'Votre évènement a été créé');
+            }
         }else{
             return redirect() -> route('event.show', $id) -> with('success', 'Votre évènement a été créé');
         }

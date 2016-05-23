@@ -54,8 +54,8 @@
                     <td>{{$event->date}}</td>
                     <td>{{$event->debut}} à {{$event->fin}}</td>
                     <td>GRATUIT</td>
-                    <td>{{ $event->placesLeft }}/{{ $event->places }}</td>
-                    @if(Auth::check())
+                    <td>{{ $event->places - $event->reservations->count() }}/{{ $event->places }}</td>
+                    @if(Auth::user())
                         {!! Form::model($event,array('route' => array('resa.update', $event->id),'method' => 'PUT')) !!}
                         {{ Form::hidden('event_id', $event->id) }}
                         @if($resas >= 3)
@@ -67,8 +67,8 @@
                         @endif
                         {!! Form::close() !!}
                     @else
-                        <td>{!! Form::selectRange('number', 0,0, null, ['disabled' => 'disabled']) !!}</td>
-                        <td><a href="{{ url('/login') }}"><button class="btn btnlogin">Réserver</button></a></td>
+                        <td>{!! Form::selectRange('number', 1,3  ) !!}</td>
+                        <td><a href="{{ url('/register') }}"><button class="btn btnlogin">Réserver</button></a></td>
                     @endif
 
                 </tr>

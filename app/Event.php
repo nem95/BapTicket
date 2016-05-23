@@ -12,4 +12,8 @@ class Event extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function reservations() {
+        return $this->hasMany('App\Resa', 'event_id', 'id');
+    }
+
 }
