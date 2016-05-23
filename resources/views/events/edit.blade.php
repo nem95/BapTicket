@@ -117,7 +117,7 @@
                                 <a class="btn btnlogin" href="{{ route('event.index') }}">Retour à l'accueil</a>
                             </div>
                         </div>
-                            
+                    </form>
 
             </div>
         </div>
