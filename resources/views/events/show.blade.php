@@ -55,7 +55,8 @@
                     <td>{{$event->debut}} à {{$event->fin}}</td>
                     <td>GRATUIT</td>
                     <td>{{ $event->placesLeft }}/{{ $event->places }}</td>
-                    {!! Form::model($event,array('route' => array('resa.update', $event->id),'method' => 'PUT')) !!}
+                    @if(Auth::check())
+                        {!! Form::model($event,array('route' => array('resa.update', $event->id),'method' => 'PUT')) !!}
                         {{ Form::hidden('event_id', $event->id) }}
                         @if($resas >= 3)
                             <td>{!! Form::selectRange('number', 0,0, null, ['disabled' => 'disabled']) !!}</td>
@@ -64,7 +65,12 @@
                             <td>{!! Form::selectRange('number', 1,3 - $resas ) !!}</td>
                             <td>{!! Form::submit('Réserver',['class' => 'btn btnlogin']) !!}</td>
                         @endif
-                    {!! Form::close() !!}
+                        {!! Form::close() !!}
+                    @else
+                        <td>{!! Form::selectRange('number', 0,0, null, ['disabled' => 'disabled']) !!}</td>
+                        <td><a href="{{ url('/login') }}"><button class="btn btnlogin">Réserver</button></a></td>
+                    @endif
+
                 </tr>
             </table>
             <br>
@@ -78,7 +84,7 @@
                 {{ $event->adresse }} {{ $event->adresse2 }}, {{ $event->postal }} {{ $event->city }}
             </address>
         </div>
-        
+
         <div class="col-md-10 col-md-offset-1 displaynone">
             <div class="col-md-9">
                 <div class="showeventtitle">
@@ -108,20 +114,20 @@
                 <br>
                 <div class="showorgacontent">
                     <p>Prénom: {{ $user->surname }}
-                    <br>
-                    Nom: {{ $user->name }}
-                    <br>
-                    Profession: {{ $user->sector }}</p>
+                        <br>
+                        Nom: {{ $user->name }}
+                        <br>
+                        Profession: {{ $user->sector }}</p>
 
                     <div class="clear-fix"></div>
 
                     <p>Description: <br> {{ $user->known }}</p>
                     <a href="" class="eventshowa">En savoir plus...</a>
                 </div>
-                
+
             </div>
             <div class="col-md-3">
-                @if(Auth::user()->photo !='')
+                @if( Auth::check() && Auth::user()->photo !='')
                     <img src="{{ asset(Auth::user()->photo) }}" alt="" class="img-responsive imgshoworga">
                 @else
                     <img src="{{ asset("img/defaults-img/default-profil.png") }}" alt="" class="img-responsive imgshoworga">
@@ -130,13 +136,13 @@
                 <div class="btnshoworga">
                     <button class="btnshow"><a class="showa" href="{{route('orga.show', $event->user_id)}}">Voir le profil</a></button>
                 </div>
-                
+
             </div>
         </div>
 
         <div class="col-md-10 col-md-offset-1 showeventmobileprofil">
             <div class="col-sd-12">
-                 @if(Auth::user()->photo !='')
+                @if(Auth::check() && Auth::user()->photo !='')
                     <img src="{{ asset(Auth::user()->photo) }}" alt="" class="img-responsive imgshoworga">
                 @else
                     <img src="{{ asset("img/defaults-img/default-profil.png") }}" alt="" class="img-responsive imgshoworga">
@@ -167,27 +173,27 @@
 
                     <button class="btnevent"><a class="showa" href="{{route('orga.show', $event->user_id)}}">Voir le profil</a></button>
                 </div>
-                
+
             </div>
             <div class="col-md-9">
                 <div class="showeventtitle">
-                    
-                    
+
+
                 </div>
                 <br>
                 <div class="showorgacontent">
                     <p>Prénom: {{ $user->surname }}
-                    <br>
-                    Nom: {{ $user->name }}
-                    <br>
-                    Profession: {{ $user->sector }}</p>
+                        <br>
+                        Nom: {{ $user->name }}
+                        <br>
+                        Profession: {{ $user->sector }}</p>
 
                     <div class="clear-fix"></div>
 
                     <p>Description: <br> {{ $user->known }}</p>
                     <a href="" class="eventshowa">En savoir plus...</a>
                 </div>
-                
+
             </div>
             
         </div>

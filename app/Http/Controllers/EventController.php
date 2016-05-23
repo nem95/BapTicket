@@ -107,9 +107,18 @@ class EventController extends Controller
         //dd($resas);*/
         $user_id = $event->user_id;
         $user = User::findOrFail($user_id);
-        $resas = Resa::where('user_id', Auth::user()->id)->count();
+        if (Auth::check()){
+            $resas = Resa::where('user_id', Auth::user()->id)->count();
+            return view('events.show')->with(compact('event', 'user', 'resas'));
 
-        return view('events.show')->with(compact('event', 'user', 'resas'));
+        }else{
+            //dd($event);
+
+            return view('events.show')->with(compact('event', 'user'));
+
+        }
+
+
 
 
         //return view('events.show')->with(compact('event', 'user'));

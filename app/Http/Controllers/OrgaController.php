@@ -67,6 +67,33 @@ class OrgaController extends Controller
         //
     }
 
+    public function addTags(Request $request){
+
+        $tags = new Tag;
+
+        $tags->name = $request->tag;
+        $tags->user_id = Auth::user()->id;
+        //dd($tags);
+        $tags->save();
+        //$event -> fill($input) -> save();
+
+        return redirect() -> route('orga.show', Auth::user()->id);
+
+
+    }
+
+    public function deleteTags($id){
+
+        dd($id);
+
+        $tag = Tag::find($id);
+        $tag->delete();
+
+        return redirect() -> route('event.index');
+
+
+    }
+
     /**
      * Display the specified resource.
      *
@@ -151,7 +178,7 @@ class OrgaController extends Controller
             $user->photo = $destinationPath. '/'.$filename;
         }else{
             $filename = "pas de fichier";
-            dd($filename);
+            //dd($filename);
 
         }
 

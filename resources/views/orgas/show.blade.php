@@ -46,17 +46,23 @@
                         <div class="tags">
                             <p>Tags :
                                 @foreach($tags as $tag)
-                                    <span>
-                                        {{$tag->name}}<button><img class="delete-icon" src="{{ asset("img/icons/icon-delete.png") }}" alt="Icone de suppersion du tag..."></button>
-                                    </span>
+                                <form class="" role="form" method="POST" action="{{url('/orgas', $tag->id)}}">
+                                    {!! csrf_field() !!}
+                                    <input type="hidden" name="_method" value="DELETE">
+                                        <span>
+                                            {{$tag->name}}<button><img class="delete-icon" src="{{ asset("img/icons/icon-delete.png") }}" alt="Icone de suppersion du tag..."></button>
+                                        </span>
+                                </form>
+                                </form>
                                 @endforeach
 
                                 <span>
-                                    <form class="" role="form" method="POST" action="#">
-                                        {!! csrf_field() !!}
+                                    <form class="" role="form" method="POST" action="{{ url('/orga') }}">
+                                    {!! csrf_field() !!}
 
-                                        <input type="hidden" name="_method" value="PUT"/>
                                         <input type="text" class="" name="tag" placeholder="Ajouter un théme a vos favoris" value="">
+                                        <button type="submit">valider</button>
+
 
                                     </form>
                                 </span>
