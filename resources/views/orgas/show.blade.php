@@ -44,7 +44,7 @@
 
                     <p>Description: <br> {{ $user->known }}</p>
 
-                    @if(Auth::check() &&  Auth::user()->is_orga == 1 || Auth::check() &&  Auth::user()->is_admin ==1)
+                    @if(Auth::check() &&  Auth::user()->is_admin ==1 || Auth::check() &&  Auth::user()->id == $user->id)
                         <div class="tags">
                             <p>Tags :
                                 @foreach($tags as $tag)
@@ -71,14 +71,17 @@
                             </p>
                         </div>
                     @else
-                        <div class="tag">
-                            {{--@foreach()
-
-                            @endforeach--}}
+                        <div class="tags">
+                            <p>Tags : </p>
+                        @foreach($tags as $tag)
+                                <span>
+                                    {{$tag->name}}
+                                </span>
+                            @endforeach
                         </div>
                     @endif
                 </div>
-                
+
             </div>
             <div class="col-md-3">
                 @if($user->photo !='')

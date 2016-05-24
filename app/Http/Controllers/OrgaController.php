@@ -106,7 +106,7 @@ class OrgaController extends Controller
         $list = Event::where('user_id', $id)->get();
         $infos = User::where('id', $id)->get();
 
-        $tags = Tag::all();
+        $tags = Tag::where('user_id', $id)->get();
         return view('orgas.show')->with(compact('user','list', 'infos', 'tags'));
     }
 
