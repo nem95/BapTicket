@@ -12,36 +12,36 @@
                             <h1 class="profil-title">Profil</h1>
                         </div>
                         <div class="social">
-                            @if(Auth::check() &&  Auth::user()->socialfb != '')
-                                <a href="{{ Auth::user()->socialfb }}" target="_blank">
+                            @if(Auth::check() &&  $user->socialfb != '')
+                                <a href="{{ $user->socialfb }}" target="_blank">
                                     <img class="icones" src="{{ asset("img/icons/icon-fb.png") }}" alt="Icone Facebook">
                                 </a>
                             @endif
-                            @if(Auth::check() &&  Auth::user()->socialtt != '')
-                                <a href="{{ Auth::user()->socialtt }}" target="_blank">
+                            @if(Auth::check() &&  $user->socialtt != '')
+                                <a href="{{ $user->socialtt }}" target="_blank">
                                     <img class="icones" src="{{ asset("img/icons/icon-tt.png") }}" alt="Icone Twitter">
                                 </a>
                             @endif
-                            @if(Auth::check() &&  Auth::user()->socialig != '')
-                                <a href="{{ Auth::user()->socialig }}" target="_blank">
+                            @if(Auth::check() &&  $user->socialig != '')
+                                <a href="{{ $user->socialig }}" target="_blank">
                                     <img class="icones" src="{{ asset("img/icons/icon-ig.png") }}" alt="Icone Instagram">
                                 </a>
                             @endif
-                            @if(Auth::check() &&  Auth::user()->socialgg != '')
-                                <a href="{{ Auth::user()->socialgg }}" target="_blank">
+                            @if(Auth::check() &&  $user->socialgg != '')
+                                <a href="{{ $user->socialgg }}" target="_blank">
                                     <img class="icones" src="{{ asset("img/icons/icon-gg.png") }}" alt="Icone Google+">
                                 </a>
                             @endif
                         </div>
                     </div>
                     <div class="infos">
-                        <p>Prénom : {{ Auth::user()->surname }}</p>
-                        <p>Nom : {{ Auth::user()->name }}</p>
-                        <p class="Marge-bot">Profession : {{ Auth::user()->sectors }}</p>
+                        <p>Prénom : {{ $user->surname }}</p>
+                        <p>Nom : {{ $user->name }}</p>
+                        <p class="Marge-bot">Profession : {{ $user->sectors }}</p>
                         <p>Description :</p>
-                        <p class="Marge-bot">{{ Auth::user()->known }}</p>
+                        <p class="Marge-bot">{{ $user->known }}</p>
                     </div>
-                    @if(Auth::check() &&  Auth::user()->is_orga == 1 || Auth::check() &&  Auth::user()->is_admin ==1)
+                    @if(Auth::check() &&  $user->is_orga == 1 || Auth::check() &&  $user->is_admin ==1)
                         <div class="tags">
                             <p>Tags :
                                 @foreach($tags as $tag)
@@ -72,14 +72,14 @@
                 </div>
                 <div class="col-md-4">
                     <div class="profil-pic">
-                        @if(Auth::user()->photo !='')
-                            <img src="{{ asset(Auth::user()->photo) }}" alt="" class="img-responsive">
+                        @if($user->photo !='')
+                            <img src="{{ asset($user->photo) }}" alt="" class="img-responsive">
                         @else
                             <img src="{{ asset("img/defaults-img/default-profil.png") }}" alt="" class="img-responsive">
                         @endif
 
-                        @if(Auth::check() &&  Auth::user()->is_orga == 1 || Auth::check() &&  Auth::user()->is_admin ==1)
-                            <a href="{{route('orga.edit', Auth::user()->id)}}" class="modif-prfl">Modifier le profil</a>
+                        @if(Auth::check() &&  $user->is_orga == 1 || Auth::check() &&  $user->is_admin ==1)
+                            <a href="{{route('orga.edit', $user->id)}}" class="modif-prfl">Modifier le profil</a>
                         @endif
                     </div>
                 </div>

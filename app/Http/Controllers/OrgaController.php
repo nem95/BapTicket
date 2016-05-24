@@ -100,12 +100,13 @@ class OrgaController extends Controller
      */
     public function show($id)
     {
+        $user = User::find($id);
+        //dd(Auth::user()->id);
         $id = Auth::user()->id;
         $list = Event::where('user_id', $id)->get();
         $infos = User::where('id', $id)->get();
 
         $tags = Tag::all();
-        $user = User::find($id);
         return view('orgas.show')->with(compact('user','list', 'infos', 'tags'));
     }
 

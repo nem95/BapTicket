@@ -86,7 +86,7 @@
                 @endif
                 <p>Note:</p>
                 <div class="btnshoworga">
-                    @if(Auth::check() &&  Auth::user()->is_orga == 1 || Auth::check() &&  Auth::user()->is_admin ==1)
+                    @if(Auth::check() &&  Auth::user()->is_orga == 1 || Auth::check() &&  Auth::user()->is_admin ==1 || Auth::check() &&  Auth::user()->id == $user->id)
                         <button class="btnshow"><a href="{{route('orga.edit', Auth::user()->id)}}">Modifier le profil</a></button>
                     @endif
                 </div>              
@@ -201,7 +201,7 @@
                             
                             
                         </div>
-                        @if(Auth::check() &&  $event->user_id == Auth::user()->id || Auth::check() &&  Auth::user()->is_admin ==1)
+                        @if(Auth::check() &&  $event->user_id == Auth::user()->id || Auth::check() &&  Auth::user()->is_admin ==1 )
                             <button class="btnevent"><a href="{{route('event.edit', $event->id)}}">Modifier </a></button>
                         @endif
 

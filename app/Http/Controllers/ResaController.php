@@ -78,8 +78,9 @@ class ResaController extends Controller
 
     public function update(Request $request, $id)
     {
-        $resas = Resa::where('user_id', Auth::user()->id)->count();
+        $event = Event::findOrFail($id);
 
+        $resas = Resa::where('user_id', Auth::user()->id)->where('event_id', $event->id)->count();
         if ($resas < 3 ){
             $places = intval($request->number);
             $places = $resas - $places;
@@ -95,7 +96,7 @@ class ResaController extends Controller
 
                 $user =  Auth::user();
 
-                $pdf = PDF::loadView('pdf.billet', compact('user'));
+                $pdf = PDF::loadView('pdf.billet', compact('user', 'event'));
             }
 
             $event =  Event::find($id);

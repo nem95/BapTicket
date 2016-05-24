@@ -91,23 +91,25 @@
                     <h3 class="showeventh2">Profil de l'organisateur</h3>
                     <div class="showbtn2">
                         <a href=""><i class="fa fa-2x fa-share" aria-hidden="true"></i></a>
-                        @if(Auth::check() &&  Auth::user()->socialfb != '')
-                            <a href="{{ Auth::user()->socialfb }}" target="_blank">
+                        @if(Auth::check() &&  $user->socialfb != '')
+                            <a href="{{ $user->socialfb }}" target="_blank">
                                 <i class="fa fa-2x fa-facebook" aria-hidden="true"></i>
                             </a>
                         @endif
-                        @if(Auth::check() &&  Auth::user()->socialtt != '')
-                            <a href="{{ Auth::user()->socialtt }}" target="_blank">
+                        @if(Auth::check() &&  $user->socialtt != '')
+                            <a href="{{ $user->socialtt }}" target="_blank">
                                 <i class="fa fa-2x fa-twitter" aria-hidden="true"></i>
                             </a>
                         @endif
-                        @if(Auth::check() &&  Auth::user()->socialig != '')
-                            <a href="{{ Auth::user()->socialig }}" target="_blank">
+                        @if(Auth::check() &&  $user->socialig != '')
+                            <a href="{{ $user->socialig }}" target="_blank">
                                 <i class="fa fa-2x fa-instagram" aria-hidden="true"></i>
                             </a>
                         @endif
-                        @if(Auth::check() &&  Auth::user()->socialgg != '')
-                            <i class="fa fa-2x fa-google-plus" aria-hidden="true"></i>
+                        @if(Auth::check() &&  $user->socialgg != '')
+                            <a href="{{ $user->socialig }}" target="_blank">
+                                <i class="fa fa-2x fa-google-plus" aria-hidden="true"></i>
+                            </a>
                         @endif
                     </div>
                 </div>
@@ -127,8 +129,8 @@
 
             </div>
             <div class="col-md-3">
-                @if( Auth::check() && Auth::user()->photo !='')
-                    <img src="{{ asset(Auth::user()->photo) }}" alt="" class="img-responsive imgshoworga">
+                @if( Auth::check() && $user->photo !='')
+                    <img src="{{ asset($user->photo) }}" alt="" class="img-responsive imgshoworga">
                 @else
                     <img src="{{ asset("img/defaults-img/default-profil.png") }}" alt="" class="img-responsive imgshoworga">
                 @endif
@@ -142,8 +144,8 @@
 
         <div class="col-md-10 col-md-offset-1 showeventmobileprofil">
             <div class="col-sd-12">
-                @if(Auth::check() && Auth::user()->photo !='')
-                    <img src="{{ asset(Auth::user()->photo) }}" alt="" class="img-responsive imgshoworga">
+                @if(Auth::check() && $user->photo !='')
+                    <img src="{{ asset($user->photo) }}" alt="" class="img-responsive imgshoworga">
                 @else
                     <img src="{{ asset("img/defaults-img/default-profil.png") }}" alt="" class="img-responsive imgshoworga">
                 @endif
@@ -151,23 +153,25 @@
                 <div class="btnshoworga row">
                     <div class="showbtn2 centermobile">
                         <a href=""><i class="fa fa-2x fa-share" aria-hidden="true"></i></a>
-                        @if(Auth::check() &&  Auth::user()->socialfb != '')
-                            <a href="{{ Auth::user()->socialfb }}" target="_blank">
+                        @if(Auth::check() &&  $user->socialfb != '')
+                            <a href="{{ $user->socialfb }}" target="_blank">
                                 <i class="fa fa-2x fa-facebook" aria-hidden="true"></i>
                             </a>
                         @endif
-                        @if(Auth::check() &&  Auth::user()->socialtt != '')
-                            <a href="{{ Auth::user()->socialtt }}" target="_blank">
+                        @if(Auth::check() &&  $user->socialtt != '')
+                            <a href="{{ $user->socialtt }}" target="_blank">
                                 <i class="fa fa-2x fa-twitter" aria-hidden="true"></i>
                             </a>
                         @endif
-                        @if(Auth::check() &&  Auth::user()->socialig != '')
-                            <a href="{{ Auth::user()->socialig }}" target="_blank">
+                        @if(Auth::check() &&  $user->socialig != '')
+                            <a href="{{ $user->socialig }}" target="_blank">
                                 <i class="fa fa-2x fa-instagram" aria-hidden="true"></i>
                             </a>
                         @endif
-                        @if(Auth::check() &&  Auth::user()->socialgg != '')
-                            <i class="fa fa-2x fa-google-plus" aria-hidden="true"></i>
+                        @if(Auth::check() &&  $user->socialgg != '')
+                            <a href="{{ $user->socialgg }}" target="_blank">
+                                <i class="fa fa-2x fa-google-plus" aria-hidden="true"></i>
+                            </a>
                         @endif
                     </div>
 
