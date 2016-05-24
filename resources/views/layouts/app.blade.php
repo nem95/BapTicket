@@ -81,69 +81,70 @@
     </style>
 </head>
 <body id="app-layout">
-<div class="menu">
-    <div class="container-fluid menu-nav">
-        <div class="barre-menu">
-            <ul class="nav-nav">
-                <li class="bars" id="bars"><img src="{{ asset("img/menu-bars.png") }}" alt="barre de menu" class="img-responsive"></li>
-                <li class="logo" id="logo"><a href="{{ url('/') }}"><img src="{{ asset("img/logo.png") }}" alt="Logo WiTicket" class="img-responsive"></a></li>
-                <li class="find"><img src="{{ asset("img/search.png") }}" alt="barre de menu" class="img-responsive"></li>
-                <li class="retour-click" id="retour"><img src="{{ asset("img/back.png") }}" alt="barre de menu" class="img-responsive"></li>
-                <li class="retour-clicks" id="search-bar">
-                    <form action="" class="form-search-mob">
-                        <input class="input-search" type="text" placeholder="   Mots-clés..."/>
-                    </form>
-                </li>
-                <li class="search">
-                    <form action="" class="formulaire">
-                        <div class="cherche">
-                            <label for="" class="chercher">
-                                <i class="fa fa-search"></i>
-                                <input class="champ" type="text" placeholder="   Mots-clés..."/>
-                            </label>
-                            <div class="selecteur">
-                                <i class="fa fa-eye eye-selector"></i>
-                                <select name="menu_destination" class="boutons selct">
-                                    <option value="http://www.monsite.net/accueil.html">Accueil</option>
-                                    <option value="http://www.monsite.net/apropos.html">Qui sommes-nous ?</option>
-                                    <option value="http://www.monsite.net/contact.html">Nous contacter</option>
-                                    <option value="http://www.monsite.net/plan.html">Plan du site</option>
-                                </select>
-                            </div>
-                            <div class="recherche">
-                                <button class="boutons rechrch" type="submit">Rechercher</button>
-                            </div>
-                        </div>
-                    </form>
-                </li>
-                <!-- Authentication Links -->
-                @if (Auth::guest())
-                    <li class="co">
-                        <a href="{{ url('/login') }}" class="connexion">
-                            <p class="connex">Connexion / Inscription</p>
-                        </a>
-                    </li>
-                @else
-                    <li class="dropdown account">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            {{ Auth::user()->name }} {{ Auth::user()->surname }} <span class="caret"></span>
-                        </a>
 
-                        <ul class="dropdown-menu" role="menu">
-
-                        @if(Auth::check() && Auth::user()->is_orga == 1 || Auth::check() && Auth::user()->is_admin == 1 )
-                            <li><a href="{{ route('orga.show', Auth::user()->id) }}">Mon profil</a></li>
-                            <li><a href="{{ route('event.create') }}">Créer un event</a></li>
-                        @endif
-                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                        </ul>
-                    </li>
-                @endif
-                <li class="help"><a href="{{ url('/faq') }}">Aide</a></li>
-            </ul>
-        </div>
+<nav class="navbar">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <i class="fa fa-2x fa-bars" aria-hidden="true"></i>
+      </button>
+      <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset("img/logo.png") }}" alt="Logo WiTicket" class="img-responsive"></a>
     </div>
-</div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+    <form class="navbar-form navbar-left" role="search">
+        <div class="input-group barremenu">
+        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+          <input type="text" class="form-control searchmenuinput" placeholder="Mots-clés..." size="50">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-eye" aria-hidden="true"></i> Genre <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a href="#">Accueil</a></li>
+              <li><a href="#">Qui sommes-nous ?</a></li>
+              <li><a href="#">Nous contacter</a></li>
+              <li><a href="#">Plan du site</a></li>
+            </ul>
+            <button class="btn btnlogin btnsearch" type="button">Rechercher</button>
+          </div>
+        </div>
+    </form>
+      <ul class="nav navbar-nav navbar-right">
+        @if (Auth::guest())
+            <li>
+                <a href="{{ url('/login') }}" class="btnnavbar">
+                    <p>Connexion / Inscription</p>
+                </a>
+            </li>
+        @else
+            <li>
+                <a href="#" class="dropdown-toggle aidemenu" data-toggle="dropdown" role="button" aria-expanded="false">
+                    {{ Auth::user()->name }} {{ Auth::user()->surname }} <span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu">
+
+                @if(Auth::check() && Auth::user()->is_orga == 1 || Auth::check() && Auth::user()->is_admin == 1 )
+                    <li><a href="{{ route('orga.show', Auth::user()->id) }}">Mon profil</a></li>
+                    <li><a href="{{ route('event.create') }}">Créer un event</a></li>
+                @endif
+                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                </ul>
+            </li>
+        @endif
+        <li><a class="aidemenu" href="{{ url('/faq') }}">Aide</a></li>
+      </ul>
+      </ul>
+
+    
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
 
 
 

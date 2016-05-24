@@ -2,6 +2,91 @@ body {
     font-family: 'Lato';
     background-color: #e8eaea;
 }
+/* Navbar */
+
+
+
+.navbar {
+    background-color: rgba(0, 0, 0, .5);
+    padding-top: 10px;
+    height: 75px;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+    position: absolute;
+}
+
+.navbar-nav>li>a {
+    padding-bottom: 1px;
+    padding-top:10px;
+    margin-top: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-nav>li>a:focus {
+    background-color: unset;
+}
+
+.nav .open>a {
+    background-color: unset !important;
+}
+
+.nav .open>a:focus {
+    background-color: unset !important;
+}
+
+.dropdown-menu>li>a:hover {
+    background-color: #E5E5E5 !important;
+}
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color: #49ada6;
+}
+
+.navbar li a:hover {
+    background-color: #49ada6;    
+}
+
+.navbar li a:active {
+    background-color: #49ada6; 
+}
+
+.aidemenu:hover{
+    background-color: unset !important;
+}
+
+.navbar-brand img{
+    width: 150px;
+    margin-top: -20px;
+}
+
+.btnnavbar {
+    background-color: #49ada6;
+    border-radius: 5px;
+}
+
+.btnnavbar p {
+    color: white;
+}
+
+.searchmenuinput {
+    border-left: none;
+}
+.input-group-addon {
+    background-color: white;
+    border-right: none;
+}
+
+.fa-angle-down {
+    margin-left: 5px;
+}
+
+.fa-eye {
+    margin-right: 5px;
+}
 
 /* Homepage */
 
@@ -674,5 +759,19 @@ footer {
         display: block;
         color: #66868c;
     }
+
+    .navbar {
+        padding: 0;
+    }
+
+    .navbar-brand img{
+        margin-top: -5px;
+
+    }
+
+    .navbar-collapse {
+    background-color: #B6B6B6;
+    overflow: hidden;
+}
 }
 

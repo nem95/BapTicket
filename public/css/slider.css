@@ -1,29 +1,5 @@
 /*######### LE MENU #########*/
-.menu{
-    width: 100%;
-    height: 70px;
-    position: absolute; /*tres important pour que le slider soit coller en haut*/
-    background-color: rgba(0,0,0, 0.5);
-    z-index: 9999;
-}
-.barre-menu{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
- li{
-    margin-left: 5px;
-    margin-top: 15px;
-}
-.nav-nav {
-    width: 100%;
-}
-.nav-nav , li, .nav-nav  a {
-    display:block;
-    float:left;
-    text-decoration:none;
-    list-style: none;
-}
+
 
 .bars, .find, .retour, .search-bar, .retour-click, .retour-clicks{
     display: none;
