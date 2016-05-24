@@ -26,8 +26,8 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::resource('/orga', 'OrgaController');
     Route::post('/orga', 'OrgaController@addTags');
-    Route::delete('/orgas', 'OrgaController@deleteTags');
-    
+    //Route::delete('/orga/{id}', ['as' => 'orga.deleteTags', 'uses' => 'OrgaController@deleteTags']);
+
     Route::resource('/admin', 'AdminController');
     Route::resource('/resa', 'ResaController');
 

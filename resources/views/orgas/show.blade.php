@@ -46,14 +46,14 @@
                         <div class="tags">
                             <p>Tags :
                                 @foreach($tags as $tag)
-                                <form class="" role="form" method="POST" action="{{url('/orgas', $tag->id)}}">
+                                <form class="" role="form" method="POST" action="{{route('orga.destroy',['id' => $tag->id])}}">
                                     {!! csrf_field() !!}
                                     <input type="hidden" name="_method" value="DELETE">
                                         <span>
                                             {{$tag->name}}<button><img class="delete-icon" src="{{ asset("img/icons/icon-delete.png") }}" alt="Icone de suppersion du tag..."></button>
                                         </span>
                                 </form>
-                                </form>
+
                                 @endforeach
 
                                 <span>

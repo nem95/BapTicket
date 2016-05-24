@@ -84,8 +84,6 @@ class OrgaController extends Controller
 
     public function deleteTags($id){
 
-        dd($id);
-
         $tag = Tag::find($id);
         $tag->delete();
 
@@ -202,6 +200,11 @@ class OrgaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tag = Tag::find($id);
+        $tag->delete();
+        $user = Auth::user();
+
+        return redirect()->route('orga.show', $user->id);
+
     }
 }
