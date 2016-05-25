@@ -1,0 +1,87 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300);
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+p {
+	font-size: 14px;
+}
+
+.ticket {
+	width: 650px;
+	height: 237px;
+	background-image: url('../img/ticket_bg_pdf.png');
+	background-size: cover;
+	border:1px solid black;
+}
+
+.bleu {
+	width: 462px;
+	height:237px;
+	float: left;
+}
+
+.bleu h1 {
+	color: white;
+	margin-top: 5px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.host {
+	color: white;
+	text-align: right;
+	margin-right: 40px;
+	margin-top: -20px;
+}
+
+.bleu img {
+	height: 20px;
+	
+	margin-bottom: -3px;
+}
+
+.loca {
+	color: white;
+	margin-left: 40px;
+	
+}
+
+.adresse {
+	color: white;
+	margin-left: 57px;
+	margin-top: -14px;
+}
+
+.num {
+	text-align: right;
+	margin-right: 40px;
+	margin-top: -40px;
+}
+
+.blanc {
+	height:237px;
+	width: 188px;
+	float: right;
+
+}
+
+.titre {
+	text-align: center;
+	text-transform: uppercase;
+	margin-left: -24px;
+}
+
+.hostblanc {
+	text-align: right;
+}
+
+
+
+
+
+
+
+

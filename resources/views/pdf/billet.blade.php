@@ -9,42 +9,27 @@
 <main>
     <div id="details" class="clearfix">
         <div id="invoice">
-        	<div class="container-fluid">
-        		<div class="row ticket">
-        			<div class="col-md-12">
-        				<img src="{{asset("img/ticket_bg.png")}}" alt="billet" class="img-responsive">
-        			</div>
-        		</div>
-        		<div class="row">
-        			<div class="col-md-8">
-        				<h2>{{$event->title}}</h2>
-        				<div class="clear-fix"></div>
-        				<h4>Par {{$event->host}}</h4>
+            <div class="ticket">
+                <div class="bleu">
+                    <h1> $event->title </h1>
+                    <p class="host">Par $event->host</p>
+                    <p class="loca"><img src="{{asset("img/loc2.png")}}" alt=""> $event->localisation <br>
+                    $event->adresse $event->adresse2 <br>
+                    $event->postal $event->city</p>
+                    <h5 class="num">N° 000 001</h5>
+                </div>
 
-        				<div class="col-md-6">
-        					<h4><i class="fa fa-map-marker" aria-hidden="true"></i> {{ $event->localisation }} <br>
-        						{{ $event->adresse }} <br>
-        						{{ $event->adresse2 }} <br>
-        						{{ $event->postal }} {{ $event->city }}</h4>
-        				</div>
-        				<div class="col-md-6">
-        					<h4>N° 000 123</h4>
-        				</div>
-        			</div>
-        			<div class="col-md-4">
-        				<h4>{{ $user->surname }} {{ $user->name }}</h4>
-        				<div class="clear-fix"></div>
-        				<h2>{{$event->title}}</h2>
-        				<div class="clear-fix"></div>
-        				<h4>Par {{$event->host}}</h4>
-        				<div class="clear-fix"></div>
-        				<h4><i class="fa fa-map-marker" aria-hidden="true"></i> {{ $event->localisation }} <br>
-        						{{ $event->adresse }} <br>
-        						{{ $event->adresse2 }} <br>
-        						{{ $event->postal }} {{ $event->city }}</h4>
-        			</div>
-        		</div>
-        	</div>            
+                <div class="blanc">
+                    <p>$user->surname ->name</p>
+                    <p class="titre">$event->title</p>
+                    <p class="hostblanc">Par $event->host</p>
+                    <p>$event->localisation <br>
+                    $event->adresse $event->adresse2 <br>
+                    $event->postal $event->city</p>
+                </div>
+                
+
+            </div>        
         </div>
     </div>
 </body>

@@ -68,5 +68,10 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/services', function()
     {
         return view('other.services');
+    });
+
+    Route::get('/billet', function()
+    {
+        return view('pdf.billet');
     });      
 });

@@ -85,14 +85,29 @@
 <nav class="navbar">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+    <div class="navbar-header row">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <i class="fa fa-2x fa-bars" aria-hidden="true"></i>
       </button>
-      <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset("img/logo.png") }}" alt="Logo WiTicket" class="img-responsive"></a>
-    </div>
 
+      <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset("img/logo.png") }}" alt="Logo WiTicket" class="img-responsive"></a>
+
+      <li role="presentation" class="dropdown searchmobile">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-2x fa-search" aria-hidden="true"></i>
+        </a>
+        <ul class="dropdown-menu searchmenu">
+          <div class="input-group inputmobile">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Rechercher</button>
+              </span>
+            </div>
+        </ul>
+      </li>
+    </div>
+    
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">

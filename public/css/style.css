@@ -18,6 +18,16 @@ body {
     position: absolute;
 }
 
+.nav {
+    display: inline-block;
+    text-align: center;
+}
+
+.navbar-form {
+    text-align: center;
+    display: inline-block;
+}
+
 .navbar-nav>li>a {
     padding-bottom: 1px;
     padding-top:10px;
@@ -63,6 +73,10 @@ body {
     margin-top: -20px;
 }
 
+.navbar-brand {
+    margin-right: 40px;
+}
+
 .btnnavbar {
     background-color: #49ada6;
     border-radius: 5px;
@@ -87,6 +101,11 @@ body {
 .fa-eye {
     margin-right: 5px;
 }
+
+.dropdown-toggle {
+    border-radius: 5px 0 0 5px;
+}
+
 
 /* Homepage */
 
@@ -698,6 +717,9 @@ footer {
     border-top-left-radius: 3px 
 }
 
+.searchmobile {
+    display: none;
+}
 /* Reponsive Homepage */
 
 @media screen and (max-width: 667px) {
@@ -762,16 +784,70 @@ footer {
 
     .navbar {
         padding: 0;
+        background-color: #3C3C3C;
+    }
+
+    .fa-bars {
+        color: white;
     }
 
     .navbar-brand img{
         margin-top: -5px;
-
     }
 
+    .navbar-toggle {
+        float: left;
+    }
+
+    .navbar-brand {
+        float: none;
+        display: inline-block;
+        text-align: center;
+        margin-right: 0;
+    }
+    
+    .navbar-form{
+        display: none;
+    }
     .navbar-collapse {
-    background-color: #B6B6B6;
-    overflow: hidden;
-}
+        background-color: #B6B6B6;
+        overflow: hidden;
+        margin-top: 9px;
+    }
+
+    .fa-search {
+        color: white;
+        float: right;
+    }
+
+    .searchmobile {
+        margin-right:15px; 
+        float: right;
+        width: 10%;
+        display: block;
+        margin-top: 5%;
+    }
+
+    .searchmobile a {
+        margin-top: -45px;
+    }
+    
+    .searchmenu {
+        margin-top: 70%;
+        text-align: center;
+        position: relative;
+        float: left;
+        padding: 0;
+        left:-250px;
+    }
+
+    .inputmobile {
+        width: 160%;
+    }
+
+    .titleindex {
+        display: none;
+    }
+
 }
 

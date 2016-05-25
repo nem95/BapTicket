@@ -44,7 +44,7 @@
                     <hr class="titlehr">
                 </div>
                 <div class="col-md-6">
-                    <h1 class="eventstitle">LES TOP CONFÉRENCES</h1>
+                    <h1 class="eventstitle titleindex">LES TOP CONFÉRENCES</h1>
                 </div>
                 <div class="col-md-3">
                     <hr class="titlehr">
