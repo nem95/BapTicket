@@ -87,7 +87,7 @@ class OrgaController extends Controller
         $tag = Tag::find($id);
         $tag->delete();
 
-        return redirect() -> route('event.index');
+        return redirect() -> route('evenement.index');
 
 
     }
@@ -119,14 +119,16 @@ class OrgaController extends Controller
     public function edit($id)
     {
 
-        $user = User::find($id);
-        /*$list = Event::where('user_id', $id)->get();
-        $infos = User::where('id', $id)->get();*/
-        return view('orgas.edit')->with(compact('user'));
+        if (Auth::user()->id == $id){
+            $user = User::find($id);
+            /*$list = Event::where('user_id', $id)->get();
+            $infos = User::where('id', $id)->get();*/
+            return view('orgas.edit')->with(compact('user'));
+        }else{
+            return redirect() -> route('evenement.index');
+        }
 
-        /*$post = Post::find($id);
-        $users = User::all()->lists('name','id');
-        return view('articles.edit')->with(compact('post', 'users'));*/
+
 
     }
 

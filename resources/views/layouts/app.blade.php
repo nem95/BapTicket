@@ -145,7 +145,7 @@
 
                 @if(Auth::check() && Auth::user()->is_orga == 1 || Auth::check() && Auth::user()->is_admin == 1 )
                     <li><a href="{{ route('orga.show', Auth::user()->id) }}">Mon profil</a></li>
-                    <li><a href="{{ route('event.create') }}">Créer un event</a></li>
+                    <li><a href="{{ route('evenement.create') }}">Créer un event</a></li>
                 @else
                     <li><a href="{{ route('orga.show', Auth::user()->id) }}">Mon profil</a></li>
                 @endif

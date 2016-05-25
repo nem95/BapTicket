@@ -64,7 +64,7 @@
                             <span class="priceevent">GRATUIT</span>
                         </div>
                         <div class="bodyevent">
-                            <h4 class="black"><a href="{{ route('event.show', $event->id) }}">{{ $event->title }}</a></h4>
+                            <h4 class="black"><a href="{{ route('evenement.show', $event->id) }}">{{ $event->title }}</a></h4>
                             
                             <div class="dateevent">
                                 <i class="fa fa-calendar" aria-hidden="true"></i> {{ $event->date }} - {{ $event->debut }} à {{ $event->fin }}
@@ -75,7 +75,7 @@
                                 <p>{{ str_limit($event->content, $limit = 85, $end = '...') }}</p>
                             </div>
                             
-                            <a href="{{ route('event.show', $event->id) }}" class="eventa">En savoir plus...</a>
+                            <a href="{{ route('evenement.show', $event->id) }}" class="eventa">En savoir plus...</a>
 
                             <div class="clearfix"></div>
 
@@ -90,7 +90,7 @@
                             
                             
                         </div>
-                        <button class="btnevent"><a href="{{ route('event.show', $event->id) }}">Participer</a></button>
+                        <button class="btnevent"><a href="{{ route('evenement.show', $event->id) }}">Participer</a></button>
 
                         <div class="clearfix"></div>
                     </div>

@@ -22,7 +22,7 @@ Route::group(['middleware' => ['web']], function () {
     
     Route::get('/', 'EventController@index');
 
-    Route::resource('/event', 'EventController');
+    Route::resource('/evenement', 'EventController');
 
     Route::resource('/orga', 'OrgaController');
     Route::post('/orga', 'OrgaController@addTags');

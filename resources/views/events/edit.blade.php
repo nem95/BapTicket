@@ -14,7 +14,7 @@
                     <h4 class="gray"><span class="number">1</span> Description de l'événement</h4>
                     <hr class="hrevent">
                 </div>
-                    <form class="form-horizontal" role="form" method="POST" action="{{route('event.update', $event->id)}}" enctype="multipart/form-data">
+                    <form class="form-horizontal" role="form" method="POST" action="{{route('evenement.update', $event->id)}}" enctype="multipart/form-data">
                     {!! csrf_field() !!}
 
                         <input type="hidden" name="_method" value="PUT"/>
