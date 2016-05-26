@@ -15,7 +15,7 @@
         <div id="invoice">
             <div class="ticket">
                 <div class="bleu">
-                    <h1> {{$event->title}} </h1>
+                    <h2> {{$event->title}} </h2>
                     <p class="host">Par {{$event->host}}</p>
                     <div class="loca">
                         <div class="img-loca"><img src="{{asset("img/loc2.png")}}" alt=""></div>
@@ -30,15 +30,14 @@
                 </div>
 
                 <div class="blanc">
-                    <p>$user->surname <br>
-                        ->name</p>
+                    <p class="nomprenom">$user->surname ->name</p>
                     <p class="titre">$event->title</p>
                     <p class="hostblanc">Par $event->host</p>
                     <p>$event->localisation <br>
-                        $event->adresse <br>
-                        $event->adresse2 <br>
+                        $event->adresse ->adresse2<br>
                         $event->postal <br>
                         $event->city</p>
+                    
                 </div>
 
 

@@ -1,12 +1,16 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300);
+@font-face {
+    font-family: OpenSansLight;
+    src: url('../../storage/fonts/OpenSans-Light.ttf');
+}
 
 body {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
+	font-family: 'OpenSansLight';
 }
 
 p {
 	font-size: 14px;
+	margin-bottom: 0px;
+	margin-top: 0px;
 }
 
 
@@ -15,22 +19,23 @@ p {
 	height: 237px;
 	background-image: url('../img/ticket_bg_pdf.png');
 	background-size: cover;
-	/*border:1px solid black;*/
+	border:1px solid black;
 }
 
 .bleu {
 	width: 460px;
 	height:237px;
 	float: left;
-	border: 1px solid black;
 	display: inline-block;
 
 }
 
-.bleu h1 {
+.bleu h2 {
 	color: white;
+	font-family: 'OpenSansLight' !important;
 	font-size: 1.5em;
 	margin-top: 5px;
+	margin-bottom: 5px;
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -59,6 +64,7 @@ p {
 }
 .infos{
 	display: inline-block;
+	margin-top: -30px;
 }
 
 .adresse {
@@ -77,8 +83,8 @@ p {
 	height:237px;
 	width: 180px;
 	float: right;
-	border: 1px solid black;
 	display: inline-block;
+	font-size: 12px !important;
 
 
 }
@@ -91,6 +97,12 @@ p {
 
 .hostblanc {
 	text-align: right;
+}
+
+
+
+.nomprenom {
+	margin-top: 70px !important;
 }
 
 
