@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Orga;
 use App\Event;
+use App\Resa;
 use App\Tag;
 use App\User;
 use Illuminate\Http\Request;
@@ -77,7 +78,7 @@ class OrgaController extends Controller
         $tags->save();
         //$event -> fill($input) -> save();
 
-        return redirect() -> route('orga.show', Auth::user()->id);
+        return redirect() -> route('organisateur.show', Auth::user()->id);
 
 
     }
@@ -102,12 +103,16 @@ class OrgaController extends Controller
     {
         $user = User::find($id);
         //dd(Auth::user()->id);
-        $id = Auth::user()->id;
-        $list = Event::where('user_id', $id)->get();
-        $infos = User::where('id', $id)->get();
+        $resas = Resa::where('user_id', $id)->get();
+        $index = $resas->pluck('event_id');
+        $event = Event::whereIn('id', $index)->get();
 
+        $list = Event::where('user_id', $id)->get();
+        $id = Auth::user()->id;
+
+        $infos = User::where('id', $id)->get();
         $tags = Tag::where('user_id', $id)->get();
-        return view('orgas.show')->with(compact('user','list', 'infos', 'tags'));
+        return view('orgas.show')->with(compact('user','list', 'infos', 'tags', 'resas', 'event'));
     }
 
     /**
@@ -192,7 +197,7 @@ class OrgaController extends Controller
         $user->update();
 
 
-        return redirect()->route('orga.show', $user->id);
+        return redirect()->route('organisateur.show', $user->id);
     }
 
     /**
@@ -207,7 +212,7 @@ class OrgaController extends Controller
         $tag->delete();
         $user = Auth::user();
 
-        return redirect()->route('orga.show', $user->id);
+        return redirect()->route('organisateur.show', $user->id);
 
     }
 }

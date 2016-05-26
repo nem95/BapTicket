@@ -48,7 +48,7 @@
                         <div class="tags">
                             <p>Tags :
                                 @foreach($tags as $tag)
-                                <form class="" role="form" method="POST" action="{{route('orga.destroy',['id' => $tag->id])}}">
+                                <form class="" role="form" method="POST" action="{{route('organisateur.destroy',['id' => $tag->id])}}">
                                     {!! csrf_field() !!}
                                     <input type="hidden" name="_method" value="DELETE">
                                         <span>
@@ -74,13 +74,29 @@
                         <div class="tags">
                             <p>Tags : </p>
                         @foreach($tags as $tag)
-                                <span>
-                                    {{$tag->name}}
-                                </span>
-                            @endforeach
+                            <span>
+                                {{$tag->name}}
+                            </span>
+                        @endforeach
                         </div>
                     @endif
                 </div>
+
+                @foreach($event as $events)
+                    <table>
+                        <tr>
+                            <td>{{$events->title}} -- </td>
+                            <td> -- {{$events->date}}</td>
+                            <td>
+                                <form class="" role="form" method="POST" action="{{ url('/resa') }}">
+                                    {!! csrf_field() !!}
+                                    <input type="hidden" name="id" value="{{$events->id}}">
+                                    <button> reserver</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+                @endforeach
 
             </div>
             <div class="col-md-3">
@@ -93,7 +109,7 @@
                 <div class="btnshoworga">
                     <!--Auth::check() &&  Auth::user()->is_orga == 1 || -->
                     @if(Auth::check() &&  Auth::user()->is_admin ==1 || Auth::check() &&  Auth::user()->id == $user->id)
-                        <button class="btnshow"><a href="{{route('orga.edit', Auth::user()->id)}}">Modifier le profil</a></button>
+                        <button class="btnshow"><a href="{{route('organisateur.edit', Auth::user()->id)}}">Modifier le profil</a></button>
                     @endif
                 </div>              
             </div>
@@ -133,7 +149,7 @@
 
                    <div class="btnshoworga">
                        @if(Auth::check() &&  Auth::user()->is_admin ==1 || Auth::check() &&  Auth::user()->id == $user->id)
-                            <button class="btnevent"><a href="{{route('orga.edit', Auth::user()->id)}}">Modifier le profil</a></button>
+                            <button class="btnevent"><a href="{{route('organisateur.edit', Auth::user()->id)}}">Modifier le profil</a></button>
                         @endif
                     </div>
                 </div>
@@ -209,6 +225,8 @@
                         </div>
                         @if(Auth::check() &&  $event->user_id == Auth::user()->id || Auth::check() &&  Auth::user()->is_admin ==1 )
                             <button class="btnevent"><a href="{{route('evenement.edit', $event->id)}}">Modifier </a></button>
+                        @else
+                            <button class="btnevent"><a href="{{ route('evenement.show', $event->id) }}">Participer</a></button>
                         @endif
 
                         <div class="clearfix"></div>

@@ -79,7 +79,7 @@
                         @endif
 
                         @if(Auth::check() &&  $user->is_orga == 1 || Auth::check() &&  $user->is_admin ==1)
-                            <a href="{{route('orga.edit', $user->id)}}" class="modif-prfl">Modifier le profil</a>
+                            <a href="{{route('organisateur.edit', $user->id)}}" class="modif-prfl">Modifier le profil</a>
                         @endif
                     </div>
                 </div>
@@ -111,12 +111,12 @@
                         <img class="imgevent" src="{{asset("img/conference.jpg")}}" alt="conf">
                         </div>
                         <div class="bodyevent">
-                            <h4><a href="{{ route('event.show', $event->id) }}">{{ $event->title }}</a>
+                            <h4><a href="{{ route('evenement.show', $event->id) }}">{{ $event->title }}</a>
                             <div class="clear-fix"></div></h4>
                             <div class="clearfix"></div>
                             {{ $event->content }}
                             <div class="clear-fix"></div>
-                            <a href="{{ route('event.show', $event->id) }}" class="eventa">En savoir plus...</a>
+                            <a href="{{ route('evenement.show', $event->id) }}" class="eventa">En savoir plus...</a>
 
                             <div class="clearfix"></div>
 

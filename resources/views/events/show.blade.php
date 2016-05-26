@@ -152,7 +152,7 @@
                 @endif
                 <p>Note:</p>
                 <div class="btnshoworga">
-                    <button class="btnshow"><a class="showa" href="{{route('orga.show', $event->user_id)}}">Voir le profil</a></button>
+                    <button class="btnshow"><a class="showa" href="{{route('organisateur.show', $event->user_id)}}">Voir le profil</a></button>
                 </div>
 
             </div>
@@ -191,7 +191,7 @@
                         @endif
                     </div>
 
-                    <button class="btnevent"><a class="showa" href="{{route('orga.show', $event->user_id)}}">Voir le profil</a></button>
+                    <button class="btnevent"><a class="showa" href="{{route('organisateur.show', $event->user_id)}}">Voir le profil</a></button>
                 </div>
 
             </div>

@@ -16,12 +16,12 @@
                                 <img class="imgevent" src="{{asset("img/conference.jpg")}}" alt="conf">
                             </div>
                             <div class="bodyevent">
-                                <h4><a href="{{ route('event.show', $list->id) }}">{{ $list->title }}</a>
+                                <h4><a href="{{ route('evenement.show', $list->id) }}">{{ $list->title }}</a>
                                     <div class="clear-fix"></div></h4>
                                 <div class="clearfix"></div>
                                 {{ $list->content }}
                                 <div class="clear-fix"></div>
-                                <a href="{{ route('event.show', $list->id) }}" class="eventa">En savoir plus...</a>
+                                <a href="{{ route('evenement.show', $list->id) }}" class="eventa">En savoir plus...</a>
 
                                 <div class="clearfix"></div>
 

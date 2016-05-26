@@ -68,6 +68,21 @@ class ResaController extends Controller
         //
     }
 
+    public function reservation(Request $request)
+    {
+        $id = $request->id;
+        //dd($id);
+        $event = Event::findOrFail($id);
+
+        $resas = Resa::where('user_id', Auth::user()->id)->where('event_id', $event->id)->count();
+        //dd($resas);
+        $user =  Auth::user();
+
+        $pdf = PDF::loadView('pdf.billet', compact('user', 'event', 'resas'));
+
+        return $pdf->download('billet.pdf');
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -104,14 +119,14 @@ class ResaController extends Controller
             $event->placesLeft = $event->placesLeft - $resas;
             $event->update();
 
-            //return redirect() -> route('event.show', $id) -> with('success', 'Votre évènement a été créé');
-            if ($pdf){
+            return redirect() -> route('evenement.show', $id) -> with('success', 'Votre évènement a été créé');
+           /* if ($pdf){
                 return $pdf->download('billet.pdf');
             }else{
-                return redirect() -> route('event.show', $id) -> with('success', 'Votre évènement a été créé');
-            }
+                return redirect() -> route('evenement.show', $id) -> with('success', 'Votre évènement a été créé');
+            }*/
         }else{
-            return redirect() -> route('event.show', $id) -> with('success', 'Votre évènement a été créé');
+            return redirect() -> route('evenement.show', $id) -> with('success', 'Votre évènement a été créé');
         }
     }
 

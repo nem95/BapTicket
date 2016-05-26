@@ -86,7 +86,7 @@ class EventController extends Controller
         $event->save();
         //$event -> fill($input) -> save();
 
-        return redirect() -> route('event.index') -> with('success', 'Votre évènement a été créé');
+        return redirect() -> route('evenement.index') -> with('success', 'Votre évènement a été créé');
     }
 
     /**
@@ -180,7 +180,7 @@ class EventController extends Controller
 
         $event->save();
 
-        return redirect() -> route('event.index') -> with('success', 'Votre article a bien été modifié');
+        return redirect() -> route('evenement.index') -> with('success', 'Votre article a bien été modifié');
     }
 
     /**
@@ -194,6 +194,6 @@ class EventController extends Controller
         $event = Event::findOrFail($id);
         $event->delete();
 
-        return redirect() -> route('event.index') -> with('success', 'Votre article a bien été supprimé');
+        return redirect() -> route('evenement.index') -> with('success', 'Votre article a bien été supprimé');
     }
 }

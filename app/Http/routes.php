@@ -24,12 +24,13 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::resource('/evenement', 'EventController');
 
-    Route::resource('/orga', 'OrgaController');
-    Route::post('/orga', 'OrgaController@addTags');
+    Route::resource('/organisateur', 'OrgaController');
+    Route::post('/organisateur', 'OrgaController@addTags');
     //Route::delete('/orga/{id}', ['as' => 'orga.deleteTags', 'uses' => 'OrgaController@deleteTags']);
 
     Route::resource('/admin', 'AdminController');
     Route::resource('/resa', 'ResaController');
+    Route::post('/resa', 'ResaController@reservation');
 
     Route::resource('/contact', 'ContactController');
 

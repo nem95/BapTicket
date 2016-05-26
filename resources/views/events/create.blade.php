@@ -14,7 +14,7 @@
                     <h4 class="gray"><span class="number">1</span> Description de l'événement</h4>
                     <hr class="hrevent">
                 </div>
-                    {!! Form::open(array('route' => 'event.store', 'method' => 'POST'))!!}
+                    {!! Form::open(array('route' => 'evenement.store', 'method' => 'POST'))!!}
 
                         <div class="col-md-6">
                             <div class="form-group">
@@ -239,7 +239,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        {!! Form::checkbox('', ''); !!} Masquer la visibilité de ce billet
+                                        {!! Form::checkbox('', '') !!} Masquer la visibilité de ce billet
                                     </div>
                                 </div>
                                 
@@ -264,7 +264,7 @@
                             !!}
 
 
-                            <a class="btn btnlogin" href="{{ route('event.index') }}">Retour à l'accueil</a>
+                            <a class="btn btnlogin" href="{{ route('evenement.index') }}">Retour à l'accueil</a>
 
                     {!! Form::close() !!}
             </div>

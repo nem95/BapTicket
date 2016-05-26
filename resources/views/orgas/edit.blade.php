@@ -10,7 +10,7 @@
                 <h4 class="gray"><span class="number">1</span> Informations générales (Elles apparaîtront sur votre profil)</h4>
                 <hr class="hrevent">
             </div>
-            <form class="form-horizontal" role="form" method="POST" action="{{route('orga.update', $user->id)}}" enctype="multipart/form-data">
+            <form class="form-horizontal" role="form" method="POST" action="{{route('organisateur.update', $user->id)}}" enctype="multipart/form-data">
                 {!! csrf_field() !!}
 
                 <input type="hidden" name="_method" value="PUT"/>
