@@ -23,7 +23,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $event = Event::all();
+        //$event = Event::all();
+        $event = Event::orderBy('created_at', 'desc')->with('reservations')->paginate(9);
+
         $user = User::all();
         //dd($user);
         return view('admin.index', compact('event', 'user'));

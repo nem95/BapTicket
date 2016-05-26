@@ -608,8 +608,12 @@ footer {
     background-color: #547980;
     color: white;
     margin: 0;
-    padding: 10%;
+    padding: 30px;
 }
+.Conf {
+    border-left: 2px solid white;
+}
+
 
 .filtres {
     background-color: #DADADA;
@@ -629,6 +633,8 @@ footer {
 
 .dashboardusers {
     background-color: #DADADA;
+    /*min-height: 200px;*/
+    overflow: auto;
     color: black;
     margin-top: 3px;
     padding: 2% 2%;
@@ -649,7 +655,13 @@ footer {
 .btndash {
     background-color: #65868d;
     float: right;
-    padding: 0 8%;
+    padding: 5px 5px;
+    border-radius: 5px;
+}
+.btndashEdit{
+    background-color: #49ada6;
+    float: left;
+    padding: 5px 5px;
     border-radius: 5px;
 }
 
