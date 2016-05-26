@@ -167,6 +167,9 @@ body {
     padding-bottom: 3%;
 }
 
+.h4index {
+    height: 43px;
+}
 .bodyevent h4 {
     margin-bottom: 10px; 
 }
@@ -588,6 +591,189 @@ footer {
     margin-bottom: 2%;
 }
 
+/* Dashboard admin */
+
+.nopadding {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.spacemenu {
+    height: 75px;
+    background-color: gray;
+    width: 100%;
+}
+
+.hcoladmin {
+    text-align: center;
+    background-color: #547980;
+    color: white;
+    margin: 0;
+    padding: 10%;
+}
+
+.filtres {
+    background-color: #DADADA;
+    color: black;
+    margin-top: 3px;
+    padding: 1% 2%;
+}
+
+.filtresul {
+    list-style: none;
+    margin-top: -8px;
+    margin-bottom: 0px;
+}
+
+.filtersize{
+}
+
+.dashboardusers {
+    background-color: #DADADA;
+    color: black;
+    margin-top: 3px;
+    padding: 2% 2%;
+    display: block;
+    padding-left: 0;
+}
+
+.dashboardusers img {
+    width: 130%;
+    margin-top: 8%;
+    border-radius: 50%;
+    display: block;
+}
+
+.infosdash {
+}
+
+.btndash {
+    background-color: #65868d;
+    float: right;
+    padding: 0 8%;
+    border-radius: 5px;
+}
+
+.btndash2 {
+    background-color: #65868d;
+    float: right;
+    padding: 0 8%;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.dashhead {
+    background-color: #DADADA;
+    border-radius: 15px;
+    height: 50px;
+    margin: 3% 0%;
+}
+
+.dashheadhr {
+    border: 1px solid;
+    border-color: #DADADA;
+}
+.dashhead h3 {
+    margin-top: 10px;
+}
+
+.dashedituser {
+    background-color: #DADADA;
+    border-radius: 15px;
+    padding: 2%;
+    margin-bottom: 3%;
+}
+
+.dashedituser h4{
+    color: black;
+    text-align: center;
+}
+
+.dashedituser input {
+    width: 100%;
+}
+
+.whitehr {
+    border: 1px solid white;
+    margin-top: 5px;
+}
+
+.dashuser p {
+    font-size: 12px;
+}
+
+.dashuser .form-group {
+    margin-bottom: 3px;
+}
+
+.marginbtm {
+    margin-bottom: 10px;
+}
+
+.userororga1 {
+    background-color: #36494c;
+    text-decoration: none;
+    text-align: center;
+    padding: 6% 3%;
+    font-size: 12px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.userororga2 {
+    background-color: #65868d;
+    text-decoration: none;
+    text-align: center;
+    padding: 6% 3%;
+    font-size: 12px;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.statutbtn {
+    margin-top: 30px;
+}
+
+.dashsocialuser i{
+    background-color: #44ada7 !important;
+    padding: 5%;
+    border-radius: 50%;
+    width: 30px;
+    text-align: center;
+    margin-top: 20%;
+}
+
+.dashbtnright a{
+    background-color: #65868d;
+    text-decoration: none;
+    text-align: center;
+    padding: 6% 3%;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.dashsocialuser i:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.dashtitleevent {
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+
+.dashdeleventbtn {
+
+    text-align: center;
+    margin-top: 2%;
+
+}
+
+.dashdeleventbtn a {
+    background-color: #65868d;
+    padding: 1% 30%;
+    border-radius: 5px;
+}
 /* Général */
 
 .bold {
@@ -630,6 +816,10 @@ footer {
 
 .black {
     color: black !important;
+}
+
+.whitebg {
+    background-color: white;
 }
 /* Pagination styling */ 
 
@@ -847,6 +1037,12 @@ footer {
 
     .titleindex {
         display: none;
+    }
+
+    /* Dash Admin */
+
+    .dashboardusers img {
+    width: 100%;
     }
 
 }

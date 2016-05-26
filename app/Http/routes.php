@@ -71,8 +71,11 @@ Route::group(['middleware' => ['web']], function () {
         return view('other.services');
     });
 
+    /* Route dev à enlever */
+
     Route::get('/billet', function()
     {
         return view('pdf.billet');
-    });      
+    });
+
 });
