@@ -12,5 +12,13 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix.browserSync([
+        'app/**/*',
+        'public/**/*',
+        'resources/views/**/*'
+    ], {
+        proxy: 'localhost:8888',
+        reloadDelay: 2000
+    });
 });
+
