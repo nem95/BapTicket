@@ -30,13 +30,12 @@
                 </div>
 
                 <div class="blanc">
-                    <p class="nomprenom">$user->surname ->name</p>
-                    <p class="titre">$event->title</p>
-                    <p class="hostblanc">Par $event->host</p>
-                    <p>$event->localisation <br>
-                        $event->adresse ->adresse2<br>
-                        $event->postal <br>
-                        $event->city</p>
+                    <p class="nomprenom">{{$user->surname}} {{$user->name}}</p>
+                    <p class="titre">{{$event->title}}</p>
+                    <p class="hostblanc">Par {{$event->host}}</p>
+                    <p>{{$event->localisation}} <br>
+                        {{$event->adresse}} {{$event->adresse2 }}<br>
+                        {{$event->postal}} {{$event->city}}</p>
                     
                 </div>
 

@@ -19,7 +19,8 @@ p {
 	height: 237px;
 	background-image: url('../img/ticket_bg_pdf.png');
 	background-size: cover;
-	border:1px solid black;
+	border:1px solid;
+	border-color: #DEDEDE;
 }
 
 .bleu {
@@ -33,7 +34,7 @@ p {
 .bleu h2 {
 	color: white;
 	font-family: 'OpenSansLight' !important;
-	font-size: 1.5em;
+	font-size: 28px !important;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	text-align: center;
@@ -84,7 +85,8 @@ p {
 	width: 180px;
 	float: right;
 	display: inline-block;
-	font-size: 12px !important;
+	font-size: 13px !important;
+	margin-left: 5px !important;
 
 
 }
@@ -97,12 +99,14 @@ p {
 
 .hostblanc {
 	text-align: right;
+	margin-right: 5px !important;
 }
 
 
 
 .nomprenom {
-	margin-top: 70px !important;
+	margin-top: 65px !important;
+	margin-bottom: 10px !important;
 }
 
 
