@@ -30,6 +30,7 @@ class CreateEventsTable extends Migration
             $table->date('date');
             $table->string('img');
             $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

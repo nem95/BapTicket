@@ -138,6 +138,17 @@ body {
     margin-right: 2%;
     padding: 3% 6%;
 }
+.btneventDelete{
+    float: right;
+    border: none;
+    border-radius: 3px;
+    background-color: #d9534f;
+    margin-top: -7%;
+    margin-right: 2%;
+    padding: 3% 6%;
+    color: white;
+}
+
 
 .btnevent a {
     color: white;
@@ -505,11 +516,13 @@ footer {
 .imgshoworga {
     margin-top: 5%;
     height: auto;
-    width: 100%;
+    width: 100% !important;
     border: 1px solid;
     border-color: #49ada6;
 }
-
+.descript{
+    font-size: 0.9em;
+}
 .showbtn2 {
     text-align: right;
 }
@@ -660,9 +673,19 @@ footer {
 }
 .btndashEdit{
     background-color: #49ada6;
-    float: left;
+    float: right ;
     padding: 5px 5px;
+    margin-right: 15px;
     border-radius: 5px;
+}
+.btndashDelete{
+    background-color: #D9534F;
+    float: right ;
+    padding: 5px 5px;
+    margin-right: 15px;
+    border-radius: 5px;
+    border: 0;
+    color: white;
 }
 
 .btndash2 {
@@ -965,7 +988,14 @@ footer {
         margin-right: 0;
         padding: 1%;
     }
-
+    .btneventDelete{
+        width: 100%;
+        text-align: center;
+        border-radius: 0;
+        margin-top: 3%;
+        margin-right: 0;
+        padding: 1%;
+    }
     .btnevent a {
         font-size: 20px;
     }

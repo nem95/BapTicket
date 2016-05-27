@@ -14,7 +14,14 @@ class Users extends Seeder
         DB::table('users')->insert([
             'name' => 'Chatti',
             'surname' => 'Naïm',
-            'email' => 'naim.chatti@gmail.com',
+            'email' => 'naiim.chatti@gmail.com',
+            'password' => bcrypt('azerty'),
+            'remember_token' => str_random(10)
+        ]);
+        DB::table('users')->insert([
+            'name' => 'naim',
+            'surname' => 'naim',
+            'email' => 'nem.95@hotmail.fr',
             'password' => bcrypt('azerty'),
             'remember_token' => str_random(10)
         ]);

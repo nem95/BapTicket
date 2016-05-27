@@ -13,25 +13,35 @@
                 <!-- Début foreach list as user -->
                 @foreach($user as $users)
                     <div class="dashboardusers col-md-12">
-                        <div class="col-md-3   col-sm-2  col-xs-3">
+                        <div class="col-md-4  col-sm-2  col-xs-3">
                             @if($users->photo != '')
                                     <img class="img-responsive imgshoworga" src="{{asset($users->photo)}}">
                             @else
                                 <img src="{{ asset("img/defaults-img/default-profil.png") }}" alt="" class="img-responsive imgshoworga">
                             @endif
                         </div>
-                        <div class="col-md-3 col-sm-9 col-xs-9">
+                        <div class="col-md-8 col-sm-9 col-xs-9">
                             <p>{{$users->name}} <br>
                                 {{$users->surname}} <br>
                                 {{$users->sectors}} <br>
                         </p>
                         </div>
-                        <div class="col-md-9 col-sm-9 col-xs-9">
+                        <div class="col-md-8 descript">
                             <p>Déscription :  <br>
-                                {{substr($users->known,  0, 70)}}</p>
-                            <a href="{{route('admin.edit', $users->id)}}" class="btndashEdit">Editer</a>
-                            <a href="{{route('organisateur.show', $users->id)}}" class="btndash">En savoir plus</a>
+                                {{substr($users->known,  0, 70)}} ...
+                            </p>
+                        </div>
+                        <div class="col-md-12    col-sm-9 col-xs-12">
 
+                            <a href="{{route('organisateur.show', $users->id)}}" class="btndash">En savoir plus</a>
+                            <a href="{{route('admin.edit', $users->id)}}" class="btndashEdit">Editer</a>
+                            <form class="" role="form" method="POST" action="{{route('admin.destroy',['id' => $users->id])}}">
+                                {!! csrf_field() !!}
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btndashDelete">
+                                    <i class="fa fa-trash" aria-hidden="true"></i> Supprimer
+                                </button>
+                            </form>
                         </div>
                     </div>
                 @endforeach
@@ -82,6 +92,13 @@
 
                             </div>
                             <button class="btnevent"><a href="{{route('evenement.edit', $events->id)}}">Modifier </a></button>
+                            <form class="" role="form" method="POST" action="{{route('evenement.destroy',['id' => $events->id])}}">
+                                {!! csrf_field() !!}
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btneventDelete">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </button>
+                            </form>
 
 
                             <div class="clearfix"></div>

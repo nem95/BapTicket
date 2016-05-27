@@ -26,11 +26,17 @@ class AdminController extends Controller
     public function index()
     {
         //$event = Event::all();
-        $event = Event::orderBy('created_at', 'desc')->with('reservations')->paginate(9);
+        if (Auth::check() && Auth::user()->is_admin == 1) {
 
-        $user = User::all();
-        //dd($user);
-        return view('admin.index', compact('event', 'user'));
+            $event = Event::orderBy('created_at', 'desc')->with('reservations')->paginate(9);
+
+            $user = User::all();
+            //dd($user);
+            return view('admin.index', compact('event', 'user'));
+        }else{
+            return redirect('/');
+
+        }
     }
 
     /**

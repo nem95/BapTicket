@@ -149,6 +149,9 @@
                 @else
                     <li><a href="{{ route('organisateur.show', Auth::user()->id) }}">Mon profil</a></li>
                 @endif
+                    @if(Auth::check() && Auth::user()->is_admin == 1)
+                        <li><a href="{{ route('admin.index') }}">Administration</a></li>
+                    @endif
                     <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                 </ul>
             </li>
