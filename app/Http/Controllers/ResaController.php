@@ -111,7 +111,7 @@ class ResaController extends Controller
 
                 $user =  Auth::user();
 
-                $pdf = PDF::loadView('pdf.billet', compact('user', 'event'));
+                //$pdf = PDF::loadView('pdf.billet', compact('user', 'event'));
             }
 
             $event =  Event::find($id);

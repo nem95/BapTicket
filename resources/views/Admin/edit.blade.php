@@ -10,7 +10,7 @@
                 <h4 class="gray"><span class="number">1</span> Informations générales (Elles apparaîtront sur votre profil)</h4>
                 <hr class="hrevent">
             </div>
-            <form class="form-horizontal" role="form" method="POST" action="{{route('organisateur.update', $user->id)}}" enctype="multipart/form-data">
+            <form class="form-horizontal" role="form" method="POST" action="{{route('admin.update', $user->id)}}" enctype="multipart/form-data">
                 {!! csrf_field() !!}
 
                 <input type="hidden" name="_method" value="PUT"/>
@@ -173,6 +173,16 @@
 
             </form>
 
+
+            <div class="col-md-3">
+                <form class="" role="form" method="POST" action="{{route('admin.destroy',['id' => $user->id])}}">
+                    {!! csrf_field() !!}
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-danger center-block ">
+                        Supprimer
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

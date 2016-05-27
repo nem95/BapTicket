@@ -108,7 +108,7 @@ class OrgaController extends Controller
         $event = Event::whereIn('id', $index)->get();
 
         $list = Event::where('user_id', $id)->get();
-        $id = Auth::user()->id;
+        //$id = Auth::user()->id;
 
         $infos = User::where('id', $id)->get();
         $tags = Tag::where('user_id', $id)->get();

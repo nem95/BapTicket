@@ -26,10 +26,10 @@
                                 {{$users->sectors}} <br>
                         </p>
                         </div>
-                        <div class="col-md-6 col-sm-9 col-xs-9">
+                        <div class="col-md-9 col-sm-9 col-xs-9">
                             <p>Déscription :  <br>
                                 {{substr($users->known,  0, 70)}}</p>
-                            <a href="#" class="btndashEdit">Editer</a>
+                            <a href="{{route('admin.edit', $users->id)}}" class="btndashEdit">Editer</a>
                             <a href="{{route('organisateur.show', $users->id)}}" class="btndash">En savoir plus</a>
 
                         </div>
@@ -81,7 +81,8 @@
 
 
                             </div>
-                            <button class="btnevent"><a href="{{ route('evenement.show', $events->id) }}">Participer</a></button>
+                            <button class="btnevent"><a href="{{route('evenement.edit', $events->id)}}">Modifier </a></button>
+
 
                             <div class="clearfix"></div>
                         </div>

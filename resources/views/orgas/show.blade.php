@@ -100,6 +100,9 @@
 
             </div>
             <div class="col-md-3">
+                @if(Auth::check() &&  Auth::user()->is_admin ==1 )
+                    <button class="btnshow"><a href="{{route('admin.index')}}">Administration</a></button>
+                @endif
                 @if($user->photo !='')
                     <img src="{{ asset($user->photo) }}" alt="" class="img-responsive imgshoworga">
                 @else
