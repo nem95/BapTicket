@@ -95,4 +95,7 @@
   'opensanslight' => array(
     'normal' => DOMPDF_FONT_DIR . '4c2727170996e097b7f7b307a2871f91',
   ),
+  'opensansregular' => array(
+    'normal' => DOMPDF_FONT_DIR . '6ada8ea31b919ce9bae93e26e9c180a1',
+  ),
 ) ?>

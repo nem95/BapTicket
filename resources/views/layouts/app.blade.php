@@ -156,7 +156,7 @@
                 </ul>
             </li>
         @endif
-        <li><a class="aidemenu" href="{{ url('/faq') }}">Aide</a></li>
+        <li class="aidemenudisplay"><a class="aidemenu" href="{{ url('/faq') }}">Aide</a></li>
       </ul>
       </ul>
 

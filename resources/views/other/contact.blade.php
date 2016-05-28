@@ -69,7 +69,6 @@
                 ['class' => 'btn btnlogin'])
             !!}
             {!! Form::close() !!}
-            <a class="btn btnlogin" href="{{ route('event.index') }}">Retour à l'accueil</a>
     	</div>
     </div>
 

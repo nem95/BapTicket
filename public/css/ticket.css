@@ -3,12 +3,17 @@
     src: url('../../storage/fonts/OpenSans-Light.ttf');
 }
 
+@font-face {
+    font-family: OpenSansRegular;
+    src: url('../../storage/fonts/OpenSans-Regular.ttf');
+}
+
 body {
 	font-family: 'OpenSansLight';
 }
 
 p {
-	font-size: 14px;
+	font-size: 13px;
 	margin-bottom: 0px;
 	margin-top: 0px;
 }
@@ -31,12 +36,15 @@ p {
 
 }
 
-.bleu h2 {
+.titre1 {
 	color: white;
-	font-family: 'OpenSansLight' !important;
-	font-size: 28px !important;
-	margin-top: 5px;
-	margin-bottom: 5px;
+	font-family: 'OpenSansRegular' !important;
+	font-size: 16px !important;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-right: 5px;
+	margin-left: 5px;
+	padding-bottom: 0px;
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -76,8 +84,10 @@ p {
 
 .num {
 	text-align: right;
-	margin-right: -50px;
-	margin-top: -30px;
+	color: black;
+	font-family: 'OpenSansRegular';
+	display: inline-block;
+	margin-right: 130px;
 }
 
 .blanc {
@@ -85,7 +95,7 @@ p {
 	width: 180px;
 	float: right;
 	display: inline-block;
-	font-size: 13px !important;
+	font-size: 12px !important;
 	margin-left: 5px !important;
 
 
@@ -94,7 +104,7 @@ p {
 .titre {
 	text-align: center;
 	text-transform: uppercase;
-	margin-left: -24px;
+	font-family: 'OpenSansRegular';
 }
 
 .hostblanc {
@@ -105,8 +115,8 @@ p {
 
 
 .nomprenom {
-	margin-top: 65px !important;
-	margin-bottom: 10px !important;
+	margin-top: 55px !important;
+	margin-bottom: 0px !important;
 }
 
 

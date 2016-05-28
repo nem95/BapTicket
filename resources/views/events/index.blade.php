@@ -65,7 +65,7 @@
                         </div>
                         <div class="bodyevent">
                             <div class="h4index">
-                                <h4 class="black"><a href="{{ route('evenement.show', $event->id) }}">{{ str_limit($event->title, $limit = 70, $end = '...') }}</a></h4>
+                                <h4 class="black"><a href="{{ route('evenement.show', $event->id) }}">{{ str_limit($event->title, $limit = 65, $end = '...') }}</a></h4>
                             </div>
                             
                             

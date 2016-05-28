@@ -15,14 +15,14 @@
         <div id="invoice">
             <div class="ticket">
                 <div class="bleu">
-                    <h2> {{$event->title}} </h2>
+                    <p class="titre1"> {{ str_limit($event->title, $limit = 95, $end = '') }} </p>
                     <p class="host">Par {{$event->host}}</p>
                     <div class="loca">
                         <div class="img-loca"><img src="{{asset("img/loc2.png")}}" alt=""></div>
                         <div class="infos">
                             <p > {{$event->localisation}} <br>
                                 {{$event->adresse}} {{$event->adresse2 }} <br>
-                                {{$event->postal}} {{$event->city}} </p> <h5 class="num">N° 000 001</h5>
+                                {{$event->postal}} {{$event->city}} <span class="num">N°000 001</span></p> 
                         </div>
                     </div>
 
@@ -31,7 +31,7 @@
 
                 <div class="blanc">
                     <p class="nomprenom">{{$user->surname}} {{$user->name}}</p>
-                    <p class="titre">{{$event->title}}</p>
+                    <p class="titre">{{ str_limit($event->title, $limit = 82, $end = '...') }}</p>
                     <p class="hostblanc">Par {{$event->host}}</p>
                     <p>{{$event->localisation}} <br>
                         {{$event->adresse}} {{$event->adresse2 }}<br>

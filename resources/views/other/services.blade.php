@@ -18,7 +18,6 @@
 			<div class="clear-fix"></div>
 			<p>Sélectionner un sujet : <br>
 			<a class="black" href="">- Retour et service après-vente</a> <br>
-			<a class="black" href="{{ route('orga.show', Auth::user()->id) }}">- Mon compte Witicket</a> <br>
 			<a class="black" href="">- Newsletter</a> <br>
 			<a class="black" href="">- Retrouver Witicket sur Facebook</a> <br>
 			<a class="black" href="">- Ou Twitter</a> <br>
