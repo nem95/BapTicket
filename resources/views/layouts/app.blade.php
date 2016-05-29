@@ -99,7 +99,7 @@
         </a>
         <ul class="dropdown-menu searchmenu">
           <div class="input-group inputmobile">
-              <input type="text" class="form-control" placeholder="Search for...">
+              <input type="text" class="form-control" placeholder="Mots clés...">
               <span class="input-group-btn">
                 <button class="btn btn-default" type="button">Rechercher</button>
               </span>

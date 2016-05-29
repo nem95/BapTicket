@@ -138,7 +138,7 @@
                             </div>
                         </div>
 
-                        <div class="numbevent2">
+                        <!-- <div class="numbevent2">
                             <h4 class="gray"><span class="number">2</span> Création des billets</h4>
                             <hr class="hrevent">
                         </div>
@@ -254,7 +254,7 @@
                                 </div>
                             </div>  
 
-                        </div>
+                        </div> -->
                                                         
                     
 

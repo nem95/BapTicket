@@ -56,7 +56,7 @@
                 <!-- Début foreach list as event -->
                 @foreach($event as $events)
                     <div class="col-md-4 col-sm-4">
-                        <div class="borderevent">
+                        <div class="borderevent adminborder">
                             <div class="imgfullmobile">
                                 <img class="imgevent" src="{{asset("img/conference.jpg")}}" alt="conf">
                                 <span class="priceevent">GRATUIT</span>

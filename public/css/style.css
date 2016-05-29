@@ -945,9 +945,19 @@ footer {
     border-top-left-radius: 3px 
 }
 
+.pagination>li>a, .pagination>li>span {
+    float: left !important;
+}
+
 .searchmobile {
     display: none;
 }
+
+.adminborder {
+    border: 1px solid;
+    border-color: #DADADA;
+}
+
 /* Reponsive Homepage */
 
 @media screen and (max-width: 767px) {
@@ -1068,16 +1078,18 @@ footer {
     }
     
     .searchmenu {
-        margin-top: 70%;
         text-align: center;
-        position: relative;
-        float: left;
+        position: absolute;
         padding: 0;
-        left:-250px;
+        float: none;    
+        top: 0;
+        margin: 0;
+        width: 260px;
+        left: -700%;
     }
 
     .inputmobile {
-        width: 160%;
+        width: 100%;
     }
 
     .titleindex {
