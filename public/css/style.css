@@ -1082,9 +1082,11 @@ footer {
         position: absolute;
         padding: 0;
         float: none;    
-        top: 0;
+        top: -10px;
         margin: 0;
         width: 260px;
+        border-color: #4C4C4C;
+        border: 10px solid; 
         left: -700%;
     }
 
@@ -1096,11 +1098,17 @@ footer {
         display: none;
     }
 
+    .fa-search2 {
+        color: black;
+        height: 20px;
+    }
+
     /* Dash Admin */
 
     .dashboardusers img {
     width: 100%;
     }
+
 
 }
 .navbar-nav {

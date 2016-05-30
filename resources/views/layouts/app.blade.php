@@ -101,7 +101,7 @@
           <div class="input-group inputmobile">
               <input type="text" class="form-control" placeholder="Mots clés...">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Rechercher</button>
+                <button class="btn btn-default" type="button"><i class="fa fa-search fa-search2" aria-hidden="true"></i></button>
               </span>
             </div>
         </ul>
