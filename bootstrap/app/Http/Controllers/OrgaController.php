@@ -2,42 +2,50 @@
 
 namespace App\Http\Controllers;
 
+use App\Orga;
 use App\Event;
+use App\Resa;
 use App\Tag;
 use App\User;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
-
-class AdminController extends Controller
+use Intervention\Image\Facades\Image;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+class OrgaController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('admin');
-    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('orga')->only(['create', 'edit', 'update', 'infosEdit', 'infosUpdate']);
+    }
+
     public function index()
     {
-        //$event = Event::all();
-        if (Auth::check() && Auth::user()->is_admin == 1) {
+       /* $id = Auth::user()->id;
 
-            $event = Event::orderBy('created_at', 'desc')->with('reservations')->paginate(9);
+        $list = Event::where('user_id', $id)->get();
+        $infos = User::where('id', $id)->get();
+        $tags = Tag::all();
+        //dd($tags);
+        return view('orgas.index')->with(compact('list', 'infos', 'tags'));
+        //return view('orgas.index', compact('list'));*/
+        return redirect('/');
 
-            $user = User::all();
-            //dd($user);
-            return view('Admin.index', compact('event', 'user'));
-        }else{
-            return redirect('/');
-
-        }
     }
+    
+    public function infosEdit(){
+    }
+
+    public function infosUpdate(Request $request){
+
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -60,6 +68,31 @@ class AdminController extends Controller
         //
     }
 
+    public function addTags(Request $request){
+
+        $tags = new Tag;
+
+        $tags->name = $request->tag;
+        $tags->user_id = Auth::user()->id;
+        //dd($tags);
+        $tags->save();
+        //$event -> fill($input) -> save();
+
+        return redirect() -> route('organisateur.show', Auth::user()->id);
+
+
+    }
+
+    public function deleteTags($id){
+
+        $tag = Tag::find($id);
+        $tag->delete();
+
+        return redirect() -> route('evenement.index');
+
+
+    }
+
     /**
      * Display the specified resource.
      *
@@ -68,7 +101,18 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        //dd(Auth::user()->id);
+        $resas = Resa::where('user_id', $id)->get();
+        $index = $resas->pluck('event_id');
+        $event = Event::whereIn('id', $index)->get();
+
+        $list = Event::where('user_id', $id)->get();
+        //$id = Auth::user()->id;
+
+        $infos = User::where('id', $id)->get();
+        $tags = Tag::where('user_id', $id)->get();
+        return view('orgas.show')->with(compact('user','list', 'infos', 'tags', 'resas', 'event'));
     }
 
     /**
@@ -80,14 +124,14 @@ class AdminController extends Controller
     public function edit($id)
     {
 
-            if (Auth::user()->id == $id || Auth::user()->is_admin == 1){
+        if (Auth::user()->id == $id){
             $user = User::find($id);
             /*$list = Event::where('user_id', $id)->get();
             $infos = User::where('id', $id)->get();*/
-            return view('admin.edit')->with(compact('user'));
-            }else{
-                return redirect() -> route('admin.index');
-            }
+            return view('orgas.edit')->with(compact('user'));
+        }else{
+            return redirect() -> route('evenement.index');
+        }
 
 
 
@@ -153,7 +197,7 @@ class AdminController extends Controller
         $user->update();
 
 
-        return redirect()->route('admin.index');
+        return redirect()->route('organisateur.show', $user->id);
     }
 
     /**
@@ -164,9 +208,11 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
+        $tag = Tag::find($id);
+        $tag->delete();
+        $user = Auth::user();
 
-        return redirect()->route('admin.index');
+        return redirect()->route('organisateur.show', $user->id);
+
     }
 }

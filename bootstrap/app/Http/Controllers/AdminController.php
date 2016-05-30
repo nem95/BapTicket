@@ -32,7 +32,7 @@ class AdminController extends Controller
 
             $user = User::all();
             //dd($user);
-            return view('Admin.index', compact('event', 'user'));
+            return view('admin.index', compact('event', 'user'));
         }else{
             return redirect('/');
 
