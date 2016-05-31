@@ -84,7 +84,7 @@ class AdminController extends Controller
             $user = User::find($id);
             /*$list = Event::where('user_id', $id)->get();
             $infos = User::where('id', $id)->get();*/
-            return view('admin.edit')->with(compact('user'));
+            return view('Admin.edit')->with(compact('user'));
             }else{
                 return redirect() -> route('admin.index');
             }
