@@ -91,7 +91,21 @@
             </table>
             <br>
             <div class="btnmobile row">
-                <button class="btnevent"><a href="">Participer</a></button>
+                @if(Auth::user())
+                        {!! Form::model($event,array('route' => array('resa.update', $event->id),'method' => 'PUT')) !!}
+                        {{ Form::hidden('event_id', $event->id) }}
+                        @if($resas >= 3)
+                            <td>{!! Form::selectRange('number', 0,0, null, ['disabled' => 'disabled']) !!}</td>
+                            <td>{!! Form::submit('Participer',['class' => 'btnevent', 'disabled' => 'disabled']) !!}</td>
+                        @else
+                            <td>{!! Form::selectRange('number', 1,3 - $resas ) !!}</td>
+                            <td>{!! Form::submit('Participer',['class' => 'btnevent']) !!}</td>
+                        @endif
+                        {!! Form::close() !!}
+                    @else
+                        <td>{!! Form::selectRange('number', 1,3  ) !!}</td>
+                        <td><a href="{{ url('/register') }}"><button class="btnevent">Réserver</button></a></td>
+                    @endif
             </div>
             
         </div>
@@ -150,7 +164,7 @@
                 @else
                     <img src="{{ asset("img/defaults-img/default-profil.png") }}" alt="" class="img-responsive imgshoworga">
                 @endif
-                <p>Note:</p>
+                <!-- <p>Note:</p> -->
                 <div class="btnshoworga">
                     <button class="btnshow"><a class="showa" href="{{route('organisateur.show', $event->user_id)}}">Voir le profil</a></button>
                 </div>
@@ -165,7 +179,7 @@
                 @else
                     <img src="{{ asset("img/defaults-img/default-profil.png") }}" alt="" class="img-responsive imgshoworga">
                 @endif
-                <p>Note:</p>
+                <!-- <p>Note:</p> -->
                 <div class="btnshoworga row">
                     <div class="showbtn2 centermobile">
                         <a href=""><i class="fa fa-2x fa-share" aria-hidden="true"></i></a>

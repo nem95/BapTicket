@@ -548,6 +548,8 @@ footer {
 
 .btnshoworga {
     text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .maps iframe{
@@ -957,6 +959,10 @@ footer {
     border: 1px solid;
     border-color: #DADADA;
 }
+.navbar-nav {
+        float: none !important;
+        text-align: center;
+    }
 
 /* Reponsive Homepage */
 
@@ -976,6 +982,7 @@ footer {
 
     .btnmobile {
         display: block;
+        text-align: center;
     }
 
     .imgfullmobile {
@@ -983,7 +990,7 @@ footer {
         margin-left:-10%;
         overflow: hidden;
     }
-
+    
     .showeventmobileprofil {
         display: block;
     }
@@ -1000,6 +1007,8 @@ footer {
         margin-top: 3%;
         margin-right: 0;
         padding: 1%;
+        color: white;
+        font-size: 16px;
     }
     .btneventDelete{
         width: 100%;
@@ -1009,6 +1018,7 @@ footer {
         margin-right: 0;
         padding: 1%;
     }
+
     .btnevent a {
         font-size: 20px;
     }

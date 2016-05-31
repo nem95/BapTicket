@@ -29,7 +29,7 @@
                                     ['class' => 'form-control'])
                                 !!}
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                             {!! Form::label('', 'Tags :') !!}
                                 <div class="tags">
                                 <p><span>Le TAG<button><img class="delete-icon" src="{{ asset("img/icons/icon-delete.png") }}" alt="Icône de suppression du tag..."></button></span>
@@ -38,7 +38,7 @@
                                     @endforeach--}}
                                 </p>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -121,24 +121,24 @@
                             </div>
                             
 
-                            <div class="embed-container createeventmap">
+                            <!-- <div class="embed-container createeventmap">
 
                                 <address>
                                     
                                 </address>
                                     
                                     
-                            </div>
+                            </div> -->
                         </div>
 
-                        <div class="col-md-12">
+                        <!--<div class="col-md-12">
                             <div class="form-group">
                                 {!! Form::label('img', 'Image de conférence :') !!}
                                 {!! Form::file('img')!!}
                             </div>
                         </div>
 
-                        <!-- <div class="numbevent2">
+                         <div class="numbevent2">
                             <h4 class="gray"><span class="number">2</span> Création des billets</h4>
                             <hr class="hrevent">
                         </div>
@@ -258,18 +258,24 @@
                                                         
                     
 
-
-                            {!! Form::submit('Créer la conférence',
-                                ['class' => 'btn btnlogin'])
-                            !!}
-
-
-                            <a class="btn btnlogin" href="{{ route('evenement.index') }}">Retour à l'accueil</a>
-
-                    {!! Form::close() !!}
+                        
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-12 marginbtm">
+            {!! Form::submit('Créer la conférence',
+                    ['class' => 'btn btnlogin'])
+                !!}
+
+
+                <a class="btn btnlogin" href="{{ route('evenement.index') }}">Retour à l'accueil</a>
+            </div>
+                
+
+        {!! Form::close() !!}
+        </div>
+                
 </div>
 </div>
 @endsection

@@ -29,9 +29,13 @@
 }
 .tags{
     width: 100%;
-    border: 1px solid gray;
+    border: 1px solid;
+    border-color: #9C9C9C;
+    border-radius: 5px;
     overflow: hidden;
-    background-color: white;
+    background-color: transparent;
+    padding: 5px;
+    margin-bottom: 10px;
 }
 .tags p{
     font-size: 1.1em;
@@ -40,7 +44,9 @@
     margin-left: 3px;
 }
 .tags button{
-    background:none;
+    background-color: #49ada6;
+    color: white;
+    border-radius: 5px;
     border: 0;
 }
 .tags span{
@@ -49,7 +55,17 @@
     margin: 2px;
     padding: 2px;
     float: left;
+}
 
+.btnshowbillet {
+    background-color: #49ada6;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+}
+
+.tagsinput {
+    width: 200px;
 }
 .delete-icon{
     width: 0.7em;

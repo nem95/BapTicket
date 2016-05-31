@@ -11,7 +11,7 @@
                     <div class="showbtn2">
                         <a href=""><i class="fa fa-2x fa-share" aria-hidden="true"></i></a>
                         @if(Auth::check() &&  $user->socialfb != '')
-                            <a href="{{ $user->socialfb }}" target="_blank">
+                            <a href="{{$user->socialfb}}" target="_blank">
                                 <i class="fa fa-2x fa-facebook" aria-hidden="true"></i>
                             </a>
                         @endif
@@ -52,7 +52,7 @@
                                     {!! csrf_field() !!}
                                     <input type="hidden" name="_method" value="DELETE">
                                         <span>
-                                            {{$tag->name}}<button><img class="delete-icon" src="{{ asset("img/icons/icon-delete.png") }}" alt="Icone de suppersion du tag..."></button>
+                                            {{$tag->name}}<button><img class="delete-icon" src="{{ asset("img/icons/icon-delete.png") }}" alt="Icône de suppression du tag..."></button>
                                         </span>
                                 </form>
 
@@ -62,8 +62,8 @@
                                     <form class="" role="form" method="POST" action="{{ url('/orga') }}">
                                     {!! csrf_field() !!}
 
-                                        <input type="text" class="" name="tag" placeholder="Ajouter un théme a vos favoris" value="">
-                                        <button type="submit">valider</button>
+                                        <input class="tagsinput" type="text" class="" name="tag" placeholder="Ajoutez un thème à vos favoris" value="">
+                                        <button type="submit">Valider</button>
 
 
                                     </form>
@@ -91,7 +91,7 @@
                                 <form class="" role="form" method="POST" action="{{ url('/resa') }}">
                                     {!! csrf_field() !!}
                                     <input type="hidden" name="id" value="{{$events->id}}">
-                                    <button> reserver</button>
+                                    <button class="btnshowbillet"> Réserver</button>
                                 </form>
                             </td>
                         </tr>
@@ -108,7 +108,7 @@
                 @else
                     <img src="{{ asset("img/defaults-img/default-profil.png") }}" alt="" class="img-responsive imgshoworga">
                 @endif
-                <p>Note:</p>
+                <!-- <p>Note:</p> -->
                 <div class="btnshoworga">
                     <!--Auth::check() &&  Auth::user()->is_orga == 1 || -->
                     @if(Auth::check() &&  Auth::user()->is_admin ==1 || Auth::check() &&  Auth::user()->id == $user->id)
