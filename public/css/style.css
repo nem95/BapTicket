@@ -160,7 +160,7 @@ body {
     margin-top: 2%;
     padding-bottom: 2%;
     color: #66868c;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .placesevent i {
@@ -960,13 +960,41 @@ footer {
     border-color: #DADADA;
 }
 .navbar-nav {
-        float: none !important;
-        text-align: center;
-    }
+    float: none !important;
+    text-align: center;
+}
+
+.inline button{
+    display: inline-block;
+}
+
+.trbillet{
+    margin-bottom: 5px !important;
+}
+
+.btnshowbillet {
+    margin-left: 5px;
+}
+
+.hbillet {
+    color: black;
+}
 
 /* Reponsive Homepage */
 
 @media screen and (max-width: 767px) {
+
+    .margintopmobile {
+        margin-top: 75px;
+    }
+
+    .margintopmobile2 {
+        margin-top: 100px;
+    }
+
+    select {
+        border: 1px solid black !important;
+    }
 
     .displaynone {
         display: none;
@@ -1095,7 +1123,7 @@ footer {
         top: -10px;
         margin: 0;
         width: 260px;
-        border-color: #4C4C4C;
+        border-color: #323232;
         border: 10px solid; 
         left: -700%;
     }

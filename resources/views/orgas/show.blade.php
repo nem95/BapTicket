@@ -34,15 +34,15 @@
                 </div>
                 <br>
                 <div class="showorgacontent">
-                    <p>Prénom: {{ $user->surname }}
+                    <p><strong>Prénom:</strong> {{ $user->surname }}
                     <br>
-                    Nom: {{ $user->name }}
+                    <strong>Nom:</strong> {{ $user->name }}
                     <br>
-                    Profession: {{ $user->sectors }}</p>
+                    <strong>Profession:</strong> {{ $user->sectors }}</p>
 
                     <div class="clear-fix"></div>
 
-                    <p>Description: <br> {{ $user->known }}</p>
+                    <p><strong>Description:</strong> <br> {{ $user->known }}</p>
 
                     @if(Auth::check() &&  Auth::user()->is_admin ==1 || Auth::check() &&  Auth::user()->id == $user->id)
                         <div class="tags">
@@ -81,9 +81,10 @@
                         </div>
                     @endif
                 </div>
-
+                
+                <p><strong>Mes billets:</strong></p>
                 @foreach($event as $events)
-                    <table>
+                    <table class="trbillet">
                         <tr>
                             <td>{{$events->title}} -- </td>
                             <td> -- {{$events->date}}</td>
@@ -91,7 +92,7 @@
                                 <form class="" role="form" method="POST" action="{{ url('/resa') }}">
                                     {!! csrf_field() !!}
                                     <input type="hidden" name="id" value="{{$events->id}}">
-                                    <button class="btnshowbillet"> Réserver</button>
+                                    <button class="btnshowbillet">Réserver</button>
                                 </form>
                             </td>
                         </tr>
@@ -122,11 +123,11 @@
         <div class="col-md-10 col-md-offset-1 showeventmobileprofil">
             <div class="col-sd-12">
                 @if($user->photo !='')
-                    <img src="{{ asset($user->photo) }}" alt="" class="img-responsive imgshoworga">
+                    <img src="{{ asset($user->photo) }}" alt="" class="img-responsive imgshoworga margintopmobile2">
                 @else
-                    <img src="{{ asset("img/defaults-img/default-profil.png") }}" alt="" class="img-responsive imgshoworga">
+                    <img src="{{ asset("img/defaults-img/default-profil.png") }}" alt="" class="img-responsive imgshoworga margintopmobile2">
                 @endif
-                <p>Note:</p>
+                <!-- <p>Note:</p> -->
                 <div class="btnshoworga row">
                     <div class="showbtn2 centermobile">
                         <a href=""><i class="fa fa-2x fa-share" aria-hidden="true"></i></a>
@@ -174,7 +175,7 @@
                     <div class="clear-fix"></div>
 
                     <p>Description: <br> {{ $user->known }}</p>
-                    <a href="" class="eventshowa">En savoir plus...</a>
+                    <!-- <a href="" class="eventshowa">En savoir plus...</a> -->
                 </div>
                 
             </div>

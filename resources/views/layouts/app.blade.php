@@ -8,7 +8,7 @@
     
     <title>Site de billetterie pour des conférences sur le digital </title>
 
-    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="icon" type="image/png" href="{{ asset("img/logo_small.png") }}" />
     <!-- Dublin Core -->
     <meta name="DC.title" content="WITICKET site de billetterie pour des conférences sur le digital">
     <meta name="DC.creator" content="WITICKET">
