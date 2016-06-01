@@ -63,7 +63,7 @@
                                     {!! csrf_field() !!}
 
                                         <input class="tagsinput" type="text" class="" name="tag" placeholder="Ajoutez un thème à vos favoris" value="">
-                                        <button type="submit">Valider</button>
+                                        <button type="submit" class="tagssubmit">Valider</button>
 
 
                                     </form>

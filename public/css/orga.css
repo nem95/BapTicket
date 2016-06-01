@@ -44,10 +44,13 @@
     margin-left: 3px;
 }
 .tags button{
-    background-color: #49ada6;
     color: white;
     border-radius: 5px;
     border: 0;
+}
+
+.tagssubmit {
+        background-color: #49ada6;
 }
 .tags span{
     border: 1px solid #CCCCCC;
