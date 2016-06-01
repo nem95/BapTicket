@@ -110,23 +110,21 @@
                         </div>
                         
                         <div class="form-group">
-                            <div class="col-md-3">
+                            <div class="col-md-3 inline">
                                 <button type="submit" class="btn center-block btnlogin">
                                     Enregistrer
                                 </button>
+                                <form class="" role="form" method="POST" action="{{route('evenement.destroy',['id' => $event->id])}}">
+                                {!! csrf_field() !!}
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="btn btn-danger center-block ">
+                                        Supprimer
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </form>
 
-                    <div class="col-md-3">
-                        <form class="" role="form" method="POST" action="{{route('evenement.destroy',['id' => $event->id])}}">
-                            {!! csrf_field() !!}
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn btn-danger center-block ">
-                                Supprimer
-                            </button>
-                        </form>
-                    </div>
 
             </div>
         </div>
