@@ -59,7 +59,7 @@
                                 @endforeach
 
                                 <span>
-                                    <form class="" role="form" method="POST" action="{{ url('/orga') }}">
+                                    <form class="" role="form" method="POST" action="{{ url('/organisateur') }}">
                                     {!! csrf_field() !!}
 
                                         <input class="tagsinput" type="text" class="" name="tag" placeholder="Ajoutez un thème à vos favoris" value="">
