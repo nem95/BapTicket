@@ -24,6 +24,8 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::resource('/evenement', 'EventController');
 
+    Route::resource('/queries', 'QueryController');
+
     Route::resource('/organisateur', 'OrgaController');
     Route::post('/organisateur', 'OrgaController@addTags');
     //Route::delete('/orga/{id}', ['as' => 'orga.deleteTags', 'uses' => 'OrgaController@deleteTags']);

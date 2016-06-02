@@ -29,11 +29,7 @@ class EventController extends Controller
 
     }
 
-    public function dashboardOrga()
-    {
-
-
-    }
+   
 
     /**
      * Show the form for creating a new resource.

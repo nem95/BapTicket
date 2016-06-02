@@ -99,6 +99,7 @@
         </a>
         <ul class="dropdown-menu searchmenu">
           <div class="input-group inputmobile">
+
               <input type="text" class="form-control" placeholder="Mots clés...">
               <span class="input-group-btn">
                 <button class="btn btn-default" type="button"><i class="fa fa-search fa-search2" aria-hidden="true"></i></button>
@@ -111,23 +112,27 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <div class='navbar-form navbar-left'>
+            {!! Form::open(array('route' => 'queries.store', 'method' => 'POST'))!!}
+            {!! csrf_field() !!}
 
-    <form class="navbar-form navbar-left" role="search">
-        <div class="input-group barremenu">
-        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
-          <input type="text" class="form-control searchmenuinput" placeholder="Mots-clés..." size="50">
-          <div class="input-group-btn">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-eye" aria-hidden="true"></i> Genre <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-            <ul class="dropdown-menu dropdown-menu-right">
-              <li><a href="#">Accueil</a></li>
-              <li><a href="#">Qui sommes-nous ?</a></li>
-              <li><a href="#">Nous contacter</a></li>
-              <li><a href="#">Plan du site</a></li>
-            </ul>
-            <button class="btn btnlogin btnsearch" type="button">Rechercher</button>
-          </div>
+            <div class="input-group barremenu">
+                <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+                {!! Form::text('title', '', ['class' => 'form-control', 'placeholder searchmenuinput' => 'Mots-clés... ', 'size'=>'50']) !!}
+                {{-- <input type="text" class="form-control searchmenuinput" placeholder="Mots-clés..." size="50"> --}}
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-eye" aria-hidden="true"></i> Genre <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="#">{!! Form::checkbox('connectés', 'connectés') !!} Objets Connectés</a></li>
+                        <li><a href="#">{!! Form::checkbox('business', 'business') !!} E-business</a></li>
+                        <li><a href="#">{!! Form::checkbox('marketing', 'marketing') !!} Marketing Digital</a></li>
+                    </ul>
+                    {!! Form::submit('Search', array('class'=>'btn btnlogin btnsearch')) !!}
+                </div>
+            </div>
+            {!! Form::close() !!}
         </div>
-    </form>
+
       <ul class="nav navbar-nav navbar-right">
         @if (Auth::guest())
             <li>
