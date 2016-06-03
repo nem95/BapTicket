@@ -118,7 +118,7 @@
 
             <div class="input-group barremenu">
                 <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
-                {!! Form::text('title', '', ['class' => 'form-control', 'placeholder searchmenuinput' => 'Mots-clés... ', 'size'=>'50']) !!}
+                {!! Form::text('title', '', ['class' => 'form-control  searchmenuinput', 'placeholder' => 'Mots-clés... ', 'size'=>'50']) !!}
                 {{-- <input type="text" class="form-control searchmenuinput" placeholder="Mots-clés..." size="50"> --}}
                 <div class="input-group-btn">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-eye" aria-hidden="true"></i> Genre <i class="fa fa-angle-down" aria-hidden="true"></i></button>
@@ -127,7 +127,7 @@
                         <li><a href="#">{!! Form::checkbox('business', 'business') !!} E-business</a></li>
                         <li><a href="#">{!! Form::checkbox('marketing', 'marketing') !!} Marketing Digital</a></li>
                     </ul>
-                    {!! Form::submit('Search', array('class'=>'btn btnlogin btnsearch')) !!}
+                    {!! Form::submit('Rechercher', array('class'=>'btn btnlogin btnsearch')) !!}
                 </div>
             </div>
             {!! Form::close() !!}

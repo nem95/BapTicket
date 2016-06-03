@@ -72,11 +72,13 @@ class QueryController extends Controller
             }
         }
 
+        $list = Event::orderBy('created_at', 'desc')->with('reservations')->paginate(8);
+
         // Returns an array of articles that have the query string located somewhere within
         // our articles titles. Paginates them so we can break up lots of search results.
 
         // returns a view and passes the view the list of articles and the original query.
-        return view('page.search', compact('search'));
+        return view('page.search', compact('search', 'list'));
 
     }
 
