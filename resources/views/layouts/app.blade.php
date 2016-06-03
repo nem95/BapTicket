@@ -98,13 +98,20 @@
           <i class="fa fa-2x fa-search" aria-hidden="true"></i>
         </a>
         <ul class="dropdown-menu searchmenu">
-          <div class="input-group inputmobile">
+            {!! Form::open(array('route' => 'queries.store', 'method' => 'POST'))!!}
+            {!! csrf_field() !!}
 
-              <input type="text" class="form-control" placeholder="Mots clés...">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button"><i class="fa fa-search fa-search2" aria-hidden="true"></i></button>
-              </span>
+            <div class="input-group inputmobile">
+                {{-- <input type="text" class="form-control" placeholder="Mots clés..."> --}}
+                {!! Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Mots-clés... ']) !!}
+                <span class="input-group-btn">
+                    {{-- <button class="btn btn-default" type="button"><i class="fa fa-search fa-search2" aria-hidden="true"></i></button> --}}
+                    {!! Form::button('<i class="fa fa-search fa-search2" aria-hidden="true"></i>', array('type' => 'submit', 'class'=>'btn btnlogin btnsearch')) !!}
+
+                </span>
             </div>
+
+            {!! Form::close() !!}
         </ul>
       </li>
     </div>
@@ -192,6 +199,41 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+        $('.slider-search').slick({
+            slidesToShow: 4,
+            slidesToScroll: 2,
+            prevArrow: '<img src="{{asset("img/prev.png")}}" alt="" class="slick-prev prev">',
+            nextArrow: '<img src="{{asset("img/next.png")}}" alt="" class="slick-next next">',
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 880,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 780,
+                    settings: "unslick"
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
         $('.slider').slick({
             autoplay: true,
             autoplaySpeed: 3000,
@@ -200,6 +242,7 @@
         });
     });
 </script>
+
 <script>
     $(document).ready(function(){
         $("address").each(function(){                     

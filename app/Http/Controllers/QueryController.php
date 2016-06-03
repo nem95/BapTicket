@@ -43,42 +43,58 @@ class QueryController extends Controller
         $connect = $request->connectés;
         $business = $request->business;
         $marketing = $request->marketing;
+
+        $list = Event::orderBy('created_at', 'desc')->with('reservations')->paginate(10);
+
         if ($title != ''){
             //dd($title);
             if ($connect){
                 $search = Event::where('title', 'LIKE', '%' . $title . '%')->where('title', 'LIKE', '%' . $connect . '%')->get();
+                return view('page.search', compact('search', 'list'));
+
             }
             if ($business){
-                $search = Event::where('title', 'LIKE', '%' . $title . '%')->where('title', 'LIKE', '%' . $business . '%')->get();
+                return view('page.search', compact('search', 'list'));
+
             }
             if ($marketing){
                 $search = Event::where('title', 'LIKE', '%' . $title . '%')->where('title', 'LIKE', '%' . $marketing . '%')->get();
+                return view('page.search', compact('search', 'list'));
+
             }else{
-                $search = Event::where('title', 'LIKE', '%' . $title . '%')->get();
+                $search = Event::where('title', 'LIKE', '%' . $title . '%')->orWhere('host', 'LIKE', '%' . $title . '%')->get();
+                return view('page.search', compact('search', 'list'));
+
             }
 
         }else{
             //dd($title.'44');
             if ($connect != ''){
                 $search = Event::where('title', 'LIKE', '%' . $connect . '%')->get();
+                return view('page.search', compact('search', 'list'));
+
             }
-            if ($business != ''){
+            elseif ($business != ''){
                 $search = Event::where('title', 'LIKE', '%' . $business . '%')->get();
+                return view('page.search', compact('search', 'list'));
+
             }
-            if ($marketing != ''){
+            elseif ($marketing != ''){
                 $search = Event::where('title', 'LIKE', '%' . $marketing . '%')->get();
+                return view('page.search', compact('search', 'list'));
+
             }else{
-                dd('ola');
+                $search = '';
+                return view('page.search', compact('search', 'list'));
+
             }
         }
 
-        $list = Event::orderBy('created_at', 'desc')->with('reservations')->paginate(8);
 
         // Returns an array of articles that have the query string located somewhere within
         // our articles titles. Paginates them so we can break up lots of search results.
 
         // returns a view and passes the view the list of articles and the original query.
-        return view('page.search', compact('search', 'list'));
 
     }
 
