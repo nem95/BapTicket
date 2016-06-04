@@ -988,6 +988,10 @@ footer {
     color: black;
 }
 
+.searchcontainer {
+    margin-top: 120px !important;
+}
+
 
 /* Reponsive Homepage */
 

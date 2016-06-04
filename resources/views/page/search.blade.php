@@ -2,13 +2,13 @@
 
 @section('content')
     <div class="container-fluid">
-        <div class="row h1event">
+        <div class="row h1event searchcontainer">
             <div class="col-md-10 col-md-offset-1">
                 <div class="col-md-3">
                     <hr class="titlehr">
                 </div>
                 <div class="col-md-6">
-                    <h1 class="eventstitle titleindex">LES TOP CONFÉRENCES</h1>
+                    <h1 class="eventstitle titleindex">RESULTAT DE LA RECHERCHE</h1>
                 </div>
                 <div class="col-md-3">
                     <hr class="titlehr">
