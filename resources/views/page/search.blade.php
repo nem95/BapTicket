@@ -65,16 +65,15 @@
                         </div>
                     @endforeach
 
+
                     @forelse ($search as $event)
                         <p></p>
                     @empty
                         <p class="error">Aucunes conférences ne correspond à votre recherche</p>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                @include('errors.message')
-
+                            <div class="slider-search">
                                 @foreach($list as $event)
+
                                     <div class="col-md-3">
                                         <div class="borderevent">
                                             <div class="imgfullmobile">
@@ -117,10 +116,11 @@
                                         </div>
                                     </div>
                                 @endforeach
-
                             </div>
-                        </div>
                         @include('pagination.default', ['paginator' => $list])
+
+
+
                     @endforelse
                 @else
                     <p class="error">Aucunes conférences ne correspond à votre recherche</p><br>

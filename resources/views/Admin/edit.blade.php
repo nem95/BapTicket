@@ -162,23 +162,24 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <div class="col-md-12 inline">
-                        <button type="submit" class="btn center-block btnlogin">
-                            Enregistrer
-                        </button>
-                        <form class="" role="form" method="POST" action="{{route('admin.destroy',['id' => $user->id])}}">
-                            {!! csrf_field() !!}
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn btn-danger center-block ">
-                                Supprimer
-                            </button>
-                        </form>
-
-                    </div>
-                </div>
+                <button type="submit" class="btn center-block btnlogin">
+                    Enregistrer
+                </button>
 
             </form>
+            <div class="form-group">
+                <div class="col-md-12 inline">
+
+                    <form class="" role="form" method="POST" action="{{route('admin.destroy',['id' => $user->id])}}">
+                        {!! csrf_field() !!}
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger center-block ">
+                            Supprimer
+                        </button>
+                    </form>
+
+                </div>
+            </div>(
 
 
         </div>
