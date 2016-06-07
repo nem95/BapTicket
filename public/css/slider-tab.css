@@ -10,11 +10,15 @@
         margin-top: 15px;
     }
     /*######### LE SLIDER #########*/
-
     .prev, .next{
         height:150px !important;
         margin-top: -20px;
     }
+    .left, .right{
+        height: 80px !important;
+        margin-top: -25px;
+    }
+
     .slide-1, .slide-2, .slide-3{
         width: 40%;
         margin-top: -210px;

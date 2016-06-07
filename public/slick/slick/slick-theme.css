@@ -27,7 +27,7 @@
 
     display: block;
 
-    width: 20px;
+    width:auto;
     height: 20px;
     padding: 0;
     margin-top: -10px\9; /*lte IE 8*/
@@ -205,4 +205,11 @@
 {
     opacity: .75;
     color: black;
+}
+@media screen and (max-width: 770px) {
+
+    .none{
+        display: none !important;
+    }
+
 }

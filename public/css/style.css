@@ -178,7 +178,7 @@ body {
 }
 
 .h4index {
-    height: 43px;
+    height: 80px;
 }
 .bodyevent h4 {
     margin-bottom: 10px; 
@@ -1160,6 +1160,63 @@ footer {
     width: 100%;
     }
 
+    .h4index {
+        height: 40px;
+    }
+
+    /* BARRE DE RECHERCHE MOBILE */
+    .find{
+        position: absolute;
+        top: -22px;
+        right: 0;
+    }
+
+    .close-search{
+        width: 48px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .search-menu-mob{
+        width: 65%;
+        height: 60px;
+        float: left;
+        color: #46aea7;
+        font-size: 1.4em;
+        background-color: rgba(0, 0, 0, 0);
+        border-bottom: 1px solid white !important;
+        border: none;
+        outline:none;
+
+        /*-webkit-transition: all 0.50s ease-in-out;
+        -moz-transition: all 0.50s ease-in-out;
+        -ms-transition: all 0.50s ease-in-out;
+        -o-transition: all 0.50s ease-in-out;*/
+
+        border-bottom: solid 1px #46aea7;
+        -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+        transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+        background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #46aea7 4%);
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #46aea7 4%);
+        background-position: -900px 0;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+
+    }
+    .search-menu-mob:focus{
+
+        box-shadow: none;
+        outline: none;
+        background-position: 100% 0;
+
+        color: #1abc9c;
+        font-size: 1.4em;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        border-bottom: 2px solid #1abc9c !important;
+        outline:none;
+    }
 
 }
 .navbar-nav {
@@ -1181,6 +1238,17 @@ footer {
 
     .h4index {
         height: 60px !important;
+    }
+    .navbar-left {
+        width: 60%;
+        padding: 0;
+    }
+    #wrap{
+        display:none;
+    }
+
+    .find{
+        display: none;
     }
 
 
@@ -1207,11 +1275,22 @@ footer {
     }
 
     .navbar-left {
-        width: 60%;
+        width: 55%;
     }
 
     .navbar-right {
         float: left !important;
+    }
+    #wrap{
+        display:none;
+    }
+
+    .find{
+        display: none;
+    }
+
+    .search-menu-mob{
+        display: none;
     }
 
 }
@@ -1224,5 +1303,28 @@ footer {
     .navbar {
         background-color: #323232;
     }
+    
+    #wrap{
+        display:none;
+    }
 }
 
+@media screen and (min-width: 1360px) {
+
+    .h4index {
+        height: 45px !important;
+    }
+
+    .navbar-left {
+        width: 60%;
+        padding: 0;
+    }
+    #wrap{
+        display:none;
+    }
+
+
+    .find{
+        display: none;
+    }
+}

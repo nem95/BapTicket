@@ -91,29 +91,14 @@
         <i class="fa fa-2x fa-bars" aria-hidden="true"></i>
       </button>
 
-      <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset("img/logo.png") }}" alt="Logo WiTicket" class="img-responsive"></a>
-
-      <li role="presentation" class="dropdown searchmobile">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-2x fa-search" aria-hidden="true"></i>
-        </a>
-        <ul class="dropdown-menu searchmenu">
-            {!! Form::open(array('route' => 'queries.store', 'method' => 'POST'))!!}
+        <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset("img/logo.png") }}" alt="Logo WiTicket" class="img-responsive"></a>
+        <i class="fa fa-2x fa-search find" aria-hidden="true"></i>
+        <img src="{{ asset("img/cancel.png") }}" class="img-responsive retour-click" alt="close search menu">
+        {!! Form::open(array('route' => 'queries.store', 'method' => 'POST'))!!}
             {!! csrf_field() !!}
+            {!! Form::text('title', '', ['class' => 'retour-clicks', 'placeholder' => 'Mots-clés... ']) !!}
 
-            <div class="input-group inputmobile">
-                {{-- <input type="text" class="form-control" placeholder="Mots clés..."> --}}
-                {!! Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Mots-clés... ']) !!}
-                <span class="input-group-btn">
-                    {{-- <button class="btn btn-default" type="button"><i class="fa fa-search fa-search2" aria-hidden="true"></i></button> --}}
-                    {!! Form::button('<i class="fa fa-search fa-search2" aria-hidden="true"></i>', array('type' => 'submit', 'class'=>'btn btnlogin btnsearch')) !!}
-
-                </span>
-            </div>
-
-            {!! Form::close() !!}
-        </ul>
-      </li>
+        {!! Form::close() !!}
     </div>
     
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -202,8 +187,8 @@
         $('.slider-search').slick({
             slidesToShow: 4,
             slidesToScroll: 2,
-            prevArrow: '<img src="{{asset("img/prev.png")}}" alt="" class="slick-prev prev">',
-            nextArrow: '<img src="{{asset("img/next.png")}}" alt="" class="slick-next next">',
+            prevArrow: '<img src="{{asset("img/arrow-left.png")}}" alt="" class="slick-prev left">',
+            nextArrow: '<img src="{{asset("img/arrow-right.png")}}" alt="" class="slick-next right">',
             responsive: [
                 {
                     breakpoint: 1024,
@@ -222,9 +207,13 @@
                     }
                 },
                 {
-                    breakpoint: 780,
-                    settings: "unslick"
-                }
+                    breakpoint: 770,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+
                 // You can unslick at a given breakpoint now by adding:
                 // settings: "unslick"
                 // instead of a settings object
